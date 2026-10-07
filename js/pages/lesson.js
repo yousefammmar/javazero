@@ -13,6 +13,7 @@
         <div class="actions"><a class="btn b2 m0" href="playground.html" id="pg">${ic('terminal')} Edit in playground</a>
           <button class="btn ${done ? 'b3' : 'b1'}" id="done">${ic('checkc')} ${done ? 'Completed' : 'Mark complete'}</button></div></div>
         <aside class="kp"><h4>${ic('bulb')} Key points</h4><ul>${l.pts.map(p => `<li>${p}</li>`).join('')}</ul>
+          <a class="w3" href="${W3}${W3_LESSON[l.id] || ''}" target="_blank" rel="noopener">${ic('upright')} Read more on W3Schools</a>
           <div class="step-note"><b>Try it:</b> change a value in the playground and predict the output before you run it.</div></aside></div>
       <div class="pn">${prev ? `<a href="lesson.html?id=${prev.id}">${ic('left')}<span><small>Previous</small>${prev.t}</span></a>` : '<span></span>'}${next ? `<a class="nx" href="lesson.html?id=${next.id}"><span><small>Next</small>${next.t}</span>${ic('right')}</a>` : `<a class="nx" href="quiz.html"><span><small>Finished</small>Take the daily quiz</span>${ic('right')}</a>`}</div>`;
     $('#run').onclick = () => {

@@ -1,7 +1,7 @@
 /* App shell: header, nav, sidebar and command palette around each page's <main>. */
 const NAV = [
   ['index.html', 'dashboard', 'Dashboard'], ['lessons.html', 'book', 'Lessons'], ['roadmap.html', 'branch', 'Roadmap'],
-  ['playground.html', 'terminal', 'Playground'], ['tools.html', 'wrench', 'Tools'], ['mistakes.html', 'bug', 'Mistake Lab'], ['quiz.html', 'quiz', 'Daily Quiz'],
+  ['playground.html', 'terminal', 'Playground'], ['tools.html', 'wrench', 'Tools'], ['mistakes.html', 'bug', 'Mistake Lab'], ['quiz.html', 'quiz', 'Daily Quiz'], ['resources.html', 'link', 'Resources'],
 ];
 (() => {
   const main = $('#main'), page = (location.pathname.split('/').pop() || 'index.html').replace('lesson.html', 'lessons.html');
@@ -40,6 +40,7 @@ const NAV = [
       <div class="tip"><b>${ic('bulb')} ${tip[0]}</b>${tip[1]}</div>
     </aside>`}
   </div>`;
+  app.insertAdjacentHTML('beforeend', `<footer class="sig"><a class="avatar" href="https://yousefammmar.github.io/profile" target="_blank" rel="noopener" aria-label="Yousef Odeh - open portfolio" title="Yousef Odeh - portfolio"><img src="img/avatar.png" width="72" height="72" alt=""></a><span>Designed &amp; built by</span><b class="sign">Yousef Odeh</b>${ic('code')}</footer>`);
   app.querySelector('.slot').replaceWith(main);
   document.body.append(app);
 
@@ -50,6 +51,7 @@ const NAV = [
     ...MISTAKES.map(x => ({ t: x.t, s: 'Mistake Lab', i: 'bug', h: `mistakes.html#${x.id}`, k: x.why })),
     ...EXCEPTIONS.map(x => ({ t: x.n, s: 'Stack traces', i: 'terminal', h: 'tools.html#stack', k: x.say })),
     ...COMPILER_ERRORS.map(x => ({ t: x.e, s: 'Compiler errors', i: 'warn', h: 'tools.html#errors', k: x.say })),
+    ...RESOURCES.flatMap(g => g.items.map(([t, , d]) => ({ t: `${t} (W3Schools)`, s: 'Resources', i: 'link', h: 'resources.html', k: d }))),
     { t: 'String Lab', s: 'Tools', i: 'type', h: 'tools.html#string', k: 'toUpperCase substring replace' },
     { t: 'Multi-file IDE', s: 'Tools', i: 'folder', h: 'tools.html#ide', k: 'heap stack memory' },
   ];

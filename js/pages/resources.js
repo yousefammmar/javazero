@@ -1,0 +1,4 @@
+/* Resources: curated W3Schools Java links grouped by topic. */
+$('#root').innerHTML = `<div class="mh"><div><h2>Resources</h2><p>Hand-picked W3Schools Java references to read alongside the lessons. Links open w3schools.com in a new tab.</p></div><a class="mini c" href="${W3}" target="_blank" rel="noopener">Open W3Schools Java ${ic('upright')}</a></div>
+  <div class="res">${RESOURCES.map(g => `<section class="panel"><h3><span class="ico">${ic(g.icon)}</span>${g.t}</h3><ul>${g.items.map(([t, path, d]) => `<li><a href="${W3}${path}" target="_blank" rel="noopener"><span><b>${t}</b><small>${d}</small></span>${ic('upright')}</a></li>`).join('')}</ul></section>`).join('')}</div>
+  <p class="disc">W3Schools is a trademark of Refsnes Data. JavaZero is not affiliated with or endorsed by W3Schools; these are plain links to their public pages.</p>`;

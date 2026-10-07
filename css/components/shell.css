@@ -25,3 +25,10 @@ a.mini{text-decoration:none;display:inline-block}.mini{transition:filter .15s}.m
 .pal li small{margin-left:auto;font:11px var(--mono);color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:40%}
 .pal li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .pal li.on,.pal li:hover{background:var(--mint)}.pal li.empty{color:var(--mut);justify-content:center;cursor:default}
+/* signature */
+.sig{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px 16px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+.sign{font:700 28px/1 'Caveat',cursive;color:var(--coral);letter-spacing:.01em;transform:rotate(-2deg)}
+.sig .i{color:var(--coral)}
+.avatar{width:72px;height:72px;border-radius:50%;overflow:hidden;border:1.5px solid var(--ink);background:#fff;display:block;flex:none;transition:transform .2s ease,box-shadow .2s ease}
+.avatar:hover{transform:scale(1.15);box-shadow:0 0 0 3px #f26b5b55}
+.avatar img{width:100%;height:100%;display:block;object-fit:cover}

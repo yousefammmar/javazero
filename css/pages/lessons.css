@@ -25,3 +25,4 @@
 .pn a{display:flex;align-items:center;gap:12px;text-decoration:none;padding:12px 16px;border:1px solid var(--line);border-radius:14px;max-width:48%;font-weight:700;font-size:14px}.pn a:hover{border-color:var(--coral);color:var(--coral)}
 .pn small{display:block;font:11px var(--mono);color:var(--mut);font-weight:400}.pn .nx{margin-left:auto;text-align:right}
 @media(max-width:900px){.lesson-grid{grid-template-columns:1fr}.mod header{grid-template-columns:auto 1fr}.mp{grid-column:1/-1;text-align:left}}
+.lesson-grid>*{min-width:0}

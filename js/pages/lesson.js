@@ -22,7 +22,7 @@
       Store.set('ran', Store.get('ran', 1) + 1);
     };
     $('#pg').onclick = () => Store.set('draft', l.code);
-    $('#done').onclick = () => { Progress.toggle(l.id); render(); };
+    $('#done').onclick = () => { Progress.toggle(l.id); render(); refreshAside(); };
   };
   render();
 }

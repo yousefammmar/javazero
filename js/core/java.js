@@ -17,7 +17,8 @@ String.prototype.hashCode=function(){let h=0;for(const c of String(this))h=(Math
 String.prototype.isEmpty=function(){return this.length===0};
 class ArrayList extends Array{add(x){this.push(x);return true}get(i){return this[i]}size(){return this.length}}
 const Integer={parseInt:s=>{if(!/^\\s*-?\\d+\\s*$/.test(s))throw new Error('NumberFormatException: For input string: "'+s+'"');return parseInt(s,10)},MAX_VALUE:2147483647,MIN_VALUE:-2147483648};
-const String_valueOf=x=>String(x);`;
+const String_valueOf=x=>String(x);
+const __div=(a,b)=>{if(b===0)throw new Error('ArithmeticException: / by zero');return Math.trunc(a/b)};`;
 
   function check(src) {
     const errs = [], lines = src.split('\n');
@@ -79,7 +80,7 @@ const String_valueOf=x=>String(x);`;
         .replace(/\bfor\s*\(\s*(?:final\s+)?TYPE\s+(\w+)\s*:\s*/.source ? new RegExp(`\\bfor\\s*\\(\\s*(?:final\\s+)?${TYPE}\\s+(\\w+)\\s*:\\s*`, 'g') : '', 'for (const $1 of ')
         .replace(new RegExp(`\\bfor\\s*\\(\\s*(?:int|long|double)\\s+`, 'g'), 'for (let ')
         .replace(new RegExp(`^(\\s*)(?:final\\s+)?${TYPE}\\s+(\\w+)\\s*=\\s*\\{(.*)\\}\\s*;`), '$1let $2 = [$3];')
-        .replace(new RegExp(`^(\\s*)(?:final\\s+)?${TYPE}\\s+(\\w+)\\s*(=|;)`), '$1let $2 $3')
+        .replace(new RegExp(`(^\\s*|[{;]\\s*)(?:final\\s+)?${TYPE}\\s+(\\w+)\\s*(=|;)`, 'g'), '$1let $2 $3')
         .replace(/\bnew\s+(?:int|long|double|boolean|char|byte|short|float)\[(\w+)\]/g, 'new Array($1).fill(0)')
         .replace(/\bnew\s+String\[(\w+)\]/g, 'new Array($1).fill(null)')
         .replace(/(\w)<[\w\s,?<>]*>(?=\s*\()/g, '$1')
@@ -87,7 +88,7 @@ const String_valueOf=x=>String(x);`;
         .replace(/System\.out\.println\(/g, '__p(').replace(/System\.out\.print\(/g, '__w(')
         .replace(/\bString\.valueOf\(/g, 'String(').replace(/(\d)[Lf]\b/g, '$1')
         .replace(/\bcatch\s*\(\s*[\w.|\s]+\s+(\w+)\s*\)/g, 'catch ($1)').replace(/\bwhile\s*\((.*)\)\s*\{/, 'while (__t() && ($1)) {')
-        .replace(/(?<![\w.])(\w+)\s*\/\s*(\w+)(?![\w.])/g, (m, a, b) => (intVars.has(a) || /^\d+$/.test(a)) && (intVars.has(b) || /^\d+$/.test(b)) ? `Math.trunc(${a} / ${b})` : m);
+        .replace(/(?<![\w.])(\w+)\s*\/\s*(\w+)(?![\w.])/g, (m, a, b) => (intVars.has(a) || /^\d+$/.test(a)) && (intVars.has(b) || /^\d+$/.test(b)) ? `__div(${a}, ${b})` : m);
       return t;
     };
     lines.forEach(raw => {
@@ -157,7 +158,7 @@ const String_valueOf=x=>String(x);`;
       if (e instanceof ReferenceError) { kind = 'compile'; text = `cannot find symbol: ${msg.split(' ')[0]}`; return { out, err: { kind, list: [{ line: 0, msg: text }] } }; }
       if (e instanceof TypeError && /null|undefined/.test(msg)) text = 'java.lang.NullPointerException';
       else if (e instanceof RangeError) text = 'java.lang.StackOverflowError';
-      else if (/^NumberFormatException/.test(msg)) text = 'java.lang.' + msg;
+      else if (/^(NumberFormatException|ArithmeticException)/.test(msg)) text = 'java.lang.' + msg;
       else text = 'java.lang.RuntimeException: ' + msg;
       return { out, err: { kind: 'runtime', text } };
     }

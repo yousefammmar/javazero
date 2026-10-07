@@ -15,7 +15,7 @@
   };
   root.onclick = e => {
     const f = e.target.closest('[data-f]'), t = e.target.closest('.tick');
-    if (f) { filter = f.dataset.f; render(); } else if (t) { Progress.toggle(t.dataset.id); render(); }
+    if (f) { filter = f.dataset.f; render(); } else if (t) { Progress.toggle(t.dataset.id); render(); refreshAside(); }
   };
   render();
 }

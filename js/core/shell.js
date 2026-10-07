@@ -7,10 +7,25 @@ const NAV = [
   const main = $('#main'), page = (location.pathname.split('/').pop() || 'index.html').replace('lesson.html', 'lessons.html');
   const title = main.dataset.title || 'Dashboard';
   const noAside = main.dataset.aside === 'off';
-  const ov = Progress.overall(), core = MODULES.slice(0, 3), coreDone = core.reduce((a, m) => a + Progress.forModule(m).n, 0), coreTot = core.reduce((a, m) => a + m.lessons.length, 0);
-  const corePct = Math.round(coreDone / coreTot * 100), next = Progress.next();
-  const earned = BADGES.filter(b => b.test()), tip = TIPS[new Date().getDate() % TIPS.length];
-  const shown = [...earned, ...BADGES.filter(b => !b.test())].slice(0, 3);
+  const asideInner = () => {
+    const ov = Progress.overall(), core = MODULES.slice(0, 3), coreDone = core.reduce((a, m) => a + Progress.forModule(m).n, 0), coreTot = core.reduce((a, m) => a + m.lessons.length, 0);
+    const corePct = Math.round(coreDone / coreTot * 100), next = Progress.next();
+    const earned = BADGES.filter(b => b.test()), tip = TIPS[new Date().getDate() % TIPS.length];
+    const shown = [...earned, ...BADGES.filter(b => !b.test())].slice(0, 3);
+    return `
+      <div class="side"><h4><span class="l">ACTIVE STREAK</span><b class="red">${ic('flame')} 4 Days</b></h4>
+        <div class="days">${'MTWTFSS'.split('').map((d, i) => `<div>${d}<i class="${i < 4 ? 'd' : ''}">${i < 4 ? ic('check') : ''}</i></div>`).join('')}</div></div>
+      <div class="side"><h4>Java Core I <span class="bd">${corePct}%</span></h4><div class="bar thick"><i style="width:${corePct}%;background:var(--coral)"></i></div>
+        <div class="nm"><b>Next Milestone:</b><br><span>${next ? next.t : 'All lessons complete'}</span></div>
+        <a class="btn b1 full" href="${next ? 'lesson.html?id=' + next.id : 'quiz.html'}">${ic('play')} Continue Lesson</a></div>
+      <div class="side"><h4>Earned Badges <span class="cnt-s">${earned.length} / ${BADGES.length}</span></h4>
+        <div class="bdg">${shown.map(b => `<div class="${b.test() ? '' : 'lock'}" title="${b.hint}"><i>${ic(b.icon)}</i>${b.t}</div>`).join('')}</div>
+        <a class="more" href="settings.html#badges">View all badges ${ic('chevr')}</a></div>
+      <div class="tip"><b>${ic('bulb')} ${tip[0]}</b>${tip[1]}</div>
+    `;
+  };
+  // re-render the sidebar after progress changes (lesson ticks)
+  window.refreshAside = () => { const a = $('aside.rail'); if (a) a.innerHTML = asideInner(); };
 
   const app = document.createElement('div'); app.className = 'app';
   app.innerHTML = `
@@ -28,17 +43,7 @@ const NAV = [
       <a href="settings.html" class="${page === 'settings.html' ? 'on' : ''}" title="Settings" aria-label="Settings">${ic('sliders')}</a>
     </nav>
     <div class="slot"></div>
-    ${noAside ? '' : `<aside>
-      <div class="side"><h4><span class="l">ACTIVE STREAK</span><b class="red">${ic('flame')} 4 Days</b></h4>
-        <div class="days">${'MTWTFSS'.split('').map((d, i) => `<div>${d}<i class="${i < 4 ? 'd' : ''}">${i < 4 ? ic('check') : ''}</i></div>`).join('')}</div></div>
-      <div class="side"><h4>Java Core I <span class="bd">${corePct}%</span></h4><div class="bar thick"><i style="width:${corePct}%;background:var(--coral)"></i></div>
-        <div class="nm"><b>Next Milestone:</b><br><span>${next ? next.t : 'All lessons complete'}</span></div>
-        <a class="btn b1 full" href="${next ? 'lesson.html?id=' + next.id : 'quiz.html'}">${ic('play')} Continue Lesson</a></div>
-      <div class="side"><h4>Earned Badges <span class="cnt-s">${earned.length} / ${BADGES.length}</span></h4>
-        <div class="bdg">${shown.map(b => `<div class="${b.test() ? '' : 'lock'}" title="${b.hint}"><i>${ic(b.icon)}</i>${b.t}</div>`).join('')}</div>
-        <a class="more" href="settings.html#badges">View all badges ${ic('chevr')}</a></div>
-      <div class="tip"><b>${ic('bulb')} ${tip[0]}</b>${tip[1]}</div>
-    </aside>`}
+    ${noAside ? '' : `<aside class="rail">${asideInner()}</aside>`}
   </div>`;
   app.insertAdjacentHTML('beforeend', `<footer class="sig"><a class="avatar" href="https://yousefammmar.github.io/profile" target="_blank" rel="noopener" aria-label="Yousef Odeh - open portfolio" title="Yousef Odeh - portfolio"><img src="img/avatar.png" width="72" height="72" alt=""></a><span>Designed &amp; built by</span><b class="sign">Yousef Odeh</b>${ic('code')}</footer>`);
   app.querySelector('.slot').replaceWith(main);

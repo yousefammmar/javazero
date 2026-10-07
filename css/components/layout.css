@@ -12,4 +12,4 @@ nav a,nav button{width:44px;height:44px;border-radius:12px;font-size:19px;color:
 nav a:hover,nav button:hover{background:#f1ece3;color:var(--ink)}
 nav .on,nav .on:hover{background:var(--dark);color:#fff}nav .sp{flex:1}
 main{padding:24px;display:flex;flex-direction:column;gap:32px;min-width:0}
-aside{padding:20px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
+aside.rail{padding:20px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:16px}

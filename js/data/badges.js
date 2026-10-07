@@ -5,7 +5,7 @@ const BADGES = (() => {
   return [
     b('hello', 'Hello Java', 'spark', () => d('vars-1'), 'Finish your first lesson'),
     b('vars', 'Variables', 'cpu', () => d('vars-5'), 'Reach lesson 5 of Variables'),
-    b('fast', 'Fast Run', 'zap', () => Store.get('ran', 1) >= 1, 'Run code in the playground'),
+    b('fast', 'Fast Run', 'zap', () => Store.get('ran', 0) >= 1, 'Run code in the playground'),
     b('methods', 'Method Maker', 'sigma', () => d('methods-3'), 'Finish Return values'),
     b('classes', 'Builder', 'wrench', () => d('classes-3'), 'Finish Constructors'),
     b('extends', 'Heir', 'network', () => d('inherit-1'), 'Finish extends'),

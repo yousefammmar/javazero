@@ -19,7 +19,7 @@
   $('#runBtn').onclick = () => {
     const r = Java.run($('#heroSrc').textContent);
     $('#consoleOut').innerHTML = r.err ? `<span class="e">${esc(r.err.list ? r.err.list[0].msg : r.err.text)}</span>` : r.out.map(esc).join('<br>');
-    Store.set('ran', Store.get('ran', 1) + 1);
+    Store.set('ran', Store.get('ran', 0) + 1);
   };
   $('#modCount').textContent = `${MODULES.length + LABS.length} modules active`;
 }

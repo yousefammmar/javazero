@@ -19,7 +19,7 @@
     $('#run').onclick = () => {
       const r = Java.run(l.code);
       $('#out').innerHTML = r.err ? `<span class="e">${esc(r.err.list ? r.err.list[0].msg : r.err.text)}</span>` : r.out.map(esc).join('<br>');
-      Store.set('ran', Store.get('ran', 1) + 1);
+      Store.set('ran', Store.get('ran', 0) + 1);
     };
     $('#pg').onclick = () => Store.set('draft', l.code);
     $('#done').onclick = () => { Progress.toggle(l.id); render(); refreshAside(); };

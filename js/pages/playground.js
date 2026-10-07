@@ -24,7 +24,7 @@
       if (r.err) { const ex = EXCEPTIONS.find(x => r.err.text.includes(x.n)); h += `<div class="er"><span class="e">Exception in thread "main" ${esc(r.err.text)}</span>${ex ? `<div class="tr">${ic('bulb')} ${ex.say}<br><b>Fix: ${ex.fix}</b></div>` : ''}</div><div class="st bad">Exited with error</div>`; }
       else h += '<div class="st ok">Process finished with exit code 0</div>';
     }
-    out.innerHTML = h; Store.set('ran', Store.get('ran', 1) + 1);
+    out.innerHTML = h; Store.set('ran', Store.get('ran', 0) + 1);
   };
   ed.oninput = lines; ed.onscroll = () => gut.scrollTop = ed.scrollTop;
   ed.onkeydown = e => {

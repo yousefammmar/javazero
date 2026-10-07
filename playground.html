@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Playground – JavaZero</title>
+<meta name="description" content="JavaZero: learn Java from absolute zero with interactive lessons, labs and a playground.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<main id="main" data-title="Playground" data-aside="off">
+  <div class="pg">
+    <div class="pg-bar">
+      <div><h2>Playground</h2><p>Write Java, press Run. Common mistakes are explained in plain English.</p></div>
+      <div class="pg-act">
+        <label class="sr" for="tpl">Template</label><select class="in sm" id="tpl"></select>
+        <button class="mini" id="preset"><svg class="i"><use href="#i-reset"/></svg> Reset</button>
+        <button class="mini" id="pcopy"><svg class="i"><use href="#i-file"/></svg> Copy</button>
+        <button class="build" id="prun"><svg class="i"><use href="#i-play"/></svg> RUN</button>
+      </div>
+    </div>
+    <div class="pg-body">
+      <div class="pg-ed"><div class="pg-tab"><svg class="i"><use href="#i-code"/></svg> Main.java<span>Ctrl/Cmd + Enter to run</span></div>
+        <div class="pg-wrap"><pre id="gut" aria-hidden="true">1</pre><textarea id="ed" spellcheck="false" aria-label="Java source" autocapitalize="off"></textarea></div></div>
+      <div class="pg-out"><div class="pg-tab"><svg class="i"><use href="#i-terminal"/></svg> Console</div><div id="pout" aria-live="polite"></div></div>
+    </div>
+    <p class="pg-note">Runs a teaching subset of Java in your browser: classes, inheritance, interfaces, loops, arrays, Strings and ArrayList. No input (Scanner) and double output like 9.0 may print as 9.</p>
+  </div>
+</main>
+
+<script src="js/boot.js" data-page="playground"></script>
+</body>
+</html>

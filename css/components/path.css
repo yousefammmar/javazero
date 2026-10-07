@@ -1,0 +1,7 @@
+/* path */
+.path{display:flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:20px;padding:18px;overflow-x:auto;background:var(--card)}
+.path h3{font-size:17px}.path p{font-size:13px;color:var(--mut);max-width:280px}
+.ico{width:30px;height:40px;display:grid;place-items:center;background:var(--mint);border-radius:10px;color:var(--green);flex:none}
+.step{font:700 12px var(--mono);padding:6px 12px;border-radius:99px;white-space:nowrap;display:flex;gap:7px;align-items:center}
+.step i{font-style:normal;width:16px;height:16px;border-radius:50%;color:#fff;display:grid;place-items:center;font-size:10px}
+.path .arr{color:#bbb}

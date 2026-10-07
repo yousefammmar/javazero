@@ -1,0 +1,9 @@
+/* aside */
+.side{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.side h4{font-size:15px;display:flex;justify-content:space-between;align-items:center}
+.side .l{font:11px var(--mono);letter-spacing:.08em;color:var(--mut)}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:14px;text-align:center;font:10px var(--mono);color:var(--mut)}
+.days i{display:grid;place-items:center;height:26px;border-radius:50%;background:#ece6db;color:#bbb;font-style:normal;margin-top:6px;font-size:12px}.days i.d{background:var(--coral);color:#fff}
+.bdg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.bdg div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 4px;text-align:center;font:700 10px var(--mono)}
+.bdg i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;margin:0 auto 6px;font-style:normal}
+.tip{background:#f7f1e9;border:1px solid var(--line);border-radius:14px;padding:14px;font-size:13px;color:var(--mut)}.tip b{color:var(--ink);display:block;margin-bottom:6px}.tip code{color:var(--coral);font-family:var(--mono)}

@@ -1,0 +1,13 @@
+:root{--coral:#f26b5b;--coral-d:#d9483a;--mint:#dcf7ea;--green:#1b8a5f;--purple:#7c5cd6;--lav:#e9e4fb;--cream:#fbf8f3;--card:#f7f2ea;--line:#ebe4d8;--ink:#201d1a;--mut:#6b655c;--dark:#262420;--red:#c4161c;
+--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#e6fbf0;color:var(--ink);padding:16px;line-height:1.45}
+button{font:inherit;cursor:pointer;border:0;color:inherit;background:none}
+.mono{font-family:var(--mono)}
+.app{background:var(--cream);border:1px solid var(--line);border-radius:22px;overflow:hidden;max-width:1280px;margin:auto}
+
+.i{width:1.15em;height:1.15em;vertical-align:-.2em;flex:none}
+a{color:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard – JavaZero</title>
+<meta name="description" content="JavaZero: learn Java from absolute zero with interactive lessons, labs and a playground.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<main id="main" data-title="Dashboard">
+  <section class="hero">
+    <div>
+      <span class="tag">Beginner friendly • No experience required</span><br>
+      <button class="tog" id="eli" aria-pressed="true">Explain Like I'm New <span class="sw"></span></button>
+      <h1>Learn Java. <em>From absolute zero.</em></h1>
+      <p class="lead" id="lead"></p>
+      <a class="btn b1" href="lessons.html"><svg class="i"><use href="#i-playc"/></svg> Continue Learning</a><a class="btn b2" href="roadmap.html"><svg class="i"><use href="#i-map"/></svg> Explore Roadmap</a>
+      <p class="hint">Press <kbd>⌘</kbd> <kbd>K</kbd> to jump</p>
+    </div>
+    <div class="term">
+      <div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp;HelloJava.java<span class="ok">Compiled</span></div>
+<pre id="heroSrc"><span class="k">public class</span> HelloJava {
+  <span class="k">public static void</span> <span class="t">main</span>(<span class="t">String</span>[] args) {
+    System.out.<span class="t">println</span>(<span class="s">"Hello, Java!"</span>);
+  }
+}</pre>
+      <div class="chips">
+        <div><b class="k">public</b>Visible everywhere across project files</div>
+        <div><b class="g">static</b>Runs directly without instantiating an object</div>
+        <div><b class="t">void</b>Executes instructions and returns no data</div>
+      </div>
+      <div class="run"><span><span class="g">$</span> JVM<br><span id="consoleOut" class="g">Hello, Java!</span></span><button id="runBtn">RUN <svg class="i"><use href="#i-play"/></svg></button></div>
+    </div>
+  </section>
+
+  <section class="path" id="path">
+    <div class="ico"><svg class="i"><use href="#i-target"/></svg></div>
+    <div class="ptxt"><h3>The JavaZero Mastery Path</h3><p>Cognitive science approach: muscle memory over passive watching.</p></div>
+    <div class="steps">
+      <a href="lessons.html" class="step" style="background:var(--mint);color:#14573c"><i style="background:#14573c">1</i>LEARN</a><svg class="i"><use href="#i-chevr"/></svg>
+      <a href="tools.html#ide" class="step" style="background:var(--lav);color:#5a3fb5"><i style="background:var(--purple)">2</i>SEE</a><svg class="i"><use href="#i-chevr"/></svg>
+      <a href="playground.html" class="step" style="background:#ffe3df;color:#b8372b"><i style="background:var(--coral)">3</i>TRY</a><svg class="i"><use href="#i-chevr"/></svg>
+      <a href="mistakes.html" class="step" style="background:#ffd9d9;color:var(--red)"><i style="background:var(--red)">4</i>BREAK</a><svg class="i"><use href="#i-chevr"/></svg>
+      <a href="roadmap.html" class="step" style="background:var(--mint);color:#14573c"><i style="background:#14573c">5</i>BUILD</a>
+    </div>
+  </section>
+
+  <section id="modules">
+    <div class="mh"><div><h2>Curriculum Modules</h2><p>Curated tracks designed to take you from syntax basics to modular OOP design.</p></div><span class="cnt" id="modCount"></span></div>
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">All Modules</button><button data-f="fund">Fundamentals</button><button data-f="logic">Logic &amp; Scope</button><button data-f="oop">Object-Oriented Java</button><button data-f="inh">Inheritance &amp; Interfaces</button><button data-f="lab">Java Mistake Lab</button>
+    </div>
+    <div class="mods" id="mods"></div>
+  </section>
+
+  <div data-mount="ide"></div>
+  <div class="mods nm"><div data-mount="string"></div><div data-mount="errors"></div></div>
+
+  <div class="status"><span class="on">JVM 21 HotSpot Running</span>•<span class="mono sm">Garbage Collector: G1GC</span><span class="mono sm"><svg class="i"><use href="#i-keyboard"/></svg> Command Palette (⌘K)</span>•<a href="quiz.html">Daily Practice Quiz</a>•<a href="https://docs.oracle.com/en/java/javase/21/docs/api/" rel="noopener">Documentation</a></div>
+</main>
+
+<script src="js/boot.js" data-page="index"></script>
+</body>
+</html>

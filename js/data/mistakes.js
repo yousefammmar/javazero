@@ -1,0 +1,19 @@
+/* Common beginner mistakes: buggy code, fix, and why. */
+const MISTAKES = [
+  { id: 'equals', t: 'Using == instead of .equals() on Strings', why: '== compares memory addresses, .equals() compares text. Two separately created Strings with the same text are different objects.',
+    bad: 'String a = new String("Java");\nString b = new String("Java");\nif (a == b) { ... }  // false!', good: 'String a = new String("Java");\nString b = new String("Java");\nif (a.equals(b)) { ... }  // true' },
+  { id: 'semicolon', t: 'Forgetting the semicolon', why: 'Every statement ends with ;. The compiler reports the error on the line after the real problem.',
+    bad: 'int x = 5\nSystem.out.println(x);', good: 'int x = 5;\nSystem.out.println(x);' },
+  { id: 'intdiv', t: 'Integer division surprises', why: 'int / int drops the fraction. Make one side a double to keep it.',
+    bad: 'double avg = 7 / 2;  // 3.0', good: 'double avg = 7 / 2.0;  // 3.5' },
+  { id: 'npe', t: 'NullPointerException', why: 'Calling a method on a reference that points to nothing. Initialize objects before use.',
+    bad: 'String s = null;\nSystem.out.println(s.length());', good: 'String s = "text";\nSystem.out.println(s.length());' },
+  { id: 'assign', t: '= instead of == in a condition', why: '= assigns, == compares. In Java an assignment to an int in an if is a compile error.',
+    bad: 'if (x = 5) { ... }', good: 'if (x == 5) { ... }' },
+  { id: 'offbyone', t: 'Off-by-one in loops', why: 'Arrays are 0-indexed, so the last valid index is length - 1.',
+    bad: 'for (int i = 0; i <= arr.length; i++)  // out of bounds', good: 'for (int i = 0; i < arr.length; i++)' },
+  { id: 'immut', t: 'Expecting a String to change in place', why: 'Strings are immutable. Methods like toUpperCase() return a new String.',
+    bad: 'String s = "hi";\ns.toUpperCase();\nSystem.out.println(s);  // hi', good: 'String s = "hi";\ns = s.toUpperCase();\nSystem.out.println(s);  // HI' },
+  { id: 'switch', t: 'Missing break in switch', why: 'Without break, execution falls through into the next case.',
+    bad: 'case 1: print("one");\ncase 2: print("two");  // runs too', good: 'case 1: print("one"); break;\ncase 2: print("two"); break;' },
+];

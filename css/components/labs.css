@@ -1,0 +1,7 @@
+/* labs */
+input.in,select.in{width:100%;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:13px var(--mono);color:var(--ink)}
+.meth{display:flex;flex-wrap:wrap;gap:8px}.meth button{font:600 12px var(--mono);background:#f1ece3;padding:6px 12px;border-radius:99px}.meth button.on{background:var(--dark);color:#fff}
+.ret{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;font:11px var(--mono);color:var(--mut)}.ret b{display:block;color:var(--green);font-size:16px;margin-top:4px;word-break:break-all}
+.lbl{font:12px var(--mono);color:var(--mut)}
+.status{display:flex;flex-wrap:wrap;gap:14px;align-items:center;border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--mut)}
+.status .on{color:var(--green);font:700 12px var(--mono)}.status .on::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#35c488;margin-right:7px}

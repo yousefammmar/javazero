@@ -16,4 +16,6 @@ const MISTAKES = [
     bad: 'String s = "hi";\ns.toUpperCase();\nSystem.out.println(s);  // hi', good: 'String s = "hi";\ns = s.toUpperCase();\nSystem.out.println(s);  // HI' },
   { id: 'switch', t: 'Missing break in switch', why: 'Without break, execution falls through into the next case.',
     bad: 'case 1: print("one");\ncase 2: print("two");  // runs too', good: 'case 1: print("one"); break;\ncase 2: print("two"); break;' },
+  { id: 'nextline', t: 'nextLine() right after nextInt()', why: 'nextInt() reads the number but leaves the Enter key in the input, so the next nextLine() returns an empty String. Consume the leftover line first.',
+    bad: 'int age = sc.nextInt();\nString name = sc.nextLine();  // "" (empty!)', good: 'int age = sc.nextInt();\nsc.nextLine();                 // eat the leftover Enter\nString name = sc.nextLine();' },
 ];

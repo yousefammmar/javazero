@@ -1,6 +1,6 @@
 /* Teaching-subset Java runner: checks common syntax mistakes, transpiles to JS, runs it.
    Supports classes, fields, constructors, inheritance, interfaces, static members, loops, arrays,
-   String/Math basics, ArrayList. Not a JVM: formatting of doubles (9 vs 9.0) is approximate. */
+   String/Math basics, ArrayList, and console input (Scanner, BufferedReader). Not a JVM: formatting of doubles (9 vs 9.0) is approximate. */
 const Java = (() => {
   const TYPE = '(?:int|long|short|byte|double|float|boolean|char|String|var|void|[A-Z]\\w*(?:<[^>]*>)?)(?:\\[\\])*';
   const MODS = '(?:(?:public|private|protected|static|final|abstract|default|synchronized)\\s+)*';
@@ -18,6 +18,9 @@ String.prototype.isEmpty=function(){return this.length===0};
 class ArrayList extends Array{add(x){this.push(x);return true}get(i){return this[i]}size(){return this.length}}
 const Integer={parseInt:s=>{if(!/^\\s*-?\\d+\\s*$/.test(s))throw new Error('NumberFormatException: For input string: "'+s+'"');return parseInt(s,10)},MAX_VALUE:2147483647,MIN_VALUE:-2147483648};
 const String_valueOf=x=>String(x);
+class Scanner{constructor(){}next(){return __io.next()}nextLine(){return __io.nextLine()}nextInt(){return __io.nextInt()}nextLong(){return __io.nextInt()}nextDouble(){return __io.nextDouble()}nextBoolean(){return __io.nextBoolean()}hasNext(){return __io.hasNext()}hasNextInt(){return __io.hasNextInt()}hasNextDouble(){return __io.hasNextDouble()}hasNextLine(){return __io.hasNextLine()}close(){}}
+class InputStreamReader{}
+class BufferedReader{readLine(){return __io.hasNextLine()?__io.nextLine():null}close(){}}
 const __div=(a,b)=>{if(b===0)throw new Error('ArithmeticException: / by zero');return Math.trunc(a/b)};`;
 
   function check(src) {
@@ -85,7 +88,7 @@ const __div=(a,b)=>{if(b===0)throw new Error('ArithmeticException: / by zero');r
         .replace(/\bnew\s+String\[(\w+)\]/g, 'new Array($1).fill(null)')
         .replace(/(\w)<[\w\s,?<>]*>(?=\s*\()/g, '$1')
         .replace(/\.length\(\)/g, '.length').replace(/\.replace\(/g, '.replaceAll(')
-        .replace(/System\.out\.println\(/g, '__p(').replace(/System\.out\.print\(/g, '__w(')
+        .replace(/System\.in\b/g, '0').replace(/System\.out\.println\(/g, '__p(').replace(/System\.out\.print\(/g, '__w(')
         .replace(/\bString\.valueOf\(/g, 'String(').replace(/(\d)[Lf]\b/g, '$1')
         .replace(/\bcatch\s*\(\s*[\w.|\s]+\s+(\w+)\s*\)/g, 'catch ($1)').replace(/\bwhile\s*\((.*)\)\s*\{/, 'while (__t() && ($1)) {')
         .replace(/(?<![\w.])(\w+)\s*\/\s*(\w+)(?![\w.])/g, (m, a, b) => (intVars.has(a) || /^\d+$/.test(a)) && (intVars.has(b) || /^\d+$/.test(b)) ? `__div(${a}, ${b})` : m);
@@ -137,7 +140,7 @@ const __div=(a,b)=>{if(b===0)throw new Error('ArithmeticException: / by zero');r
     return `${js}\n${impls.join(';')};\n${mainClass}.main([]);`;
   }
 
-  function run(src) {
+  function run(src, opts = {}) {
     const errs = check(src);
     if (errs.length) return { out: [], err: { kind: 'compile', list: errs } };
     const out = [];
@@ -146,12 +149,29 @@ const __div=(a,b)=>{if(b===0)throw new Error('ArithmeticException: / by zero');r
     const fmt = x => x === null || x === undefined ? 'null' : Array.isArray(x) ? `[${x.join(', ')}]` : String(x);
     const tick = () => { if (++ticks > 300000) throw new Error('Time limit exceeded (possible infinite loop)'); return true; };
     const impl = (c, i) => { if (!i) return; for (const k of Object.getOwnPropertyNames(i.prototype)) if (k !== 'constructor' && !(k in c.prototype)) c.prototype[k] = i.prototype[k]; };
+    // console input: opts.stdin is an array of lines; opts.interactive asks the caller for more instead of failing
+    const q = [...(opts.stdin || [])]; let buf = null;
+    const need = () => { const e = new Error('NeedInput'); e.needInput = true; throw e; };
+    const peekTok = () => { let b = buf, i = 0; for (;;) { if (b === null) { if (i >= q.length) return null; b = q[i++]; } const t = b.trim(); if (t) return t.split(/\s+/)[0]; b = null; } };
+    const io = {
+      load() { if (buf !== null) return; if (!q.length) { if (opts.interactive) need(); throw new Error('NoSuchElementException: No line found'); } buf = q.shift(); p(buf); },
+      nextLine() { io.load(); const r = buf; buf = null; return r; },
+      next() { for (;;) { io.load(); buf = buf.replace(/^\s+/, ''); if (buf === '') { buf = null; continue; } const t = buf.match(/^\S+/)[0]; buf = buf.slice(t.length); return t; } },
+      nextInt() { const t = io.next(); if (!/^[+-]?\d+$/.test(t)) throw new Error(`InputMismatchException: For input string: "${t}"`); return parseInt(t, 10); },
+      nextDouble() { const t = io.next(); if (isNaN(+t)) throw new Error(`InputMismatchException: For input string: "${t}"`); return +t; },
+      nextBoolean() { const t = io.next(); if (!/^(true|false)$/i.test(t)) throw new Error(`InputMismatchException: For input string: "${t}"`); return t.toLowerCase() === 'true'; },
+      hasNextLine() { return buf !== null || q.length > 0; },
+      hasNext() { return peekTok() !== null; },
+      hasNextInt() { const t = peekTok(); return t !== null && /^[+-]?\d+$/.test(t); },
+      hasNextDouble() { const t = peekTok(); return t !== null && !isNaN(+t); },
+    };
     let js;
     try { js = transpile(src); } catch (e) { return { out, err: { kind: 'compile', list: [{ line: 1, msg: 'could not parse this program: ' + e.message }] } }; }
     try {
-      new Function('__p', '__w', '__t', '__impl', prelude + '\n' + js)(p, w, tick, impl);
+      new Function('__p', '__w', '__t', '__impl', '__io', prelude + '\n' + js)(p, w, tick, impl, io);
       if (cur) out.push(cur);
     } catch (e) {
+      if (e && e.needInput) return { out, err: null, needInput: true, prompt: cur };
       if (cur) out.push(cur);
       const msg = String(e.message);
       let kind, text;
@@ -159,6 +179,7 @@ const __div=(a,b)=>{if(b===0)throw new Error('ArithmeticException: / by zero');r
       if (e instanceof TypeError && /null|undefined/.test(msg)) text = 'java.lang.NullPointerException';
       else if (e instanceof RangeError) text = 'java.lang.StackOverflowError';
       else if (/^(NumberFormatException|ArithmeticException)/.test(msg)) text = 'java.lang.' + msg;
+      else if (/^(InputMismatchException|NoSuchElementException)/.test(msg)) text = 'java.util.' + msg;
       else text = 'java.lang.RuntimeException: ' + msg;
       return { out, err: { kind: 'runtime', text } };
     }

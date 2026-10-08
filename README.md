@@ -29,9 +29,9 @@ There is no build step, no framework and no backend. It is plain HTML, CSS and J
 | Area | What you get |
 |---|---|
 | Curriculum | 30 lessons across 5 modules, each with a runnable example and key points |
-| Playground | Write and run Java in the browser, with plain-English error explanations |
+| Playground | Write and run Java in the browser, with interactive console input (`Scanner`) and plain-English error explanations |
 | Labs | Multi-file IDE with a live memory model, String Lab, Compiler Error Translator, Stack Trace Analyzer |
-| Mistake Lab | 8 classic beginner errors, each with buggy code, the fix and the reason |
+| Mistake Lab | 9 classic beginner errors, each with buggy code, the fix and the reason |
 | Daily Quiz | 10 questions with instant feedback and a saved best score |
 | Progress | Lesson checkboxes, module mastery, 16 badges, all stored in `localStorage` |
 | Navigation | Command palette (`Cmd/Ctrl + K` or `/`) searching lessons, errors, tools and resources |
@@ -106,7 +106,7 @@ Rules that make the plan work:
 | Week | Module and lessons | Practice tasks | Checkpoint |
 |---|---|---|---|
 | **1** | **Variables & Memory Boxes**, lessons 1 to 4: what a variable is, primitive types, declaring and assigning, integer versus decimal math | Declare one variable of each primitive type and print them. Predict `7 / 2`, `7 % 2`, `7 / 2.0` before running. | Explain why `7 / 2` is `3` |
-| **2** | **Variables**, lessons 5 to 8: Strings, casting, `final`, naming rules and `var` | Build a small program that stores your name and age and prints a sentence. Use the String Lab on five methods. Read the Mistake Lab entries on `==` versus `.equals()` and immutability. | Daily Quiz: score 6 or more |
+| **2** | **Variables**, lessons 5 to 8: Strings, casting, `final`, naming rules and `var` | Build a small program that stores your name and age and prints a sentence, then make it ask for them with `Scanner` (try the *Read input* template). Use the String Lab on five methods. Read the Mistake Lab entries on `==` versus `.equals()` and immutability. | Daily Quiz: score 6 or more |
 | **3** | **Methods, Parameters & Scope**, lessons 1 to 3: method anatomy, parameters, return values | Write `add`, `isEven` and `max` as methods. Call each with three inputs. | Write a method from memory in a blank Playground |
 | **4** | **Methods**, lessons 4 to 6: scope, overloading, recursion | Overload `area` for a square and a rectangle. Write a recursive `factorial`, then remove the base case and read the `StackOverflowError`. | Daily Quiz: score 7 or more. Mistake Lab: the off-by-one and missing-semicolon entries |
 | **5** | **Classes as Blueprints**, lessons 1 to 4: class versus object, fields, constructors, `this` | Model a `Car` with fields and a constructor. Create three cars. Open the multi-file IDE and watch the heap model update with *Mutate Object*. | Draw, on paper, the stack and heap for `Car a = new Car("Golf");` |
@@ -191,8 +191,18 @@ javazero/
 The Playground, the lesson viewer and the multi-file IDE all use `js/core/java.js`. It is **not a JVM.** It does three things:
 
 1. **Checks** for common beginner mistakes: missing semicolons, unbalanced braces, no `main` method.
-2. **Translates** a teaching subset of Java into JavaScript. It supports classes, fields, constructors, `static` members, inheritance (`extends`, `super`), interfaces (including `default` methods), method overloading by argument count, loops, arrays, `String` and `Math` basics, and `ArrayList`.
-3. **Runs** the result in the page, captures `System.out`, and converts failures into Java-style messages (`NullPointerException`, `StackOverflowError`, `ArithmeticException`, and others). An iteration limit stops infinite loops.
+2. **Translates** a teaching subset of Java into JavaScript. It supports classes, fields, constructors, `static` members, inheritance (`extends`, `super`), interfaces (including `default` methods), method overloading by argument count, loops, arrays, `String` and `Math` basics, `ArrayList`, and console input with `Scanner` and `BufferedReader`.
+3. **Runs** the result in the page, captures `System.out`, reads console input, and converts failures into Java-style messages (`NullPointerException`, `StackOverflowError`, `ArithmeticException`, `InputMismatchException`, and others). An iteration limit stops infinite loops.
+
+### Console input
+
+Programs that read input work the way they do in a terminal:
+
+- Run the program; when it calls `nextLine()`, `nextInt()`, `next()` and so on, the console shows a prompt and waits. Type a value and press Enter.
+- Or pre-fill the **Input (stdin)** box under the console, one line per value, and the program consumes it without prompting.
+- Supported: `Scanner` (`next`, `nextLine`, `nextInt`, `nextLong`, `nextDouble`, `nextBoolean`, `hasNext`, `hasNextInt`, `hasNextDouble`, `hasNextLine`) and `BufferedReader.readLine()`.
+- Java's real behaviors are reproduced, including the `nextInt()` then `nextLine()` trap, `InputMismatchException` for bad input, and `NoSuchElementException` when input runs out.
+- Implementation note: each time you submit a value the program is replayed from the start with all values so far (the runner cannot pause mid-execution), so keep input-driven programs deterministic.
 
 All 30 lesson examples are verified to run. The runner is intentionally small so that its behavior is easy to read and extend.
 
@@ -226,7 +236,8 @@ After adding a lesson, check that its example runs by opening it in the lesson v
 
 ## Known limitations
 
-- The runner supports a teaching subset of Java. Programs that read input with `Scanner`, use generics beyond `ArrayList`, or rely on advanced APIs will not run.
+- The runner supports a teaching subset of Java. Input is limited to `Scanner` and `BufferedReader`; `System.console()`, file readers, generics beyond `ArrayList` and advanced APIs will not run.
+- Because input is handled by replaying the program, programs that use randomness or the clock may behave differently between prompts.
 - Decimal output follows JavaScript formatting, so a `double` such as `9.0` may print as `9`.
 - Integer division is detected by a simple rule (both operands are plain `int` variables or numbers), not by full type checking.
 - The "Active streak" panel is illustrative and is not yet tied to real activity.

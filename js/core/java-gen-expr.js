@@ -83,6 +83,11 @@
       };
       return visit(info);
     },
+    guardArr(r, node, what) {
+      const k = node.k;
+      if (['this', 'new', 'newarr', 'lit', 'arrlit', 'qthis'].includes(k) || /^\$/.test(r.c) && false) return r.c;
+      return `(${r.c} ?? $np(${esc(what + this.nullWhy(node, r))}))`;
+    },
     constInt(e) {
       switch (e.k) {
         case 'lit': return e.t === 'int' ? Number(e.v) : e.t === 'char' ? e.v : undefined;
@@ -505,7 +510,7 @@
           const a = this.expr(e.arr), i = this.expr(e.idx);
           if (a.t && !a.t.endsWith('[]')) this.err(e.ln, `array required, but ${a.t} found`);
           if (i.t && !isIntLike(i.t) && i.t !== 'Integer') this.err(e.ln, i.t === 'long' || i.t === 'double' || i.t === 'float' ? `incompatible types: possible lossy conversion from ${i.t} to int` : `incompatible types: ${i.t} cannot be converted to int`);
-          return { c: `$ai(${a.c}, ${i.t === 'char' ? i.c + '.c' : i.c})`, t: a.t && a.t.endsWith('[]') ? a.t.slice(0, -2) : null };
+          { const et = a.t && a.t.endsWith('[]') ? a.t.slice(0, -2) : null; const ac = this.guardArr(a, e.arr, `Cannot load from ${et && PRIM.has(et) ? et : 'object'} array`); return { c: `$ai(${ac}, ${i.t === 'char' ? i.c + '.c' : i.c})`, t: et, targs: null }; }
         }
         case 'call': return this.callExpr(e);
         case 'new': return this.newExpr(e);
@@ -617,7 +622,7 @@
       }
       const o = this.expr(e.obj);
       if (o.t && o.t.endsWith('[]')) {
-        if (nm === 'length') return lit('int', `$alen(${o.c})`);
+        if (nm === 'length') return lit('int', `$alen(${this.guardArr(o, e.obj, 'Cannot read the array length')})`);
         this.err(e.ln, `cannot find symbol: variable ${nm}`); return lit(null, 'null');
       }
       if (o.t && PRIM.has(o.t)) { this.err(e.ln, `${o.t} cannot be dereferenced`); return lit(null, 'null'); }
@@ -632,7 +637,7 @@
         }
         this.checkAccess(f, oc, e.ln, nm);
         if (f.static) return lit(this.fieldType(f), `${this.isConstField(f) ? f.owner.js : this.staticRef(f.owner)}.$${nm}`);
-        return { c: `${o.c}.${this.fj(f)}`, t: this.fieldType(f), field: f, objc: o.c, targs: this.fieldTargs(f) };
+        return { c: `${this.guardArr(o, e.obj, `Cannot read field "${nm}"`)}.${this.fj(f)}`, t: this.fieldType(f), field: f, objc: o.c, targs: this.fieldTargs(f) };
       }
       if (o.t && libL().L[o.t] && !this.findClass(o.t)) { this.err(e.ln, `cannot find symbol: variable ${nm}`); return lit(null, 'null'); }
       if (nm === 'length') return lit('int', `$len(${o.c})`);

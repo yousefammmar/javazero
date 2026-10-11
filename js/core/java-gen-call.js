@@ -151,6 +151,23 @@
       return this.retType(pick);
     },
     paramList(m) { return m.params.map(p => this.T(p.type)).join(','); },
+    methodDesc(t, name, args) {
+      const owner = this.qualName(t || 'Object');
+      const ci = t ? this.findClass(t) : null;
+      let params;
+      if (ci) { const m = this.findMethods(ci, name).find(x => x.params.length === args.length); if (m) params = m.params.map(p => this.T(p.type) || 'Object').join(', '); }
+      if (params === undefined && t === 'String') { const S = { charAt: 'int', equals: 'Object', contains: 'CharSequence', indexOf: 'String', lastIndexOf: 'String', startsWith: 'String', endsWith: 'String', split: 'String', compareTo: 'String', compareToIgnoreCase: 'String', equalsIgnoreCase: 'String', concat: 'String', replace: 'CharSequence, CharSequence', replaceAll: 'String, String', matches: 'String', repeat: 'int', substring: args.length === 1 ? 'int' : 'int, int' }; params = S[name]; }
+      if (params === undefined) params = args.map(a => (a.t && PRIM.has(a.t) ? a.t : 'Object')).join(', ');
+      return `${owner}.${name}(${params})`;
+    },
+    guardNull(recv, e, args) {
+      const k = e.obj.k;
+      if (['this', 'super', 'new', 'newarr', 'lit', 'qthis', 'classlit', 'lambda', 'mref', 'switchexpr'].includes(k)) return recv.c;
+      if (recv.c === 'null' || /^"/.test(recv.c)) return recv.c;
+      if (k === 'field') { const base = e.obj.obj; if (this.libClassOf(base) || this.exprClass(base)) return recv.c; }
+      const msg = `Cannot invoke "${this.methodDesc(recv.t, e.name, args)}"` + this.nullWhy(e.obj, recv);
+      return `(${recv.c} ?? $np(${esc(msg)}))`;
+    },
     argCode(args) { return args.map(a => a.c).join(', '); },
     /* varargs packaging at the call site (javac does this); `pick` is the resolved method(s) */
     packArgs(pick, args) {
@@ -179,10 +196,10 @@
           const allStatic = (Array.isArray(pick) ? pick : [pick]).every(m => m.static);
           const t = this.retOf(pick);
           const cn = this.callName(pick, args); const ac = this.packArgs(pick, args);
-          if (allStatic) return lit(t, `${this.staticRef(p0.owner)}.${cn}(${ac})`);
+          if (allStatic) { const rr = lit(t, `${this.staticRef(p0.owner)}.${cn}(${ac})`); rr.callDesc = `${this.binName(p0.owner)}.${name}(${p0.params.map(q => this.T(q.type) || 'Object').join(', ')})`; return rr; }
           const ref = this.instRef(r.cls);
           if (!ref) { this.err(e.ln, `non-static method ${name}(${this.paramList(p0)}) cannot be referenced from a static context`); return lit(t, 'null'); }
-          return lit(t, `${ref}.${cn}(${ac})`);
+          { const rr = lit(t, `${ref}.${cn}(${ac})`); rr.callDesc = `${this.binName(p0.owner)}.${name}(${p0.params.map(q => this.T(q.type) || 'Object').join(', ')})`; return rr; }
         }
         const en = (() => { for (let c = this.cur; c; c = c.outer) if (c.kind === 'enum') return c; return null; })();
         if (en && (name === 'values' || name === 'valueOf')) return lit(name === 'values' ? en.name + '[]' : en.name, `${this.staticRef(en)}.${name}(${ac})`);
@@ -287,7 +304,7 @@
     },
     instanceCall(e, recv, args, ac) {
       const name = e.name, t = recv.t;
-      const rc = recv.c;
+      const rc = this.guardNull(recv, e, args);
       if (t && PRIM.has(t)) { this.err(e.ln, `${t} cannot be dereferenced`); return lit(null, 'null'); }
       if (t === 'void') { this.err(e.ln, 'void cannot be dereferenced'); return lit(null, 'null'); }
       // arrays
@@ -318,7 +335,7 @@
         this.checkAccess(p0, ci, e.ln, name, true);
         const pac = this.packArgs(pick, args);
         if ((Array.isArray(pick) ? pick : [pick]).every(m => m.static)) return lit(this.retOf(pick), `${this.staticRef(p0.owner)}.${this.callName(pick, args)}(${pac})`);
-        return lit(this.retOf(pick), `${rc}.${this.callName(pick, args)}(${pac})`);
+        { const rr = lit(this.retOf(pick), `${rc}.${this.callName(pick, args)}(${pac})`); rr.callDesc = `${this.binName(p0.owner)}.${name}(${p0.params.map(q => this.T(q.type) || 'Object').join(', ')})`; return rr; }
       }
       // String
       if (t === 'String') {

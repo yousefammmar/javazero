@@ -23,7 +23,7 @@ const JavaRT = (() => {
       if (v === -Infinity) return '-Infinity';
       if (v === 0) return (1 / v < 0) ? '-0.0' : '0.0';
       let digits = null;
-      const two = (x, f, orig) => { /* a 1-digit shortest form is rendered with the closest 2-digit decimal, as Java does (4.9E-324) */ const m = x.toExponential().split('e')[0]; if (m.length === 1 || (m.length === 2 && m[0] === '-')) { const t = x.toExponential(1); const r = f ? Math.fround(+t) === orig : +t === x; if (r) return +t; } return x; };
+      const two = (x, f, orig) => { /* a 1-digit shortest form is rendered with the closest 2-digit decimal, as Java does (4.9E-324) */ const m = x.toExponential().split('e')[0]; if (m.length === 1 || (m.length === 2 && m[0] === '-')) { const t = (f ? orig : x).toExponential(1); const r = f ? Math.fround(+t) === orig : +t === x; if (r) return +t; } return x; };
       if (isF) { for (let p = 1; p <= 9; p++) { const s = v.toPrecision(p); if (Math.fround(+s) === v) { digits = +s; break; } } if (digits === null) digits = v; } else digits = v;
       digits = two(digits, isF, v);
       const a = Math.abs(digits);
@@ -294,16 +294,37 @@ const JavaRT = (() => {
       return r === 3 ? new D(Math.fround(v), true) : new D(v);
     }
     const toNum2 = x => typeof x === 'bigint' ? x : x instanceof Ch ? x.c : typeof x === 'number' ? x : x.v;
+    const dres = (v, f) => new D(f ? Math.fround(v) : v, f);
     rt.$add = (a, b) => {
-      if (typeof a === 'number' && typeof b === 'number') return (a + b) | 0;
+      if (typeof a === 'number') { if (typeof b === 'number') return (a + b) | 0; if (b instanceof D) return dres(a + b.v, b.f); }
+      else if (a instanceof D) { if (b instanceof D) return dres(a.v + b.v, a.f && b.f); if (typeof b === 'number') return dres(a.v + b, a.f); }
+      else if (typeof a === 'bigint') { if (typeof b === 'bigint') return BigInt.asIntN(64, a + b); if (typeof b === 'number') return BigInt.asIntN(64, a + BigInt(b)); }
       if (typeof a === 'string' || typeof b === 'string' || a instanceof String || b instanceof String) return str(a) + str(b);
       if (!isNumLike(a) || !isNumLike(b)) { if (a === null || b === null || a === undefined || b === undefined) throw mk('NullPointerException'); return str(a) + str(b); }
       return arith('+', a, b);
     };
-    rt.$sub = (a, b) => typeof a === 'number' && typeof b === 'number' ? (a - b) | 0 : arith('-', a, b);
-    rt.$mul = (a, b) => typeof a === 'number' && typeof b === 'number' ? Math.imul(a, b) : arith('*', a, b);
-    rt.$div = (a, b) => { if (typeof a === 'number' && typeof b === 'number') { if (b === 0) throwEx('ArithmeticException', '/ by zero'); return (a / b) | 0; } return arith('/', a, b); };
-    rt.$mod = (a, b) => { if (typeof a === 'number' && typeof b === 'number') { if (b === 0) throwEx('ArithmeticException', '/ by zero'); return (a % b) | 0; } return arith('%', a, b); };
+    rt.$sub = (a, b) => {
+      if (typeof a === 'number') { if (typeof b === 'number') return (a - b) | 0; if (b instanceof D) return dres(a - b.v, b.f); }
+      else if (a instanceof D) { if (b instanceof D) return dres(a.v - b.v, a.f && b.f); if (typeof b === 'number') return dres(a.v - b, a.f); }
+      else if (typeof a === 'bigint') { if (typeof b === 'bigint') return BigInt.asIntN(64, a - b); if (typeof b === 'number') return BigInt.asIntN(64, a - BigInt(b)); }
+      return arith('-', a, b);
+    };
+    rt.$mul = (a, b) => {
+      if (typeof a === 'number') { if (typeof b === 'number') return Math.imul(a, b); if (b instanceof D) return dres(a * b.v, b.f); }
+      else if (a instanceof D) { if (b instanceof D) return dres(a.v * b.v, a.f && b.f); if (typeof b === 'number') return dres(a.v * b, a.f); }
+      else if (typeof a === 'bigint') { if (typeof b === 'bigint') return BigInt.asIntN(64, a * b); if (typeof b === 'number') return BigInt.asIntN(64, a * BigInt(b)); }
+      return arith('*', a, b);
+    };
+    rt.$div = (a, b) => {
+      if (typeof a === 'number') { if (typeof b === 'number') { if (b === 0) throwEx('ArithmeticException', '/ by zero'); return (a / b) | 0; } if (b instanceof D) return dres(a / b.v, b.f); }
+      else if (a instanceof D) { if (b instanceof D) return dres(a.v / b.v, a.f && b.f); if (typeof b === 'number') return dres(a.v / b, a.f); }
+      return arith('/', a, b);
+    };
+    rt.$mod = (a, b) => {
+      if (typeof a === 'number' && typeof b === 'number') { if (b === 0) throwEx('ArithmeticException', '/ by zero'); return (a % b) | 0; }
+      if (a instanceof D) { if (b instanceof D) return dres(a.v % b.v, a.f && b.f); if (typeof b === 'number') return dres(a.v % b, a.f); }
+      return arith('%', a, b);
+    };
     rt.$cat = (a, b) => str(a) + str(b);
     rt.$neg = a => typeof a === 'number' ? (-a) | 0 : typeof a === 'bigint' ? BigInt.asIntN(64, -a) : a instanceof D ? new D(-a.v, a.f) : a instanceof Ch ? -a.c : (() => { throw mk('NullPointerException'); })();
     rt.$pos = a => a instanceof Ch ? a.c : a;
@@ -829,7 +850,7 @@ const JavaRT = (() => {
     L.Void = pseudoClass('Void', 'java.lang.Void');
 
     class JMath extends JObject { }
-    const dd = f => (...a) => new D(f(...a.map(toNum)));
+    const dd = f => (x, y) => y === undefined ? new D(f(x instanceof D ? x.v : toNum(x))) : new D(f(toNum(x), toNum(y)));
     const intOrLong = (a, b, f, fb) => (typeof a === 'bigint' || typeof b === 'bigint') ? fb(BigInt(toNum2(a)), BigInt(toNum2(b))) : (a instanceof D || b instanceof D) ? new D(f(toNum(a), toNum(b)), (a instanceof D ? a.f : true) && (b instanceof D ? b.f : true) && ((a instanceof D) || (b instanceof D))) : f(toNum(a), toNum(b));
     Object.assign(JMath, {
       PI: new D(Math.PI), E: new D(Math.E),

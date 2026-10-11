@@ -709,13 +709,29 @@ const JavaGen = (() => {
       }
       return null;
     }
+    binName(c) { return c.anon ? c.name : c.local ? `${(() => { let t = c; while (t.outer) t = t.outer; return t.name; })()}$1${c.name}` : c.outer ? `${this.binName(c.outer)}$${c.name}` : c.name; }
+    /* javac/HotSpot style description of the null expression: "s", "this.name", "Main.cache", the return value of "Dog.find(String)" */
+    nullWhy(e, r) {
+      if (!e) return '';
+      if (e.k === 'paren') return this.nullWhy(e.e, r);
+      if (e.k === 'name') { const lv = this.lookupVar(e.id); if (lv) return ` because "${e.id}" is null`; const m = this.lookupMemberLexical(e.id, false); if (m) return ` because "${m.member.static ? this.binName(m.member.owner) : 'this'}.${e.id}" is null`; return ''; }
+      if (e.k === 'field') { const ob = e.obj.k === 'name' || e.obj.k === 'this' ? (e.obj.k === 'this' ? 'this' : e.obj.id) : e.obj.k === 'field' ? this.nullWhy(e.obj).replace(/^ because "|" is null$/g, '') : ''; return ob ? ` because "${ob}.${e.name}" is null` : ''; }
+      if (e.k === 'call' && r && r.callDesc) return ` because the return value of "${r.callDesc}" is null`;
+      if (e.k === 'index') { const a = e.arr.k === 'name' ? e.arr.id : ''; const i = e.idx.k === 'lit' ? e.idx.v : e.idx.k === 'name' ? e.idx.id : ''; return a && i !== '' ? ` because "${a}[${i}]" is null` : ''; }
+      return '';
+    }
+    qualName(t) {
+      const ci = this.findClass(t); if (ci) return this.binName(ci);
+      const c = libL().L[t]; if (!c) return t;
+      const fq = c.$jfq || t; return /^java\.lang\.[A-Z]/.test(fq) ? t : fq.replace(/\$/g, '.');
+    }
     fj(f) { return (!f.static && this.hiddenFields && this.hiddenFields.has(f.name)) ? `$${f.name}$${f.owner.js}` : `$${f.name}`; }
     markCapture(enc) {
       for (let x = this.ctx; x; x = x.parentCtx) if (x.cls === enc && !x.isClinit) { x.captured = true; break; }
     }
   }
 
-  const HELPERS = ['$D', '$F', '$Ch', '$add', '$sub', '$mul', '$div', '$mod', '$cat', '$neg', '$pos', '$bnot', '$and', '$or', '$xor', '$shl', '$shr', '$ushr', '$eq', '$ne', '$toInt', '$toLong', '$toDouble', '$toFloat', '$toChar', '$toByte', '$toShort', '$like', '$co', '$incv', '$arr', '$newArr', '$ai', '$as', '$alen', '$inv', '$chk', '$lam', '$mref', '$inst', '$cast', '$defc', '$str', '$equals', '$hash', '$iter', '$sw', '$tick', '$new', '$newInner', '$wrap', '$classOf', '$tryClose', '$ovlm', '$ovlc', '$ovlsup', '$ec', '$enumInit', '$fmt', '$boxEq', '$len', '$equalsNN', '$throw', '$g', '$castArr', '$lamI', '$lt', '$gt', '$le', '$ge'];
+  const HELPERS = ['$D', '$F', '$Ch', '$add', '$sub', '$mul', '$div', '$mod', '$cat', '$neg', '$pos', '$bnot', '$and', '$or', '$xor', '$shl', '$shr', '$ushr', '$eq', '$ne', '$toInt', '$toLong', '$toDouble', '$toFloat', '$toChar', '$toByte', '$toShort', '$like', '$co', '$incv', '$arr', '$newArr', '$ai', '$as', '$alen', '$inv', '$chk', '$lam', '$mref', '$inst', '$cast', '$defc', '$str', '$equals', '$hash', '$iter', '$sw', '$tick', '$new', '$newInner', '$wrap', '$classOf', '$tryClose', '$ovlm', '$ovlc', '$ovlsup', '$ec', '$enumInit', '$fmt', '$boxEq', '$len', '$equalsNN', '$throw', '$g', '$castArr', '$lamI', '$lt', '$gt', '$le', '$ge', '$np'];
 
   return { Gen, HELPERS, HELPERS_LIST: HELPERS, libL, PRIM, NUMP, BOX, RANK, JS_RESERVED, esc, mangle, isNumT, unbox, isIntLike, binNum, isRefT, OBJ_RET, STR_RET, STATIC_RET, STATIC_FIELD, ARITH, CHECKED_BASES };
 })();

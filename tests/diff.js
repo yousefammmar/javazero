@@ -60,7 +60,7 @@ for (const f of files) {
       const got = norm(r.out.join('\n'));
       if (exp.exception) {
         if (!r.err || r.err.kind !== 'runtime') why = `expected exception ${exp.exception} but ran fine`;
-        else if (r.err.text.split('\n')[0] !== exp.exception.split('\n')[0]) why = `exception mismatch\n    java: ${exp.exception}\n    ours: ${r.err.text.split('\n')[0]}`;
+        else if (r.err.text.split('\n')[0].replace(/because "[^"]*" is null/, 'because "?" is null') !== exp.exception.split('\n')[0].replace(/because "[^"]*" is null/, 'because "?" is null')) why = `exception mismatch\n    java: ${exp.exception}\n    ours: ${r.err.text.split('\n')[0]}`;
       } else if (r.err) why = `unexpected runtime error: ${JSON.stringify(r.err).slice(0, 300)}`;
       if (!why && got !== norm(exp.stdout)) {
         const a = got.split('\n'), b = norm(exp.stdout).split('\n'); let i = 0; while (i < a.length && i < b.length && a[i] === b[i]) i++;

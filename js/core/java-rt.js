@@ -1014,10 +1014,10 @@ const JavaRT = (() => {
     const need = () => { throw new NeedInput(); };
     const peekTok = () => { let b = buf, i = 0; for (;;) { if (b === null) { if (i >= q.length) return null; b = q[i++]; } const t = b.trim(); if (t) return t.split(/\s+/)[0]; b = null; } };
     const io = {
-      load() { if (buf !== null) return; if (!q.length) { if (env.interactive) need(); throwEx('NoSuchElementException', 'No line found'); } buf = q.shift(); if (env.echo !== false) pl(buf); },
+      load(tok) { if (buf !== null) return; if (!q.length) { if (env.interactive) need(); throwEx('NoSuchElementException', tok ? undefined : 'No line found'); } buf = q.shift(); if (env.echo !== false) pl(buf); },
       nextLine() { io.load(); const r = buf; buf = null; return r; },
-      next() { for (;;) { if (buf === null && !q.length && !env.interactive) throwEx('NoSuchElementException'); io.load(); buf = buf.replace(/^\s+/, ''); if (buf === '') { buf = null; continue; } const t = buf.match(/^\S+/)[0]; buf = buf.slice(t.length); return t; } },
-      peekTok() { for (;;) { io.load(); const t = buf.replace(/^\s+/, ''); if (t === '') { buf = null; continue; } return t.match(/^\S+/)[0]; } },
+      next() { for (;;) { if (buf === null && !q.length && !env.interactive) throwEx('NoSuchElementException'); io.load(1); buf = buf.replace(/^\s+/, ''); if (buf === '') { buf = null; continue; } const t = buf.match(/^\S+/)[0]; buf = buf.slice(t.length); return t; } },
+      peekTok() { for (;;) { io.load(1); const t = buf.replace(/^\s+/, ''); if (t === '') { buf = null; continue; } return t.match(/^\S+/)[0]; } },
       hasNextLine() { if (buf === null && !q.length && env.interactive) need(); return buf !== null || q.length > 0; },
       hasNext() { if (peekTok() === null && env.interactive) need(); return peekTok() !== null; },
     };
@@ -1025,7 +1025,7 @@ const JavaRT = (() => {
     class Scanner extends JObject {
       $init(src) { this.src = src; if (typeof src === 'string' || src instanceof String) { const t = str(src); this.q = t === '' ? [] : t.split('\n'); if (t.endsWith('\n')) this.q.pop(); this.b = null; this.own = true; } return this; }
       /* a Scanner over a String keeps its own buffer */
-      get io() { if (!this.own) return io; if (!this.sio) { const qq = this.q; let bb = null; const self = this; this.sio = { load() { if (bb !== null) return; if (!qq.length) throwEx('NoSuchElementException', 'No line found'); bb = qq.shift(); }, nextLine() { this.load(); const r = bb; bb = null; return r; }, next() { for (;;) { if (bb === null && !qq.length) throwEx('NoSuchElementException'); this.load(); bb = bb.replace(/^\s+/, ''); if (bb === '') { bb = null; continue; } const t = bb.match(/^\S+/)[0]; bb = bb.slice(t.length); return t; } }, peekTok() { for (;;) { this.load(); const t = bb.replace(/^\s+/, ''); if (t === '') { bb = null; continue; } return t.match(/^\S+/)[0]; } }, hasNextLine() { return bb !== null || qq.length > 0; }, hasNext() { let b = bb, i = 0; for (;;) { if (b === null) { if (i >= qq.length) return false; b = qq[i++]; } if (b.trim()) return true; b = null; } } }; } return this.sio; }
+      get io() { if (!this.own) return io; if (!this.sio) { const qq = this.q; let bb = null; const self = this; this.sio = { load(tok) { if (bb !== null) return; if (!qq.length) throwEx('NoSuchElementException', tok ? undefined : 'No line found'); bb = qq.shift(); }, nextLine() { this.load(); const r = bb; bb = null; return r; }, next() { for (;;) { if (bb === null && !qq.length) throwEx('NoSuchElementException'); this.load(1); bb = bb.replace(/^\s+/, ''); if (bb === '') { bb = null; continue; } const t = bb.match(/^\S+/)[0]; bb = bb.slice(t.length); return t; } }, peekTok() { for (;;) { this.load(1); const t = bb.replace(/^\s+/, ''); if (t === '') { bb = null; continue; } return t.match(/^\S+/)[0]; } }, hasNextLine() { return bb !== null || qq.length > 0; }, hasNext() { let b = bb, i = 0; for (;;) { if (b === null) { if (i >= qq.length) return false; b = qq[i++]; } if (b.trim()) return true; b = null; } } }; } return this.sio; }
       next() { return this.io.next(); } nextLine() { return this.io.nextLine(); }
       nextInt() { const t = this.io.peekTok(); if (!/^[+-]?\d+$/.test(t) || BigInt(t) > 2147483647n || BigInt(t) < -2147483648n) mismatch(t); this.io.next(); return Number(parseIntStrict(t)); }
       nextLong() { const t = this.io.peekTok(); if (!/^[+-]?\d+$/.test(t)) mismatch(t); this.io.next(); return BigInt(t); }

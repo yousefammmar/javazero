@@ -1026,7 +1026,7 @@
         const code = e.body.body.map(s => this.stmt(s)).join('\n');
         body = `{ ${this.ctx.tmps.length ? `let ${this.ctx.tmps.join(',')};` : ''} ${code} }`;
       } else {
-        const r = this.expr(e.body, true);
+        const r = this.expr(e.body, false);
         body = this.ctx.tmps.length ? `{ let ${this.ctx.tmps.join(',')}; return ${r.c}; }` : `(${r.c})`;
       }
       this.ctx.inLambda--; this.ctx.tmps = prevTmps; this.ctx.ret = prevRet; this.ctx.loops = prevLoops; this.ctx.switches = prevSw;

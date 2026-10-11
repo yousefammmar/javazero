@@ -209,7 +209,7 @@ All 30 lesson examples are verified to run. The runner is intentionally small so
 ## Data and privacy
 
 - Progress is stored **only in your browser** under `localStorage` keys that start with `jz:`: completed lessons, quiz best score, mistakes explored, tools used, and run count.
-- Progress is never sent to a server. There are no accounts or cookies. If the site owner sets a GoatCounter code in `js/boot.js`, anonymous page-view counts are collected (no cookies, no personal data); it is off by default.
+- Progress is never sent to a server. There are no accounts. If the site owner sets a Google Analytics 4 Measurement ID in `js/boot.js`, Google Analytics loads and sets cookies to count visits; it is off by default.
 - The only network requests are the page assets, Google Fonts, and the external links you choose to click.
 - *Settings* has a **Reset all progress** button that clears every `jz:` key.
 

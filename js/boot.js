@@ -1,14 +1,17 @@
 /* JavaZero - designed and built by Yousef Odeh */
 /* Loads shared scripts in order, then this page's script. Usage: <script src="js/boot.js" data-page="lessons"></script> */
 (() => {
-  /* Visitor counting via GoatCounter (cookie-free). Set your site code, e.g. 'javazero' for javazero.goatcounter.com. Empty = disabled. */
-  const GOATCOUNTER = '';
-  if (GOATCOUNTER && !/^(localhost|127\.|\[::1\])/.test(location.hostname) && location.protocol !== 'file:') {
+  /* Visitor counting via Google Analytics 4. Set your Measurement ID, e.g. 'G-ABC123XYZ9' (GA4 > Admin > Data streams). Empty = disabled. */
+  const GA_ID = '';
+  if (/^G-[A-Z0-9]+$/.test(GA_ID) && !/^(localhost|127\.|\[::1\])/.test(location.hostname) && location.protocol !== 'file:') {
     const g = document.createElement('script');
     g.async = true;
-    g.src = 'https://gc.zgo.at/count.js';
-    g.dataset.goatcounter = `https://${GOATCOUNTER}.goatcounter.com/count`;
+    g.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
     document.head.appendChild(g);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID);
   }
   const page = document.currentScript.dataset.page;
   const common = ['core/icons', 'core/store', 'data/curriculum', 'data/mistakes', 'data/errors', 'data/quiz', 'data/resources', 'data/badges', 'core/java', 'core/hl', 'core/shell'];

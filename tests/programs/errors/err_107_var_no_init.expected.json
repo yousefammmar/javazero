@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 3,
+  "msg": "cannot infer type for local variable x"
+ }
+}

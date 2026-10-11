@@ -1,0 +1,5 @@
+{
+ "stdout": "a-enter 0\nb-enter 0\nc-enter 0\nc-normal 0\nc-finally 0\nb-after-c 0\nb-finally 0\na-after-b 0\na-finally 0\nmain-ok 0\n-----\na-enter 1\nb-enter 1\nc-enter 1\nc-finally 1\nb-catch ise1\nb-finally 1\na-after-b 1\na-finally 1\nmain-ok 1\n-----\na-enter 2\nb-enter 2\nc-enter 2\nc-finally 2\nb-finally 2\na-finally 2\nmain-caught java.lang.IllegalArgumentException: iae2\n-----\n26\nabcccbbaamabccbbaamabccbam\nrethrow at 4\nunwind 4\nrethrow at 3\nunwind 3\nabsorbed at 2\nunwind 2\nunwind 1\nunwind 0\ndepth 200\n",
+ "exception": null,
+ "exit": 0
+}

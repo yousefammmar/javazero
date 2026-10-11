@@ -1,0 +1,5 @@
+{
+ "stdout": "ADD + 16 safe=true false true\nSUB - 8 safe=true false true\nMUL * 48 safe=true false true\nDIV / 3 safe=false false true\n42\nno op %\nAE / by zero\n-9\nESPRESSO $200 200\nLATTE special $350 350\nMOCHA $400 400\n$400 true true\nCIRCLE 12.566\nSQUARE 4.000\n950\n{ADD=25, SUB=15, MUL=100, DIV=4}\n-3 1\nl\nm (fallthrough)\n",
+ "exception": null,
+ "exit": 0
+}

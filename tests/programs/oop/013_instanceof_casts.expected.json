@@ -1,0 +1,5 @@
+{
+ "stdout": "vehicle:Vehicle\ncar:4\nsports2:Sports2\nvehicle:Bike\nstring:5\nnot-string:42\nnot-string:null\nnot-string:2\ntrue true true\nfalse\nSports2\nCCE bike\nCCE car\nCCE integer\nnull\nbig int 4\nnumber 3.0\ntrue\n1 1 3\n3 1000000000000000000 -56 B 65 4464\n",
+ "exception": null,
+ "exit": 0
+}

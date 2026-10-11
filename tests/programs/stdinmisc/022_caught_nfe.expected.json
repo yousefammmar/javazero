@@ -1,0 +1,5 @@
+{
+ "stdout": "ok 12\nbad: For input string: \"abc\"\nbad: For input string: \" 5\"\nbad: For input string: \"\"\nok 0\nbad: For input string: \"2147483648\"\nok 7\nbad: For input string: \"3.0\"\n3 good, 5 bad\nmultiple points\nFor input string: \"99999999999999999999\"\n",
+ "exception": null,
+ "exit": 0
+}

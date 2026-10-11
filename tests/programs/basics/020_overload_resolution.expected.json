@@ -1,0 +1,5 @@
+{
+ "stdout": "int int char int long double double\nInteger Object Object Object Object Object\nint char long double int\ng-long g-Integer\nh-double h-Object h-double h-double\nk-String k-Integer k-Object k-Object k-Object\nlong,int int,long\nn-float n-float n-float n-double n-float\np-short p-short p-int p-short p-int\nr-byte r-int r-byte r-int\ns-SB s-CS s-CS\nt-long t-varargs t-varargs t-varargs t-long\nu-int[] u-Object u-Object u-int[]\nv-long v-long v-float v-double v-long\n",
+ "exception": null,
+ "exit": 0
+}

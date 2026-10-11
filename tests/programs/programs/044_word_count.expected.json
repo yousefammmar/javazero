@@ -1,0 +1,5 @@
+{
+ "stdout": "Total words: 60, unique: 20\nTop 8:\n  it           10 ##########\n  of           10 ##########\n  the          10 ##########\n  was          10 ##########\n  age           2 ##\n  epoch         2 ##\n  season        2 ##\n  times         2 ##\nLongest word: foolishness (11)\n2: [it, of]\n3: [age, the, was]\n4: [best, hope]\n5: [epoch, light, times, worst]\n6: [belief, season, spring, winter, wisdom]\n7: [despair]\n8: [darkness]\n11: [foolishness, incredulity]\nLines: 4\n1: 78 chars, 18 words\n2: 78 chars, 17 words\n3: 78 chars, 15 words\n4: 49 chars, 10 words\nletters=217 upper=3 punct=10\n37 257 true w\n",
+ "exception": null,
+ "exit": 0
+}

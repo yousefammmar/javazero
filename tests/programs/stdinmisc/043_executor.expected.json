@@ -1,0 +1,5 @@
+{
+ "stdout": "5050\n20100\n45150\n80200\n125250\n180300\n245350\n320400\ndone true\nnull\njava.lang.IllegalArgumentException: bad task\nxyz\ntrue true\n42\n{k=1000}\nlatch 0\n",
+ "exception": null,
+ "exit": 0
+}

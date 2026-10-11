@@ -1,0 +1,5 @@
+{
+ "stdout": "put: null\nput again: 1\n{banana=3, date=5, apple=2, cherry=4, elderberry=6}\nget missing: null\ngetOrDefault: -1 5\nputIfAbsent existing: 2, new: null\ncontainsKey true containsValue true false\nremove: 7 null\nremove(k,v) wrong: false right: true\n{banana=3, date=5, cherry=4, elderberry=6} size 4\nbanana -> 3\ndate -> 5\ncherry -> 4\nelderberry -> 6\nkeys [banana, date, cherry, elderberry]\nvalues [3, 5, 4, 6]\n{banana=36, date=54, cherry=46, elderberry=70}\nnull {banana=0, date=54, cherry=46, elderberry=70}\nputAll: {banana=0, date=54, zebra=26, cherry=1, yak=25, elderberry=70}\nequals copy: true hash eq true\nequals after: false\n{date=54, cherry=1, elderberry=70}\n{} true\n{null=nullkey, k=null} nullkey true null\n",
+ "exception": null,
+ "exit": 0
+}

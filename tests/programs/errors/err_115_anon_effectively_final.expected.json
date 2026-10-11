@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 6,
+  "msg": "local variables referenced from an inner class must be final or effectively final"
+ }
+}

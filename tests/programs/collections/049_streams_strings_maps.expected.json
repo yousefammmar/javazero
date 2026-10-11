@@ -1,0 +1,5 @@
+{
+ "stdout": "{stays=1, the=4, spain=1, rain=2, in=3, and=1, plain=1, runs=1, mainly=1, train=1}\n{and=1, in=3, mainly=1, plain=1, rain=2, runs=1, spain=1, stays=1, the=4, train=1}\nthe=4, in=3, rain=2, and=1\n{2=[in], 3=[the, and], 4=[rain, runs], 5=[stays, spain, plain, train], 6=[mainly]}\n{2=[in, in, in], 3=[the, the, and, the, the], 4=[rain, runs, rain], 5=[spain, stays, plain, train], 6=[mainly]}\n[mainly, plain, rain, spain, train]\nThe Rain In Spain Stays Mainly In The Plain And The Train Runs In The Rain\nIntSummaryStatistics{count=16, sum=59, min=2, average=3.687500, max=6}\n{stays=5, the=3, spain=5, rain=4, in=2, and=3, plain=5, runs=4, mainly=6, train=5}\n{false=[a, t, i], true=[p, r, s, t, m]}\n{a=8, d=1, e=4, h=4, i=9, l=2, m=1, n=11, p=2, r=4, s=4, t=6, u=1, y=2}\n22\n[eht, niar, ni, niaps, syats]\n[a, b, c, d, e, f]\ntrue true true\nmainly\n[and, runs, rain, train, stays]\n[2, 6, 13]\n{p=1, a=1, r=3, s=2, t=5, i=3, m=1}\n{false=11, true=5}\n[2, 3, 4, 5, 6]\nand-in-mainly-plain-rain-runs-spain-stays-the-train\n",
+ "exception": null,
+ "exit": 0
+}

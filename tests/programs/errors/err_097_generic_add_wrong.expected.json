@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 6,
+  "msg": "incompatible types: int cannot be converted to String"
+ }
+}

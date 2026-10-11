@@ -1,0 +1,5 @@
+{
+ "stdout": "walk&swim DWS\nfly+walk W\nswim W\nbase-move W\nB>A\nwalk&swim walk&swim\nfly+walk\nwalkanon\n",
+ "exception": null,
+ "exit": 0
+}

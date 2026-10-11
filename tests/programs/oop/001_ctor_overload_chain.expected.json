@@ -1,0 +1,5 @@
+{
+ "stdout": "Point(int,int,String)\nPoint(int,int)\nPoint()\npt(0,0)\nPoint(int,int,String)\nPoint(int,int)\nPoint(int)\npt(5,5)\nPoint(int,int,String)\nPoint(int,int)\npt(3,4)\nPoint(int,int,String)\nPoint(int,int)\nPoint(long)\npt(7,1)\nPoint(int,int,String)\nPoint(int,int)\nPoint(int)\nPoint(double)\npt(2,2)\nPoint(int,int,String)\nzz(1,2)\nint 3\nint 4\nchar x\nint 5\nlong 5\ndouble 1.5\ndouble 2.0\nString hi\nObject hi\nInteger 9\nvarargs 0\nvarargs 3\nObject null\nString null\nint 98\nchar b\nObject 4\n",
+ "exception": null,
+ "exit": 0
+}

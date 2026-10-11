@@ -1,0 +1,5 @@
+{
+ "stdout": "Input: [36, 64, 85, 44, 80, 54, 68, 49, 50, 34, 0, 12, 8, 11, 95, 62, 61, 38, 7, 79, 42, 24, 83, 51, 18, 4, 39, 0, 76, 11]\nSorted: [0, 0, 4, 7, 8, 11, 11, 12, 18, 24, 34, 36, 38, 39, 42, 44, 49, 50, 51, 54, 61, 62, 64, 68, 76, 79, 80, 83, 85, 95]\nbubble     ok=true comparisons=432\ninsertion  ok=true comparisons=290\nselection  ok=true comparisons=435\nmerge      ok=true comparisons=115\nquick      ok=true comparisons=115\nheap       ok=true comparisons=204\nbubble on sorted input: 29\n",
+ "exception": null,
+ "exit": 0
+}

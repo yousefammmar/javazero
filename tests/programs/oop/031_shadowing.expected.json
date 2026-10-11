@@ -1,0 +1,5 @@
+{
+ "stdout": "param y=100 this.y=2\nlocal z=30 this.z=3\nblock w=5\nouter w=6 z=130\n2 130\nafter setY 2\nafter setY2 55\nlocal x=10 Main.x=1\nloop 10\nloop 11\nlocal,child,parent,parent\n200 20 55\n100\nlambda q=4 x=1\nshadow\nagain\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "b\n99\nc\nb1\n99\n195\nab\n195c\ncab\nc195\nc\n99\nC\nC\nB\nb\n{ 123\n0\nabcdef\nF,D,B,\n0\nhi!\nhi!\nhi!\narr=hi!\nA\t|\\'\"\n10 13 0 9\ntrue\ntrue\ntrue\nQ\nQq\n194\n194\n?\n65535\n0\n98\n48.5\n532\nab99101\n125\n102\nY\na\n97\n",
+ "exception": null,
+ "exit": 0
+}

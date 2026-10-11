@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 7,
+  "msg": "missing return statement"
+ }
+}

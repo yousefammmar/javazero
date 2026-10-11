@@ -1,0 +1,5 @@
+{
+ "stdout": "Name      |   T1   T2   T3   T4 | Average| Grade\n----------+---------------------+--------+------\nAlice     |   92   88   95  100 |   93.75|     A\nBob       |   75   64   80   71 |   72.50|     C\nCharlie   |   55   62   48   70 |   58.75|     F\nDiana     |   83   91   79   88 |   85.25|     B\nEduardo   |  100   97   99   98 |   98.50|     A\nFiona     |   68   72   65   59 |   66.00|     D\n\nMax       |  100   97   99  100\nMin       |   55   62   48   59\nMean      | 78.8 79.0 77.7 81.0\nClass mean 79.125, stddev 14.480\nA: [Alice, Eduardo]\nB: [Diana]\nC: [Bob]\nD: [Fiona]\nF: [Charlie]\nTop student: Eduardo (98.5)\n0003.142|+42|ff|10|1.234568e+04|     right|left      |\n",
+ "exception": null,
+ "exit": 0
+}

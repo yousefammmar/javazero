@@ -1,0 +1,5 @@
+{
+ "stdout": "i=0\ni=1\ni=2\ni=3\n",
+ "exception": "java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3",
+ "exit": 1
+}

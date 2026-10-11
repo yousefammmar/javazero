@@ -1,0 +1,5 @@
+{
+ "stdout": "111 111 Inner of one Inner of two\n122 112 111\n11 10 11\n222 434\ntwo/10\ntwo/77\n205 three\n209 205\nInner Nested\nMain$Inner Main$Nested\n",
+ "exception": null,
+ "exit": 0
+}

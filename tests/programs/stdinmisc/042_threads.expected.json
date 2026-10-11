@@ -1,0 +1,5 @@
+{
+ "stdout": "main\nhello from t1\nanon runnable\nplain=2000\n1500 3010 1500\ntrue 7 7 24 24\nhandler got boom\nfalse true\nslept\nNEW\nTERMINATED\n",
+ "exception": null,
+ "exit": 0
+}

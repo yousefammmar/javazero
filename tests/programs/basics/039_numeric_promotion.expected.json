@@ -1,0 +1,5 @@
+{
+ "stdout": "200 Integer -56 10000 200 -56\n60000 Integer -5536 900000000\n195 Integer b Integer Long Float Character\nInteger Integer Integer Long Float Float Double Double Integer Double Long Float\nInteger Integer Integer Long Float Integer Long Integer Integer Integer Long Boolean\n-294967296 1099216660480 1103511627776 4000000000 4000000000 -294967296\n-147483648 2000000000 2000000000 2.0E9 4.0E9 4.0E9 2.0E9 2.0E9\n0 0 1.2089258196146292E24 1.2089258E24\n4.0 2.5 3.1500000000000004 3.1499999 1.0 1.0 1.5\n2.0 2.5 2.5 2.0\n1410065408 10000000000 10000000000\n-1141367296 3153600000\n77 0 77.77777777777779\nd 101 e true 200 g\n-127 -64 2147483584 64 -64 64\n0 0.50 1 10\ntrue\nfalse\n128 -128\n-25536 ?0 40000\n11\ntrue\nfalse\nInfinity -Infinity NaN 0.0 0.0\n294 b abc bc\n",
+ "exception": null,
+ "exit": 0
+}

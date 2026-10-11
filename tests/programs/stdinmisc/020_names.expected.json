@@ -1,0 +1,5 @@
+{
+ "stdout": "[Adam, Carl, Eve, adam, bob, bob, zoe]\n[Adam, adam, bob, bob, Carl, Eve, zoe]\n[zoe, bob, bob, Eve, adam, Carl, Adam]\n6 unique\nz.2\nb.2\nb.2\nE.2\na.3\nC.3\nA.3\n",
+ "exception": null,
+ "exit": 0
+}

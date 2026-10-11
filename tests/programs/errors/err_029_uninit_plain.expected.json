@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 4,
+  "msg": "variable total might not have been initialized"
+ }
+}

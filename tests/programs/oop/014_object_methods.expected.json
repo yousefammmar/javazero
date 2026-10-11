@@ -1,0 +1,5 @@
+{
+ "stdout": "false true false false\nfalse false\ntrue false\ntrue\nPerson Student\nMain$Person Main$Student\ntrue\nfalse\nint[] java.lang.String Integer\n3 true\n2 second null\nfalse true\n2\ntrue false 0 null dflt\n96354 7 1231 1 97\n30817 30817 30817\n1073217536 0\n",
+ "exception": null,
+ "exit": 0
+}

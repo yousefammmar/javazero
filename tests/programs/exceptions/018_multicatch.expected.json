@@ -1,0 +1,5 @@
+{
+ "stdout": "0 first group: NumberFormatException / For input string: \"x\"\n1 first group: ClassCastException / class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')\n2 second group: Index 2 out of bounds for length 1\n3 second group: / by zero\n4 third group: ise\n5 third group: Range [9, 3) out of bounds for length 3\n6 none\neffectively final multi: java.io.IOException: io!\n",
+ "exception": null,
+ "exit": 0
+}

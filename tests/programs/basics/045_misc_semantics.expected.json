@@ -1,0 +1,5 @@
+{
+ "stdout": "init static field\nmain 1\nnull\nint 5\nbig int 50\nstring len 3\nint[] len 3\nnumber 2\nother c\nother [1]\nneg\nint4\nstrs\nnul\ndflt\nCircle(3.14) Circle[r=1.0]\nRect(7.00) Rect[w=2.0, h=3.5]\nCircle(0.79) Circle[r=0.5]\n10.9270\n[1, 4, 2, 2, 4, 1, 0, 1, 4, 2]\n[2, 2, 4, 1, 0, 1, 4, 2] 0 false 8\n[1, 1]\n2\n[1, 1]\n3,1,2\n42 42.0\n2 true true\nodd\nok\n10\n81 5 10\n[1, 4, 9, 16, 25]\nabc\n",
+ "exception": null,
+ "exit": 0
+}

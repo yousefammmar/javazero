@@ -1,0 +1,5 @@
+{
+ "stdout": "after iterator remove: [ann, bob, dee, flo]\nCME 1\n[ann, dee, flo]\nCME 2 null\n[1, 3, 4, 5]\nCME 3\nCME map\nISE remove twice\nat 0 saw 1\nat 1 saw 3\nat 2 saw 4\nat 4 saw 5\nat 5 saw 1\n[100, 300, 4, -4, 500, 100]\n100 500 -4 4 300 100 \nNSEE\nIndex 99 out of bounds for length 6\n",
+ "exception": null,
+ "exit": 0
+}

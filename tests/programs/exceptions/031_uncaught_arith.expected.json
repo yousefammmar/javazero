@@ -1,0 +1,5 @@
+{
+ "stdout": "start\n5\ncaught / by zero\nInfinity\n",
+ "exception": "java.lang.ArithmeticException: / by zero",
+ "exit": 1
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "Optional[hello] Optional.empty\ntrue false false true\nhello dflt hello gen\nOptional[5] Optional.empty Optional.empty\nOptional[hello] Optional.empty\nifPresent hello\nhas hello\nnone\nOptional[hello!] Optional[alt]\nNSEE No value present\nNSEE orElseThrow\ncustom\nNPE of(null)\nOptional.empty Optional[x]\ntrue 99162322 0\n'12' -> Optional[12] 24\n'x' -> Optional.empty -1\n'-7' -> Optional[-7] -14\n'3.5' -> Optional.empty -1\n'' -> Optional.empty -1\n[1, 3]\n4\nOptionalInt.empty false OptionalInt[9] -1\nOptionalDouble[1.5] 1.5 OptionalDouble.empty\nOptional[1] Optional.empty\n6 0\n",
+ "exception": null,
+ "exit": 0
+}

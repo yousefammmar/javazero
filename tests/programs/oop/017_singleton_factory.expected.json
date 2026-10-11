@@ -1,0 +1,5 @@
+{
+ "stdout": "Config created #1\ntrue\n{level=3, mode=fast} fast <none>\n1 2 true\npen -> Pen\nbook -> Book/100\nbigbook -> Book/1000\nerror: unknown product: cup\nfalse\ntrue\n1\n",
+ "exception": null,
+ "exit": 0
+}

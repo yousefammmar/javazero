@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 5,
+  "msg": "incomparable types: Integer and String"
+ }
+}

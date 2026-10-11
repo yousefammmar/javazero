@@ -1,0 +1,5 @@
+{
+ "stdout": "1 2 4 10 20 33\n37 300 33\n1 300\n47\nhidden called\n43 48\nhidden called\nping\n50\n",
+ "exception": null,
+ "exit": 0
+}

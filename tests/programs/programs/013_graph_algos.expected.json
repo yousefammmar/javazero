@@ -1,0 +1,5 @@
+{
+ "stdout": "BFS from 0: [0, 1, 2, 3, 4]\nDFS from 0: [0, 1, 2, 3, 4]\n0: dist=0 path=[0]\n1: dist=3 path=[0, 2, 1]\n2: dist=1 path=[0, 2]\n3: dist=4 path=[0, 2, 1, 3]\n4: dist=7 path=[0, 2, 1, 3, 4]\n5: unreachable\n6: unreachable\nTopo order: [4, 5, 0, 2, 3, 1]\nConnected components: 2\n0 and 4 connected? true\n0 and 6 connected? false\n",
+ "exception": null,
+ "exit": 0
+}

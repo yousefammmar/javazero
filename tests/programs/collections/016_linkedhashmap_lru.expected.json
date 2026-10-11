@@ -1,0 +1,5 @@
+{
+ "stdout": "{zeta=1, alpha=2, mid=3, beta=4}\nreinsert/update: {zeta=10, mid=3, beta=4, alpha=20}\n[zeta, mid, beta, alpha] [10, 3, 4, 20]\n{a=1, b=2, c=3}\nafter get a: {b=2, c=3, a=1}\n  evict b=2\n{c=3, a=1, d=4}\nupdate c: {a=1, d=4, c=33}\n  evict a=1\n{d=4, c=33, e=5}\n-1 false {d=4, c=33, e=5}\n{d=4, e=5, c=33}\n  evict d=4\n{e=5, c=33, f=6}\n{3=n3, 4=n4, 2=n2, 1=n1, 5=n5}\n3 \n[10, 39, 18, 47, 26, 5, 34, 13, 42, 21]\n",
+ "exception": null,
+ "exit": 0
+}

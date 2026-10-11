@@ -1,0 +1,5 @@
+{
+ "stdout": "by name Adam,Bob,Cara,Dan,Eve,Zoe\nby age (stable) Adam,Cara,Bob,Eve,Zoe,Dan\nby age desc Dan,Bob,Eve,Zoe,Adam,Cara\ncity, age, name desc Eve,Bob,Cara,Zoe,Adam,Dan\ncity desc, age Adam,Dan,Cara,Zoe,Eve,Bob\n[null, null, a, b, c]\n[c, b, a, null, null]\n[1, 2, 3]\n[3, 2, 1]\n[a, e, bb, dd, ccc]\n[e, a, dd, bb, ccc]\nccc e\nPerson[name=Dan, age=41, city=Rome]\nAdam\ncompare: -1 -2 1 1 -3 1\nPerson[name=Adam, age=25, city=Rome]\n",
+ "exception": null,
+ "exit": 0
+}

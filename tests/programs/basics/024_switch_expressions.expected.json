@@ -1,0 +1,5 @@
+{
+ "stdout": "0 many:0 -1\n1 one 10\n2 two-three 10\n3 two-three 21\n4 four -1\n5 many:5 -1\nRED r 0\nGREEN g 1\nBLUE b 2\n28 30 31 30 31 \nvowel,space,digit,other,\n1.0 2.5 97.0\n000xbigx2\nthree\nblock\nodd\n10\nc\n1.0\nis green\nfalls to blue\ngs String\n5\nb\n222\ncool\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "Start: End: Step:   C      F\n -20    -4.00\n  -5    23.00\n  10    50.00\n  25    77.00\n  40   104.00\n212\n-40.0\n",
+ "exception": null,
+ "exit": 0
+}

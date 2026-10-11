@@ -1,0 +1,5 @@
+{
+ "stdout": "feed-animal feed-dog feed-dog feed-object feed-object feed-animal\nlong long long long long Integer Object varargs varargs\nint,long long,int double,double double,double\nString CharSequence Object CharSequence Object\nBase.m(String) | Derived.m(Object) | Derived.m(Object) | Derived.m(Object)\nBase.m(String) | Derived.m(Integer) | Derived.m(Object) | Derived.m(Object) | Derived.m(Object)\n[10, 30]\na97b1.0ox7\nnull true 2 2.5 3 3.5\n",
+ "exception": null,
+ "exit": 0
+}

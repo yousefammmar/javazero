@@ -1,0 +1,5 @@
+{
+ "stdout": "remove(1) index: [3, 4, 1, 5, 9, 2, 6]\nremove(valueOf 1): [3, 4, 5, 9, 2, 6]\nremove(int var): [4, 5, 9, 2, 6]\nremove(Integer var): [4, 5, 2, 6]\nremove returns false\nremove(Object) returns true\n[4, 2, 6]\nskip-bug removal: [1, 3, 5, 7, 9]\nbackward removal: [1, 3, 5, 7, 9]\nset remove(1): [2, 3]\n[a, c]\nLong remove(1L) object: [2, 3]\nLong remove(0) index: [3]\ntrue x [z]\n",
+ "exception": null,
+ "exit": 0
+}

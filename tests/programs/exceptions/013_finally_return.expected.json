@@ -1,0 +1,5 @@
+{
+ "stdout": "finally a\n1\n2\nx set 99\n1\n3\nfinally e\n4\nfinally f\n5\nab\ntry h\ncatch h\nfinally h\nfrom catch\nloop finally 0 count=11\nloop finally 1 count=22\n21\ninner fin\nouter fin\n1\n",
+ "exception": null,
+ "exit": 0
+}

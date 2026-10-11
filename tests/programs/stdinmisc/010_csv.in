@@ -1,0 +1,6 @@
+name,city,amount
+ann,Paris,12.5
+bob,,7
+
+cy,Rome,
+dee,Oslo,100.25,extra

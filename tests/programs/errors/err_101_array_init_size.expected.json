@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 3,
+  "msg": "array creation with both dimension expression and initialization is illegal"
+ }
+}

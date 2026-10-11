@@ -1,0 +1,5 @@
+{
+ "stdout": "el\no\n",
+ "exception": "java.lang.StringIndexOutOfBoundsException: Range [2, 10) out of bounds for length 5",
+ "exit": 1
+}

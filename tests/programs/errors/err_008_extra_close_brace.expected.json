@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 7,
+  "msg": "class, interface, enum, or record expected"
+ }
+}

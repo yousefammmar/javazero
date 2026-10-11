@@ -1,0 +1,5 @@
+{
+ "stdout": "9 108\ndouble#1 18 19\ncustom-neg#2 -3 2\nt0:50:[t050]\nanon0[a50]\nt1:60:[t150]\nanon10[a50]\nt2:70:[t250]\nanon20[a50]\nw17\nw27\n[c, b, a]\nanon-object 7\n42 84\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "{10=v10, 20=v20, 30=v30, 40=v40, 50=v50, 60=v60, 70=v70, 80=v80, 90=v90}\n10 90 10=v10 90=v90\nfloor 55=50 ceiling 55=60 lower 50=40 higher 50=60\nfloor 5=null ceiling 95=null\nfloorEntry 30=v30 ceilingEntry 40=v40\nhead<40 {10=v10, 20=v20, 30=v30}\nhead<=40 {10=v10, 20=v20, 30=v30, 40=v40}\ntail>=60 {60=v60, 70=v70, 80=v80, 90=v90}\ntail>60 {70=v70, 80=v80, 90=v90}\nsub[30,70) {30=v30, 40=v40, 50=v50, 60=v60}\nsub(30,70] {40=v40, 50=v50, 60=v60, 70=v70}\ndesc {90=v90, 80=v80, 70=v70, 60=v60, 50=v50, 40=v40, 30=v30, 20=v20, 10=v10}\ndescKeys [90, 80, 70, 60, 50, 40, 30, 20, 10]\nview reflects: {5=v5, 10=v10, 20=v20, 30=v30, 33=v33}\npollFirst 5=v5 pollLast 90=v90\n9 {10=v10, 20=v20, 30=v30, 33=v33, 40=v40, 50=v50, 60=v60, 70=v70, 80=v80}\n[10, 20, 30, 33, 40, 60, 70, 80]\nNSEE\nnull\nNPE null key\n{brown=1, dog=1, fox=1, jumps=1, lazy=1, over=1, quick=1, the=2}\nbrown over {brown=1, dog=1, fox=1, jumps=1}\n",
+ "exception": null,
+ "exit": 0
+}

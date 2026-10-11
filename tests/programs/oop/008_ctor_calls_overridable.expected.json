@@ -1,0 +1,5 @@
+{
+ "stdout": "Widget ctor: describe=Button:null:0:12:0\nButton.init clicks=5\nButton ctor: label=OK clicks=5 size=12 dyn=99\nButton:OK:5:12:99\nregistered Registry-Registry\nregistered Sub(null)\n",
+ "exception": null,
+ "exit": 0
+}

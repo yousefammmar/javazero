@@ -1,0 +1,5 @@
+{
+ "stdout": "anull\nnulla\nnullnull\nxnull\n12\n3\n3x12\nx3\n98b\nba1\nbb\nd=1.0 f=1.5 l=10 b=true c=c\nd=0.3333333333333333 f=0.33333334\nsum 0.10.2\nsum 0.30000000000000004\n98\n1.0E10 1.0E-5 100.0 -0.0\n2147483647-2147483648\n-564464B\nttruefalsefalsetrue\nnull!\n01234\n43210\n9899100101\nbcde\narr2\no=null\nitem: 1\nitem: two\nitem: 3.0\nitem: c\nitem: null\nitem: 5\nitem: 2.5\nitem: true\ntab\there \"quoted\" back\\slash\nuniA?\nabc123.04.0\nxxy\nv:sb2\nn02\ntrue false true true true\n6=123\n2\nnull3c2.0true\nok\nff-11111111991000.0falsea\n",
+ "exception": null,
+ "exit": 0
+}

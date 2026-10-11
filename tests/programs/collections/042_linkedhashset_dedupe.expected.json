@@ -1,0 +1,5 @@
+{
+ "stdout": "[pear, apple, fig, kiwi, plum] 5\n[plum, apple, pear, kiwi, fig]\n[apple, fig, kiwi, pear, plum]\n[pear, apple, fig, kiwi, plum]\n[pear, fig, kiwi, plum, zzz, apple]\n[pear, kiwi, plum, apple]\n[5, 3, 9, 1, 7]\n[1, 2, 3, 4, 5, 6, 9, 0] [3, 6] [9, 0]\ntrue true\n[m, i, s, p] misp\n[p, r, o, g, a, m, i, n]\n[p, a, r, g, i, m, n, o]\n{pear=2, apple=2, fig=2, kiwi=1, plum=1}\n{pear=2, apple=2, fig=2}\n[apple, plum, kiwi, pear] first pear\nPEAR|KIWI|PLUM|APPLE\n[[1, 2], [2, 1]]\n",
+ "exception": null,
+ "exit": 0
+}

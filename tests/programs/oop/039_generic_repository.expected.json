@@ -1,0 +1,5 @@
+{
+ "stdout": "3 1 2 3\nBo2 ?\n[User[id=2, name=Bo2, age=34], User[id=3, name=Cy, age=41]]\nc go java 2\nTag[id=go, uses=7]\ntrue true\nOptional.empty false Optional[x] Optional.empty\nfound Al\nnone\n",
+ "exception": null,
+ "exit": 0
+}

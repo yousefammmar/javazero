@@ -1,0 +1,5 @@
+{
+ "stdout": "merge counts {four=1, one=2, three=1, two=3}\ncompute {four=11, one=22, three=11, two=33}\n4 22\n104 null\n{four=11, one=22, five=104, three=11, two=33}\nafter null-return computeIfPresent: false\ncompute->null removes: {four=11, three=11, two=33}\nmerge->null removes: {four=11, three=11}\n8 16\n{a=[apple, avocado, apricot], b=[banana, blueberry], c=[cherry], k=[kiwi]}\n{0=0, 1=-99, 4=-198, 9=-297}\na:1\nb:4\nc:9\ntotal 14\n832040 memo size 29\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "a.mine=2 b.mine=1 c.mine=3\ntotal=6 getTotal=6\ncreated=3\nids 1 2 3\nstatic via null ref: 6\nstatic field via null ref: 6\nvia instance: 100 100\nafter a.total++: 101\n4,5,6\ncreated=6\ntrue false true false\n",
+ "exception": null,
+ "exit": 0
+}

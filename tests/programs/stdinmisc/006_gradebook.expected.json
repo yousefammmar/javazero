@@ -1,0 +1,5 @@
+{
+ "stdout": "Alice     95.00 A\nBob       77.50 C\nCarol     78.50 C\nDan      100.00 A\nBest: Dan 100.0\n",
+ "exception": null,
+ "exit": 0
+}

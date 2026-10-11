@@ -1,0 +1,5 @@
+{
+ "stdout": "[0, 1, 4]\n4\n",
+ "exception": "java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 2",
+ "exit": 1
+}

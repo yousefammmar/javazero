@@ -1,0 +1,5 @@
+{
+ "stdout": "init Main.counter\nMain static block\nmain start\nA.CONST=10\nafter const\ninit A.a\nA static block\nA.BOXED=20\nafter boxed\nB.a via subclass\nx=1\nB.b\ninit B.b\nB static block\n1\narray of C created\ncs.length=1\nC static block\nC.v=5\nLazy ctor count=0\nLazy.count=100\nLazy seen=0\nA.touch\n2\n",
+ "exception": null,
+ "exit": 0
+}

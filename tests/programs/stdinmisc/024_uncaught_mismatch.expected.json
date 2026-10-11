@@ -1,0 +1,5 @@
+{
+ "stdout": "Enter a number: Got 5\nEnter another: ",
+ "exception": "java.util.InputMismatchException",
+ "exit": 1
+}

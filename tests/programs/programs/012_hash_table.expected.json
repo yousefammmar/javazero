@@ -1,0 +1,5 @@
+{
+ "stdout": "it -> 3\nwas -> 3\nthe -> 3\nof -> 3\ntimes -> 2\nbest -> 1\nmissing -> null\nsize=9 cap=16 resizes=2\nremove(best)=true remove(best)=false size=8\nbig size=100 cap=256 resizes=7\nget(49)=v7 get(50)=null\nput again returns old: v7, now new\nnull key: null nil\nlongest chain 2\nhash of 'hello' = 99162322\n",
+ "exception": null,
+ "exit": 0
+}

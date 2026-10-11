@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 4,
+  "msg": "cannot assign a value to final variable id"
+ }
+}

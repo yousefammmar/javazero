@@ -1,0 +1,5 @@
+{
+ "stdout": "          0 pop= 0 pow2=false lowbit=0 hex=0\n          1 pop= 1 pow2=true  lowbit=1 hex=1\n          7 pop= 3 pow2=false lowbit=1 hex=7\n          8 pop= 1 pow2=true  lowbit=8 hex=8\n        255 pop= 8 pow2=false lowbit=1 hex=ff\n       1023 pop=10 pow2=false lowbit=1 hex=3ff\n         -1 pop=32 pow2=false lowbit=1 hex=ffffffff\n-2147483648 pop= 1 pow2=false lowbit=-2147483648 hex=80000000\n 1431655765 pop=16 pow2=false lowbit=1 hex=55555555\nreverse(1)=-2147483648 reverse(0xF0)=f000000\nsingle: 9\nswapped: 12 5\n-17 >> 2 = -5, -17 >>> 28 = 15, -17 << 3 = -136\n1 << 33 = 2, 1L << 33 = 8589934592\nflags=101 canWrite=false\nflags=110\n000 001 011 010 110 111 101 100 \nInteger.bitCount(255)=8 highestOneBit(100)=64 nlz(1)=31 ntz(8)=3\nrotateLeft: 18\nmask=170 10101010\nbyte 200 -> -56, unsigned 200, short 4464, char 65535\n4294967295 -1 43\n1 2 4 8 16 \n",
+ "exception": null,
+ "exit": 0
+}

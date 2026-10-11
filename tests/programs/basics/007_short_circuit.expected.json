@@ -1,0 +1,5 @@
+{
+ "stdout": "f && t => false | aF\nt && f => false | aT bF\nt || f => true | aT\nf || t => true | aF bT\nf & t => false | aF bT\nt | f => true | aT bF\nt ^ t => false | aT bT\nt ^ f => true | aT bF\nf || f || t => true | aF bF cT\nt && t && f => false | aT bT cF\nf && t || t => true | aF cT\nt || f && f => true | aT\n(t || f) && f => false | aT cF\n!f && !t => false | aF bT\nf | t & f => false | aF bT cF\nt ^ t & f => true | aT bT cF\nt ? f : t => false | aT bF\nf ? f : t => true | aF cT\nfalse\ntrue\nfalse\nfalse\nfalse\ntrue\ntrue\ntrue\nfalse\ntrue\nfalse\ntrue\nNPE\nAE\ntrue\nfalse\ntrue\nfive\nfalse false\n",
+ "exception": null,
+ "exit": 0
+}

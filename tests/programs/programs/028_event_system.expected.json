@@ -1,0 +1,5 @@
+{
+ "stdout": "Welcome, ann!\n  [login] reached 3 handler(s)\nWelcome, bob!\n  [login] reached 3 handler(s)\nPurchase #1 by ann: book\n  [purchase] reached 1 handler(s)\n  [unknown] reached 0 handler(s)\nBye ANN\n  [logout] reached 2 handler(s)\nWelcome, ann!\n  [login] reached 3 handler(s)\nPurchase #2 by bob: pen\n  [purchase] reached 1 handler(s)\nAudit: [LOGIN:ann, LOGIN:bob, LOGOUT:ann, LOGIN:ann]\nLogins: {ann=2, bob=1}\nTotal dispatched: 13\n11 12\napple true true false\nant false true true\nbanana false true false\n[z]DONE9\n",
+ "exception": null,
+ "exit": 0
+}

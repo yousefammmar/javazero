@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 5,
+  "msg": "value() in B cannot override value() in A"
+ }
+}

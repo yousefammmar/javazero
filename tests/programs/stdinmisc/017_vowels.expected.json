@@ -1,0 +1,5 @@
+{
+ "stdout": "Hello World 123 -> v=3 c=7 d=3 sp=2\nAEIOU xyz! -> v=5 c=3 d=0 sp=1\n\t tab -> v=1 c=2 d=0 sp=2\n",
+ "exception": null,
+ "exit": 0
+}

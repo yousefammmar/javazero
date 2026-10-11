@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 5,
+  "msg": "show() in B cannot override show() in A"
+ }
+}

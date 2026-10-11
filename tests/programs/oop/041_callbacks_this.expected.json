@@ -1,0 +1,5 @@
+{
+ "stdout": "[W1 computed 120, W1 computed 6, anon:W1 computed 1]\n[work5, work3, work1]\n2 1 3\n[work5, work3, work1, recv2, recv4, recv3, recv6, recv8, recv16]\nsmall 5\nmedium 50\neven-large 500\nunhandled 501\n",
+ "exception": null,
+ "exit": 0
+}

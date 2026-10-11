@@ -1,0 +1,5 @@
+{
+ "stdout": "[PEAR, Apple, fig, banana, cherry, date] [PEAR, Apple, fig, banana, cherry, date]\n[PEAR, apple, fig, banana, cherry, date]\nsorted through view: [PEAR, apple, banana, cherry, date, fig]\nUOE add\nUOE remove\n[apple, banana, cherry, date, fig, PEAR]\n[fig, date, PEAR, apple, cherry, banana]\n[9, 7, 5, 3, 2, 1]\n[9, 2, 3, 5, 7, 1]\nstable by mod 3: [9, 3, 7, 1, 2, 5]\nasList(int[]) size 1\n[4, 2, 9] 3 true 2\n[4, 2, 9, 1]\n[[b, a], [d, c]]\n[1, two, 3.0, c, null, 1]\n[z, z, z, z, z, z]\ntrue\n[0, 1, 4, 9, 16, 25]\n1\n",
+ "exception": null,
+ "exit": 0
+}

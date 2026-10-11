@@ -1,0 +1,5 @@
+{
+ "stdout": "15\n100 sb!\n2 2 2.625 0.375 100 3 false 2\nXY\none=1;two=2;\n6\n012\nXYZ\n7\n3000000 3000000000000\n195 ab 3.0\nIntegerStringFloatDouble\n6\nfinal var\ntrue\n5\n2\n42\n42 84\n{a=[1, 2]}\n1\n2\n10.0\n",
+ "exception": null,
+ "exit": 0
+}

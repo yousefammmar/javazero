@@ -1,0 +1,5 @@
+{
+ "stdout": "0\n1\n6\n15\n0\na:0[]\nb:1[7]\nc:3[7, 8, 9]\n0[]\n3[1, x, 2.5]\nnull-array\n1[null]\n2[null, null]\n2[1, 2]\n1[2]\n2[s1, s2]\nint[] is one Object\ntwo ints\nvarargs 1\nvarargs 0\nvarargs 3\nexact ab\na0\na1\na2\na1\n0.0\n1.5\n2.1666666666666665\nok\n\n0 1 2 5\n[1, 2, 3]\n[]\nint,int\nlong2\nlong1\n999\na-b\nnone\np q\n3 2 1\n10.0\na/bc/d\n3\n",
+ "exception": null,
+ "exit": 0
+}

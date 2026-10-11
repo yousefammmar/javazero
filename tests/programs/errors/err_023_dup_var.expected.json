@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 5,
+  "msg": "variable x is already defined in method main(String[])"
+ }
+}

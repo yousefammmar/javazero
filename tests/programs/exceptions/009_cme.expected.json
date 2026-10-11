@@ -1,0 +1,5 @@
+{
+ "stdout": "first visit 1\nfirst CME msg=null list=[2, 3, 4]\nmiddle visit 1\nmiddle visit 2\nmiddle CME msg=null list=[1, 3, 4]\nsecondLast visit 1\nsecondLast visit 2\nsecondLast visit 3\nsecondLast done [1, 2, 4]\nlast visit 1\nlast visit 2\nlast visit 3\nlast visit 4\nlast CME msg=null list=[1, 2, 3]\nsingle visit 1\nsingle CME msg=null list=[]\nadd CME [a, b, c, z]\nmap CME null\n[1, 3, 5]\n[1, 3]\nISE null\nISE2 null\n[3]\nforEach CME\nsubList CME\n",
+ "exception": null,
+ "exit": 0
+}

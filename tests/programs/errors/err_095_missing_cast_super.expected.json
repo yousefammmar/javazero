@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 8,
+  "msg": "incompatible types: Animal cannot be converted to Dog"
+ }
+}

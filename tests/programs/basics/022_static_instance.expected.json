@@ -1,0 +1,5 @@
+{
+ "stdout": "static init Main 20\nmain start 10 0\ninstance init 100\nctor 1\ninstance init 200\nctor 2\nctor(int) 7\n1 7 2 14 2 3\n2 1 3\nhello from Derived.name/Base.who\nbaseField derivedField Derived.name Base.who Derived.who\nbefore lazy\nLazy loaded\n5\ntouch\nbefore order\ninit a\ninit b\nOrder static block\ninit x\ninit y\nOrder instance block\nOrder()\ninit x\ninit y\nOrder instance block\nOrder()\ndone\n",
+ "exception": null,
+ "exit": 0
+}

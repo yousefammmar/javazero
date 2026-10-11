@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 5,
+  "msg": "bad operand types for binary operator '-'"
+ }
+}

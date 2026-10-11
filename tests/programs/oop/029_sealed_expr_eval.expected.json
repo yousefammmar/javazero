@@ -1,0 +1,5 @@
+{
+ "stdout": "(1 + 2) => 3 = 3 (orig 3)\n(x + 0) => x = 5 (orig 5)\n(0 + y)*1 => y = 7 (orig 7)\n--x => x = 5 (orig 5)\nx*0 => 0 = 0 (orig 0)\n(2*3 + -4) => 2 = 2 (orig 2)\n(x + y)*-x => (x + y)*-x = -60 (orig -60)\nAdd[l=Const[v=1], r=Const[v=2]]\nConst[v=3]\nunbound zz\n",
+ "exception": null,
+ "exit": 0
+}

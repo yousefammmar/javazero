@@ -1,0 +1,5 @@
+{
+ "stdout": "parsing [10]\ntotal 10\nparsing [ 20 ]\ntotal 30\nparsing [3x]\n",
+ "exception": "java.lang.NumberFormatException: For input string: \"3x\"",
+ "exit": 1
+}

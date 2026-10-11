@@ -1,0 +1,5 @@
+{
+ "stdout": "true false false true false\n2999809 3030190 30817 1 0 2999809\n2 true false [bob#2, ann#1]\ntrue 1 true [bob#2]\n{bob#2=third, ann#1=second} 2\n8 [OE0, OE1, OE2, OE3, OE4, OE5, OE6, OE7]\ntrue\nafter mutate: contains false contains new M5 false [M6] size 1\ntrue true false\ntrue\ntrue\n128 4066 4066 3\n2 y\n",
+ "exception": null,
+ "exit": 0
+}

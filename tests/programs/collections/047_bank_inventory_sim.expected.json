@@ -1,0 +1,5 @@
+{
+ "stdout": "ok acc1 dep 50 -> 150.0\nok acc2 wd 30 -> 70.0\nfail acc3 wd 500: IllegalStateException insufficient funds in acc3\nfail acc9 dep 1: NoSuchElementException no account acc9\nfail acc1 dep -5: IllegalArgumentException bad amount -5.0\nok acc2 wd 70 -> 0.0\nok acc3 dep 0.5 -> 100.5\nacc1 150.0 [D50.0]\nacc2 0.0 [W30.0, W70.0]\nacc3 100.5 [D0.5]\n{spring=22, washer=23, pin=21, screw=11, cog=9, bolt=12, nut=24, gear=10}\n{spring=22, washer=23, pin=9, screw=11, cog=6, bolt=7, nut=24, gear=0}\n[gear:90, cable:1]\n{spring=22, washer=23, pin=9, screw=11, cog=6, bolt=7, nut=24}\ntotal 102 low: [bolt, cog, pin]\n",
+ "exception": null,
+ "exit": 0
+}

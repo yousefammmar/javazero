@@ -1,0 +1,5 @@
+{
+ "stdout": "   1 -> I            -> 1\n   4 -> IV           -> 4\n   9 -> IX           -> 9\n  14 -> XIV          -> 14\n  40 -> XL           -> 40\n  90 -> XC           -> 90\n 400 -> CD           -> 400\n1994 -> MCMXCIV      -> 1994\n2024 -> MMXXIV       -> 2024\n3999 -> MMMCMXCIX    -> 3999\n0: zero\n7: seven\n13: thirteen\n21: twenty-one\n40: forty\n99: ninety-nine\n100: one hundred\n101: one hundred and one\n342: three hundred and forty-two\n1000: one thousand\n12345: twelve thousand three hundred and forty-five\n1000001: one million one\n999999: nine hundred and ninety-nine thousand nine hundred and ninety-nine\n255 -> bin 11111111, oct 377, hex FF, base36 73 | lib: 11111111 FF\n1024 -> bin 10000000000, oct 2000, hex 400, base36 SG | lib: 10000000000 400\n0 -> bin 0, oct 0, hex 0, base36 0 | lib: 0 0\n-42 -> bin -101010, oct -52, hex -2A, base36 -16 | lib: 0 0\n123456789 -> bin 111010110111100110100010101, oct 726746425, hex 75BCD15, base36 21I3V9 | lib: 111010110111100110100010101 75BCD15\n255 255 1295\n-127 513\n",
+ "exception": null,
+ "exit": 0
+}

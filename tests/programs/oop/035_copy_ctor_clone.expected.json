@@ -1,0 +1,5 @@
+{
+ "stdout": "Anna@Rome:150[x, y]\nAnn@Oslo:150[x]\nAnn@Rome:150[x, y]\nfalse true true\n[[1, 2], [3, -1]] [[1, 2], [3, 4]] [[99, 2], [3, 4]]\n[1, 2, 3][100, 2, 3][1, 2, 3, 0, 0]\n5 6 42 true true\n[A:9] [A:9, B:2]\n",
+ "exception": null,
+ "exit": 0
+}

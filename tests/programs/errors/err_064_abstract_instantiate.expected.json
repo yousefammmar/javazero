@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 6,
+  "msg": "Shape is abstract; cannot be instantiated"
+ }
+}

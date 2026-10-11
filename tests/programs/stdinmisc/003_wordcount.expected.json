@@ -1,0 +1,5 @@
+{
+ "stdout": "lines=6 words=15 chars=76\nbrown: 1\ndog: 1\ndone: 1\nend: 2\nfox: 1\nit's: 1\njumps: 1\nlazy: 1\nover: 1\nquick: 1\nthe: 4\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "{apple=4, Banana=5, Cherry=3}\n3 true\n{APPLE=4, Banana=1, Cherry=3, apple=2}\n{18=x6, 15=x5, 12=x4, 9=x3, 6=x2, 3=x1} first 18 floor(10)=12 ceiling(10)=9\n{e=E, a=A, cc=CC, bb=BB, fff=FFF, ddd=DDD, gggg=GGGG}\n[zebra, mango, kiwi, apple] first zebra\n[40, 100, 11, 21, 33, 5, 15, 8]\n[10, 9, A, B, _, a, b]\n{null=0, a=2, b=1}\n",
+ "exception": null,
+ "exit": 0
+}

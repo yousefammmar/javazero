@@ -28,12 +28,12 @@ There is no build step, no framework and no backend. It is plain HTML, CSS and J
 
 | Area | What you get |
 |---|---|
-| Curriculum | 30 lessons across 5 modules, each with a runnable example and key points |
-| Playground | Write and run Java in the browser, with interactive console input (`Scanner`) and plain-English error explanations |
+| Curriculum | 55 lessons across 9 modules (5 Beginner + 4 Intermediate), each with a runnable example and key points |
+| Playground | Write and run Java in the browser on a real in-browser compiler (javac-style errors, JDK 21 library behavior), with interactive console input and plain-English error explanations |
 | Labs | Multi-file IDE with a live memory model, String Lab, Compiler Error Translator, Stack Trace Analyzer |
 | Mistake Lab | 9 classic beginner errors, each with buggy code, the fix and the reason |
-| Daily Quiz | 10 questions with instant feedback and a saved best score |
-| Progress | Lesson checkboxes, module mastery, 16 badges, all stored in `localStorage` |
+| Daily Quiz | 10 beginner questions plus 8 intermediate questions, with instant feedback and a saved best score |
+| Progress | Lesson checkboxes, module mastery, 25 badges, all stored in `localStorage` |
 | Navigation | Command palette (`Cmd/Ctrl + K` or `/`) searching lessons, errors, tools and resources |
 | Resources | Curated links to W3Schools Java reference pages, plus a per-lesson "read more" link |
 | Design | Responsive layout, SVG icon system, keyboard-friendly, reduced-motion aware |
@@ -82,7 +82,7 @@ Progress is tracked per lesson. Tick a lesson when you finish it; the sidebar, m
 
 ## Study plan: 8 weeks to Java fundamentals
 
-**Time commitment:** about 5 hours per week (roughly 45 to 60 minutes on five days, with a longer review session at the weekend). The 30 lessons contain about 200 minutes of core reading; the rest of the time is deliberate practice, which is where the learning happens.
+**Time commitment:** about 5 hours per week (roughly 45 to 60 minutes on five days, with a longer review session at the weekend). The 30 beginner lessons contain about 200 minutes of core reading; the rest of the time is deliberate practice, which is where the learning happens.
 
 ### The daily routine (45 to 60 minutes)
 
@@ -113,6 +113,19 @@ Rules that make the plan work:
 | **6** | **Classes**, lessons 5 to 7: encapsulation, `static` versus instance, `toString` | Build an `Account` with a private balance, `deposit` and `getBalance`. Add a `static` counter of accounts created. Override `toString`. | Explain when to use `static` and when not to |
 | **7** | **Inheritance**, lessons 1 to 5: `extends`, `super`, overriding, `protected`, the `Object` class | Create `Animal` and `Dog`, override `speak`, call `super.speak()`. Trigger a `NullPointerException` on purpose and read the trace. | Daily Quiz: score 8 or more |
 | **8** | **Interfaces as Contracts**, lessons 1 to 4, then the capstone | Define `Shape` with `Circle` and `Square`, store both in one array and loop over it. **Capstone:** extend the multi-file IDE with a new class (for example `Teacher`) across separate files. | Daily Quiz: score 9 or more. Earn the *Polymorph* badge |
+
+### Intermediate track: weeks 9 to 16
+
+The Intermediate section follows the structure of the W3Schools Java intermediate topics (links only; the text is original). Same daily routine, about 5 hours per week.
+
+| Week | Module and lessons | Practice tasks |
+|---|---|---|
+| **9 to 10** | **Abstraction, Enums & Nested Classes** (6 lessons) | Model shapes with an `abstract` class, add an `enum` with fields and a `switch` over it, write one inner and one static nested class |
+| **11 to 12** | **Exceptions: When Things Go Wrong** (6 lessons) | Handle `NumberFormatException`, write a custom checked exception, use try-with-resources and read a `Caused by:` chain |
+| **13 to 14** | **Collections: Lists, Maps & Sets** (8 lessons) | Count word frequencies with a `HashMap`, de-duplicate with a `HashSet`, sort with `Comparator`, iterate safely |
+| **15 to 16** | **Generics & Lambdas** (5 lessons) | Write a generic `Box<T>`, replace loops with lambdas and a stream pipeline |
+
+Checkpoint: the intermediate quiz (8 questions) and the intermediate badges in *Settings*.
 
 ### Weekly milestones at a glance
 
@@ -157,6 +170,7 @@ javazero/
 ├── quiz.html                  Daily Quiz
 ├── resources.html             W3Schools links
 ├── settings.html              Badges and reset
+├── tests/                     Compiler test tooling and differential corpus (see Testing)
 ├── img/
 │   └── avatar.png             Author avatar (footer)
 ├── css/
@@ -170,10 +184,15 @@ javazero/
     ├── core/
     │   ├── icons.js           SVG icon sprite and ic() helper
     │   ├── store.js           localStorage wrapper and Progress API
-    │   ├── java.js            In-browser Java runner (teaching subset)
+    │   ├── java.js            Public API: Java.run / check / compile
+│   ├── java-parse.js      Lexer and parser (Java 21 syntax, AST)
+│   ├── java-gen*.js       Semantic analysis (javac-style errors) and JavaScript code generation
+│   ├── java-flow.js       Flow analysis: definite assignment, unreachable code, checked exceptions
+│   ├── java-rt.js         Runtime: values, strings, exceptions, Scanner, formatting
+│   ├── java-coll.js       Runtime: collections, streams, Optional, BigInteger/BigDecimal, regex
     │   ├── hl.js              HTML escape, progress bar, Java syntax highlighter
     │   └── shell.js           Header, nav, sidebar, command palette, footer
-    ├── data/                  curriculum, mistakes, errors, quiz, badges, resources
+    ├── data/                  curriculum, intermediate, mistakes, errors, quiz, badges, resources
     ├── components/            module-cards, labs
     └── pages/                 one script per page
 ```
@@ -188,11 +207,14 @@ javazero/
 
 ## The in-browser Java runner
 
-The Playground, the lesson viewer and the multi-file IDE all use `js/core/java.js`. It is **not a JVM.** It does three things:
+The Playground, the lesson viewer and the multi-file IDE all use the compiler in `js/core/java*.js`. It is **not a JVM**, but it is a real compiler pipeline rather than a pattern matcher:
 
-1. **Checks** for common beginner mistakes: missing semicolons, unbalanced braces, no `main` method.
-2. **Translates** a teaching subset of Java into JavaScript. It supports classes, fields, constructors, `static` members, inheritance (`extends`, `super`), interfaces (including `default` methods), method overloading by argument count, loops, arrays, `String` and `Math` basics, `ArrayList`, and console input with `Scanner` and `BufferedReader`.
-3. **Runs** the result in the page, captures `System.out`, reads console input, and converts failures into Java-style messages (`NullPointerException`, `StackOverflowError`, `ArithmeticException`, `InputMismatchException`, and others). An iteration limit stops infinite loops.
+1. **Parses** Java 21 syntax: classes, interfaces, enums, records, sealed types, nested/inner/anonymous/local classes, generics, lambdas and method references, `var`, text blocks, switch expressions and pattern matching (`instanceof` patterns, `switch` patterns with guards, record patterns).
+2. **Checks** the program like `javac`, with the same line numbers and message wording for the common errors: missing symbols, incompatible types, possible lossy conversion, missing return, uninitialized variables, unreachable code, unreported checked exceptions, missing abstract-method implementations, bad overrides, wrong argument types, effectively-final violations, and more.
+3. **Generates JavaScript** and runs it against a runtime library that emulates the JDK 21 behavior beginners rely on: `int`/`long` overflow, `char` arithmetic, exact `double` printing, `String`/`StringBuilder`, `Math`, wrapper classes, `String.format`/`printf`, `Scanner`/`BufferedReader`, collections (`ArrayList`, `LinkedList`, `HashMap` with real iteration order, `TreeMap`, sets, `Deque`, `PriorityQueue`), `Collections`/`Arrays`, streams and `Collectors`, `Optional`, `BigInteger`/`BigDecimal`, regex, `Random` (same sequence as the JDK for a given seed), and a synchronous `Thread`/executor model.
+4. **Reports failures** as Java would: `Exception in thread "main" ...` with helpful `NullPointerException` messages, `ArrayIndexOutOfBoundsException`, `ClassCastException`, `ArithmeticException`, `StackOverflowError`, `Caused by:` chains and so on. A time limit stops infinite loops.
+
+Not supported: real threads/concurrency timing, reflection, file and network I/O, `System.console()`, and most of the JDK outside the areas above. An unsupported class is reported as a compile error instead of silently misbehaving.
 
 ### Console input
 
@@ -204,7 +226,16 @@ Programs that read input work the way they do in a terminal:
 - Java's real behaviors are reproduced, including the `nextInt()` then `nextLine()` trap, `InputMismatchException` for bad input, and `NoSuchElementException` when input runs out.
 - Implementation note: each time you submit a value the program is replayed from the start with all values so far (the runner cannot pause mid-execution), so keep input-driven programs deterministic.
 
-All 30 lesson examples are verified to run. The runner is intentionally small so that its behavior is easy to read and extend.
+All 55 lesson examples are verified to produce the same output as OpenJDK 21.
+
+## Testing
+
+The `tests/` folder contains Node scripts (no dependencies) that load the compiler exactly as the browser does:
+
+- `tests/diff.js` runs every program under `tests/programs/**` and compares stdout, exit status and the first compile-error line and message against cached results from a real JDK 21 (`*.expected.json`; regenerate with `tests/realcheck.js` where `java` is installed).
+- `tests/show.js` and `tests/jr.js` run one program and print its output or generated JavaScript for debugging.
+- The corpus has about 460 programs covering basics, OOP, exceptions, collections, stdin handling, larger programs and 129 compile-error cases.
+
 
 ## Data and privacy
 
@@ -224,7 +255,8 @@ All 30 lesson examples are verified to run. The runner is intentionally small so
 
 | To add... | Edit |
 |---|---|
-| A lesson | `js/data/curriculum.js`: add `L('<module>', n, title, summary, code, [points])` to a module |
+| A beginner lesson | `js/data/curriculum.js`: add `L('<module>', n, title, summary, code, [points])` to a module |
+| An intermediate lesson | `js/data/intermediate.js` (modules, lessons, W3Schools links and the intermediate quiz) |
 | A module | `js/data/curriculum.js`: add an object to `MODULES`, and a card visual in `js/components/module-cards.js` |
 | A mistake | `js/data/mistakes.js` |
 | A quiz question | `js/data/quiz.js` |
@@ -236,11 +268,10 @@ After adding a lesson, check that its example runs by opening it in the lesson v
 
 ## Known limitations
 
-- The runner supports a teaching subset of Java. Input is limited to `Scanner` and `BufferedReader`; `System.console()`, file readers, generics beyond `ArrayList` and advanced APIs will not run.
-- Because input is handled by replaying the program, programs that use randomness or the clock may behave differently between prompts.
-- Decimal output follows JavaScript formatting, so a `double` such as `9.0` may print as `9`.
-- Integer division is detected by a simple rule (both operands are plain `int` variables or numbers), not by full type checking.
-- The "Active streak" panel is illustrative and is not yet tied to real activity.
+- The compiler covers the Java 21 language and the JDK areas listed above, not the whole JDK. Threads run synchronously, and reflection, file I/O and networking are unavailable.
+- Because input is handled by replaying the program, programs that use randomness (without a seed) or the clock may behave differently between prompts.
+- A few exotic corner cases still differ from the real JDK (rare formatting and exception-message details); the differential test corpus tracks them.
+- Progress statistics, including the streak, come from real activity recorded in `localStorage` on this device only.
 - No license has been selected for this repository yet.
 
 ---

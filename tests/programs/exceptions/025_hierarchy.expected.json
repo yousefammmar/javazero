@@ -1,0 +1,5 @@
+{
+ "stdout": "0 -> Leaf(mid:leaf:a)\n1 -> Mid(mid:b)\n2 -> Other(other:c)\n3 -> Base(d)\n4 -> none\nMain$LeafEx\ntrue\nfalse\n  LeafEx\n  MidEx\n  BaseEx\n  Exception\n  Throwable\n  Object\ngeneral mid:b\nmulti other:c\n",
+ "exception": null,
+ "exit": 0
+}

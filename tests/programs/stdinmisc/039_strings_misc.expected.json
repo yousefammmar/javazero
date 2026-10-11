@@ -1,0 +1,5 @@
+{
+ "stdout": "hello ell he 3.0truec10null\nfruit\nfruit\nveg\nempty\nunknown:Apple\nHello,\n  \"World\" continued\ntab\there\nend\n39\n4 2\nmedium\ntrim me|strip|x | x|ababab|truetrue\n4 6 [, a, , b] [a, b, c][a, b, c]\n500 2 3 -1 true true 1 -2 -2\nheLLo a-b-c xxxxx baa xy Mi[ss]i[ss]ippi\na-b-c x/y |c 5 3 items\ntrue false true true true\n3x12cd1.0nulltrue\nRange [5, 3) out of bounds for length 3\nIndex -1 out of bounds for length 3\n",
+ "exception": null,
+ "exit": 0
+}

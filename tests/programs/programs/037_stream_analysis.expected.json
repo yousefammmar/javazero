@@ -1,0 +1,5 @@
+{
+ "stdout": "Total revenue: 639.80\nTotal units: 100\n  East     134.80\n  North     92.50\n  South    206.50\n  West     206.00\n{Doohickey=3, Gadget=4, Widget=3}\nTop 3 sales: [West/Gadget, East/Gadget, South/Gadget]\nProducts: [Doohickey, Gadget, Widget]\nCheapest: Sale[region=South, product=Widget, units=25, price=2.4]\nAny > 20 units? true, all > 0? true, none West-Widget? true\nmin=8.00 max=198.00 avg=63.980 n=10\n{false=[NWi, NGa, EWi, WDo, NDo], true=[SWi, SDo, EGa, WGa, SGa]}\nDoohickey best seller: South 7\nGadget best seller: West 20\nWidget best seller: South 25\n[1, 3, 5, 7, 9]\nn0|n1|n2|n3|n4\n3280\n64\n[c, b, a]\n",
+ "exception": null,
+ "exit": 0
+}

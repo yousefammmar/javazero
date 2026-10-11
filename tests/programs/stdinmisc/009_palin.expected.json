@@ -1,0 +1,5 @@
+{
+ "stdout": "\"racecar\" -> palindrome\n\"A man, a plan, a canal: Panama\" -> palindrome\n\"hello\" -> not palindrome\n\"\" -> palindrome\n\"No lemon, no melon\" -> palindrome\n\"ab\" -> not palindrome\n\"12321\" -> palindrome\n",
+ "exception": null,
+ "exit": 0
+}

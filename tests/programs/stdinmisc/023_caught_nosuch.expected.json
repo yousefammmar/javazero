@@ -1,0 +1,5 @@
+{
+ "stdout": "first header line\nint 42\ncaught NoSuchElementException: null\ncaught NoSuchElementException: No line found\ncaught java.util.NoSuchElementException\n",
+ "exception": null,
+ "exit": 0
+}

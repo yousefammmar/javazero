@@ -1,0 +1,5 @@
+{
+ "stdout": "IDLE --pause--> IDLE\nIDLE --start--> RUNNING\nRUNNING --pause--> PAUSED\nPAUSED --noop--> PAUSED\nPAUSED --resume--> RUNNING\nRUNNING --finish--> DONE (terminal)\nDONE --start--> DONE (terminal)\nRED@3 GREEN@5 YELLOW@6 RED@9 GREEN@11 YELLOW@12 RED@15 \nF:N(0,-1) F:N(0,-2) R:E(0,-2) F:E(1,-2) F:E(2,-2) R:S(2,-2) F:S(2,-1) L:E(2,-1) F:E(3,-1) F:E(4,-1) L:N(4,-1) L:W(4,-1) F:W(3,-1) \nN opp S L W\nE opp W L N\nS opp N L E\nW opp E L S\n{IDLE=[pause], RUNNING=[start, resume], PAUSED=[pause, noop], DONE=[finish, start]}\n",
+ "exception": null,
+ "exit": 0
+}

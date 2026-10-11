@@ -1,0 +1,5 @@
+{
+ "stdout": "fib(10) = 55\nfib(50) = 12586269025\nfib(90) = 2880067194370816120\nmemo size 89\nknapsack = 9\nknapsack = 220\nlcs = GTAB\nlcs = gaming\nedit(kitten,sitting) = 3\nedit(sunday,saturday) = 3\ncoins min for 63 = 3\ncoins min for 7 with {2,4} = -1\nways(100) = 292\nlis = 5\n",
+ "exception": null,
+ "exit": 0
+}

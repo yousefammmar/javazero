@@ -15,7 +15,18 @@ const VISUALS = {
   inherit: () => `<div class="box"><div class="inh"><span>${ic('paw')} Animal (Superclass)</span><span class="fw4">eat(), sleep()</span></div><div class="ext">${ic('down')} EXTENDS ${ic('down')}</div><div class="inh sub"><span>${ic('subright')} Dog (Subclass)</span><span class="fw4">bark(), super.eat()</span></div></div>`,
   interfaces: () => `<div class="box"><div class="two"><div><b class="red">extends (Class)</b>IS-A relationship<code>class Dog extends Animal</code></div><div><b class="grn">implements (Interface)</b>CAN-DO contract<code>implements Drivable, GPS</code></div></div></div>`,
 };
+const MIDVIS = {
+  abstraction: () => `<div class="box"><div class="two"><div><b class="red">abstract class</b>Shared code with gaps<code>abstract double area();</code></div><div><b class="grn">enum</b>A fixed set of values<code>enum Level { LOW, HIGH }</code></div></div></div>`,
+  exceptions: () => `<div class="box"><div class="code">try { <span class="red">risky</span>(); } <span class="pur">catch</span> (Exception e) { ... } <span class="grn">finally</span> { ... }</div><span class="note">[try] runs first • [catch] handles the error • [finally] always runs</span></div>`,
+  collections: () => `<div class="box"><div class="code">Map&lt;String, Integer&gt; ages = new <span class="red">HashMap</span>&lt;&gt;();</div><div><span class="sm"><b class="red">List</b>: ordered, allows duplicates</span><span class="sm"><b class="grn">Set</b>: no duplicates</span><span class="sm"><b class="pur">Map</b>: key to value</span></div></div>`,
+  lambdas: () => `<div class="box"><div class="code">names.forEach(<span class="red">n</span> <span class="pur">-&gt;</span> System.out.println(n));</div><span class="note">[parameter] [arrow] [body]: a method with no name</span></div>`,
+};
+const midFoot = (color, cta) => m => { const p = Progress.forModule(m); return [`<div><div class="row"><span class="mut">Track Mastery</span><b style="color:${color}">${p.pct}%</b></div>${pctBar(p.pct, color)}</div>`, `<span>${ic('checkc')} ${p.n} of ${p.total} Completed</span><a class="mini c" href="lesson.html?id=${(m.lessons.find(l => !Progress.has(l.id)) || m.lessons[0]).id}">${p.n ? 'Resume Lesson' : cta}</a>`]; };
 const CARD_FOOT = {
+  abstraction: midFoot('var(--coral)', 'Start Lesson'),
+  exceptions: midFoot('var(--purple)', 'Start Lesson'),
+  collections: midFoot('var(--coral)', 'Start Lesson'),
+  lambdas: midFoot('var(--purple)', 'Start Lesson'),
   vars: m => { const p = Progress.forModule(m); return [`<div><div class="row"><span class="mut">Track Mastery</span><b class="red">${p.pct}%</b></div>${pctBar(p.pct, 'var(--coral)')}</div>`, `<span>${ic('checkc')} ${p.n} of ${p.total} Completed</span><a class="mini c" href="lesson.html?id=${(m.lessons.find(l => !Progress.has(l.id)) || m.lessons[0]).id}">${p.n ? 'Resume Lesson' : 'Start Lesson'}</a>`]; },
   methods: m => { const p = Progress.forModule(m); return [`<div><div class="row"><span class="mut">Track Mastery</span><b class="pur">${p.pct}%</b></div>${pctBar(p.pct, 'var(--purple)')}</div>`, `<span>${ic('dots')} ${p.n} of ${p.total} Completed</span><a class="mini" href="lesson.html?id=${(m.lessons.find(l => !Progress.has(l.id)) || m.lessons[0]).id}">Practice Methods</a>`]; },
   classes: m => ['', `<span>Next: Constructor Overloading</span><a class="mini c" href="lesson.html?id=${(m.lessons.find(l => !Progress.has(l.id)) || m.lessons[0]).id}">Explore OOP Lab</a>`],
@@ -24,7 +35,7 @@ const CARD_FOOT = {
 };
 function moduleCard(m) {
   const [extra, foot] = CARD_FOOT[m.id](m);
-  return card({ c: m.track, icon: m.icon, tag: m.tag, meta: `${m.lessons.length} lessons • ${m.min} min`, title: m.name, desc: m.desc.replace(' new.', ' <span class="red">new</span>.').replace('what an object', '<i>what</i> an object'), body: VISUALS[m.id]() + extra, foot });
+  return card({ c: m.track, icon: m.icon, tag: m.tag, meta: `${m.lessons.length} lessons • ${m.min} min`, title: m.name, desc: m.desc.replace(' new.', ' <span class="red">new</span>.').replace('what an object', '<i>what</i> an object'), body: (VISUALS[m.id] || MIDVIS[m.id])() + extra, foot });
 }
 function labCards() {
   const mi = MISTAKES[0];
@@ -33,7 +44,7 @@ function labCards() {
       icoStyle: 'background:#ffe3e0;color:var(--red)', tagStyle: 'background:#ffe3e0;color:var(--red)', metaStyle: 'color:var(--red);font-weight:700',
       body: `<div class="box" data-mistake><div class="bug"><button class="a on" data-m="bad">Buggy Code</button><button class="b" data-m="good">Corrected Fix</button><span class="red">Memory pointer mismatch</span></div>
         <pre class="code bugcode red">${mi.bad}</pre></div>`,
-      foot: `<span>3,492 learners debugged this today</span><a class="mini r" href="mistakes.html#${mi.id}">Open Mistake Lab</a>` }),
+      foot: `<span>${MISTAKES.length} classic mistakes to break on purpose</span><a class="mini r" href="mistakes.html#${mi.id}">Open Mistake Lab</a>` }),
     card({ c: 'lab', icon: 'terminal', tag: 'Debugging Lab', meta: 'Stack Trace Anatomy', title: 'Interpreting Stack Traces (NPE)', desc: 'Read stack frames backwards to uncover exact lines where null references caused failures.',
       icoStyle: 'background:#ffe3e0;color:var(--red)', tagStyle: 'background:#ffe3e0;color:var(--red)',
       body: `<div class="nl"><div class="e">Exception in thread "main" java.lang.NullPointerException</div><div class="fr2">at com.javazero.User.getName(<span class="g">User.java:24</span>)<br>at com.javazero.App.main(<span class="g">App.java:12</span>)</div><div class="fx"><b class="g">Fix:</b> Initialize \`User user = new User()\` before calling methods!</div></div>`,

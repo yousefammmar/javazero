@@ -1,0 +1,5 @@
+{
+ "stdout": "List.of add: UOE\nList.of set: UOE\nList.of remove: UOE\nList.of sort: UOE\nList.of clear: UOE\nList.of contains(null): NPE\nList.of with null: NPE\n[3, 1, 2] 3 1 2\nSet.of add: UOE\nSet.of remove: UOE\nSet.of dup: IAE\n[a, b, c] true 3\nMap.of put: UOE\nMap.of remove: UOE\nMap.of dup key: IAE\n{one=1, three=3, two=2} 2 0\ncopyOf: UOE\nunmodifiableList: UOE\nunmodifiableMap: UOE\nunmodifiableSet: UOE\nArrays.asList set: ok\nArrays.asList add: UOE\nemptyList: UOE\nnCopies: UOE\nsingletonList: UOE\nstream toList: UOE\n[1, 2, 3]\n[1, 2, 3]\n[1, 2, 3] [1, 2, 3, 4]\ntrue true 0\n",
+ "exception": null,
+ "exit": 0
+}

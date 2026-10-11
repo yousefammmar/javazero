@@ -1,0 +1,5 @@
+{
+ "stdout": "total 10\ntotal 30\n",
+ "exception": "java.lang.NumberFormatException: For input string: \"3x\"",
+ "exit": 1
+}

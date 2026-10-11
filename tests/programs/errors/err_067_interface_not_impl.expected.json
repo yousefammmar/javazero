@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 4,
+  "msg": "Person is not abstract and does not override abstract method run() in Runner"
+ }
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "java.util.EmptyStackException msg=null\njava.util.EmptyStackException null\n2 1 1 false\ncaught EmptyStackException\ncaught StackOverflowError true true\ntrue\ntrue\njava.lang.StackOverflowError\n5050\nsum overflowed\nstill running\ninst overflow\nmutual overflow\nfinally overflow\ndone\n",
+ "exception": null,
+ "exit": 0
+}

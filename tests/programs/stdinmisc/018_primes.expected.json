@@ -1,0 +1,5 @@
+{
+ "stdout": "7 prime factors=7\n12 composite/other factors=2*2*3\n-9 composite/other factors=3*3\n1 composite/other factors=\ndone, next token: 2147483647\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "42 tokens\n{LBRACE=2, RBRACE=2, LBRACK=2, RBRACK=2, COLON=9, COMMA=8, STRING=13, NUMBER=2, LITERAL=2}\n[Token[kind=LBRACE, text={], Token[kind=STRING, text=name], Token[kind=COLON, text=:], Token[kind=STRING, text=Ada], Token[kind=COMMA, text=,], Token[kind=STRING, text=age]]\n{\n  \"name\": \"Ada\",\n  \"age\": 36,\n  \"langs\": [\n    \"en\",\n    \"fr\"\n  ],\n  \"address\": {\n    \"city\": \"London\",\n    \"zip\": null\n  },\n  \"empty\": [],\n  \"ok\": true,\n  \"pi\": -3.14\n}\n[\n  1,\n  [\n    2,\n    [\n      3,\n      {}\n    ]\n  ],\n  \"x\"\n]\n",
+ "exception": null,
+ "exit": 0
+}

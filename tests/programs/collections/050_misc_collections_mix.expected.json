@@ -1,0 +1,5 @@
+{
+ "stdout": "52 [2C, 3C, 4C, 5C, 6C]\n[4D, 2S, TH, JH, 8H, 3C, TD, 6C, TS, AD, 5C, 6D, 5D]\n[2S, 3C, 4D, 8H, TD, TH, JH]\n{CLUBS=1, DIAMONDS=2, HEARTS=3, SPADES=1}\n{2=[2S, 2D], 3=[3C, 3H, 3D], 4=[4D, 4C], 5=[5C, 5D], 6=[6C, 6D], 8=[8H], 9=[9H], 10=[TH, TD, TS], 11=[JH, JD], 12=[QC], 14=[AD]}\n{CLUBS=30, DIAMONDS=55, HEARTS=41, SPADES=12}\nAD 2S 10\n2S 3C 4D 8H TH JH\nAS 2C 37 true\ntrue 0\n[4D, 8H, TS] sum 22\n[2S, 3C, AD] sum 19\n[5C, TD, TH] sum 25\n[6C, 6D, JH] sum 23\nDIAMONDS SPADES HEARTS CLUBS \n[CLUBS, DIAMONDS, HEARTS, SPADES] 2 2\n{clubs=CLUBS, diamonds=DIAMONDS, hearts=HEARTS, spades=SPADES}\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "Hello,\n  World!\nend\n19\nline1\nline2\n12 true\n    indented more\nbase\n  mid\ntrailing.spaces.stripped\nkeep.escaped..\ntab:\there\nquote:.\"single\".and.\"\"\"triple\"\"\"\nbackslash:.\\.done\njoined on one line here\na|b|c_|\n{\n  \"name\": \"test\",\n  \"n\": 42\n}\n4\n[]0\nx1\nfirst$\n$\nthird (blank above)$\nn=5 s=str f=2.6\nHello tail\nINLINE ARG\nunicode A and tab\tand \"quotes |\ntrue\n  <p>\n      nested\n  </p>\n\ntrue\ntrue\n..two\n.one\n",
+ "exception": null,
+ "exit": 0
+}

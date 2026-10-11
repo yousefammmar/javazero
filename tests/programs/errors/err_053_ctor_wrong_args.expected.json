@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 7,
+  "msg": "constructor Point in class Point cannot be applied to given types;"
+ }
+}

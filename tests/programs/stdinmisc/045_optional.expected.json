@@ -1,0 +1,5 @@
+{
+ "stdout": "84\n-1 false false\n6 0 Optional[3]\nOptional.empty gen V\npresent 9\nabsent\nNo value present\nnone\nNPE\n[1, 2, 3] [] [a] 0 1 6 9\nn0 n2[1, a] n2[x, y] 32\n9 pear 1.5\n[1, 2, 3] 15 Optional[2] [0, 1, 2, 3, 4] [x,y]\nOptionalInt[3] OptionalInt.empty OptionalDouble[1.5] 3 OptionalInt[3] OptionalDouble.empty\n",
+ "exception": null,
+ "exit": 0
+}

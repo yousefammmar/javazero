@@ -1,0 +1,5 @@
+{
+ "stdout": "=== diagonal win ===\nMove 1: X -> 1\nMove 2: O -> 2\nMove 3: X -> 5\nMove 4: O -> 3\nMove 5: X -> 9\nX|O|O\n-+-+-\n.|X|.\n-+-+-\n.|.|X\n\nWinner: X\n=== draw ===\nMove 1: X -> 5\nMove 2: O -> 1\nMove 3: X -> 2\nMove 4: O -> 8\nMove 5: X -> 4\nMove 6: O -> 6\nMove 7: X -> 7\nMove 8: O -> 3\nMove 9: X -> 9\nO|X|O\n-+-+-\nX|X|O\n-+-+-\nX|O|X\n\nDraw\n=== column with retry ===\nMove 1: X -> 1\nSquare 1 taken, skipping\nMove 3: O -> 4\nMove 4: X -> 2\nMove 5: O -> 7\nX|X|.\n-+-+-\nO|.|.\n-+-+-\nO|.|.\n\nUnfinished\n=== unfinished ===\nMove 1: X -> 3\nMove 2: O -> 1\nMove 3: X -> 5\nO|.|X\n-+-+-\n.|X|.\n-+-+-\n.|.|.\n\nUnfinished\n",
+ "exception": null,
+ "exit": 0
+}

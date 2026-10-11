@@ -1,0 +1,5 @@
+{
+ "stdout": "open A\nopen B\nopen C\nuse A\nuse B\nuse C\nclose C\nclose B\nclose A\n--\nopen A2\nopen B2\nuse A2\nclose B2\nclose A2\ncatch body fail\nfinally\n--\nopen A3\nclose A3\ncatch cannot open\n--\nopen shared\nuse shared\nclose shared\n--\nnull resource ok\n--\nopen F\nclose F\nf finally\n7\n",
+ "exception": null,
+ "exit": 0
+}

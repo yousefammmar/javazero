@@ -1,0 +1,80 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Main {
+    static final int[] ARR = {1, 2, 3};
+    static final StringBuilder SB = new StringBuilder("sb");
+    public static void main(String[] args) {
+        final int a = 5;
+        final int b;
+        b = a * 2;
+        System.out.println(a + b);
+        ARR[0] = 100;
+        SB.append("!");
+        System.out.println(ARR[0] + " " + SB);
+        var i = 10;
+        var l = 10L;
+        var d = 10.5;
+        var f = 1.5f;
+        var c = 'c';
+        var s = "str";
+        var bo = true;
+        var by = (byte) 1;
+        System.out.println(i / 4 + " " + l / 4 + " " + d / 4 + " " + f / 4 + " " + (c + 1) + " " + s.length() + " " + !bo + " " + (by + by));
+        var list = new ArrayList<String>();
+        list.add("x"); list.add("y");
+        for (var e : list) System.out.print(e.toUpperCase());
+        System.out.println();
+        var map = new HashMap<String, Integer>();
+        map.put("one", 1); map.put("two", 2);
+        for (var en : new java.util.TreeMap<>(map).entrySet()) System.out.print(en.getKey() + "=" + en.getValue() + ";");
+        System.out.println();
+        var arr = new int[]{3, 4};
+        var arr2 = new String[2][2];
+        System.out.println(arr.length + arr2.length + arr2[0].length);
+        for (var k = 0; k < 3; k++) System.out.print(k);
+        System.out.println();
+        for (var ch : "xyz".toCharArray()) System.out.print((char) (ch - 32));
+        System.out.println();
+        var sum = 0;
+        for (var n : arr) sum += n;
+        System.out.println(sum);
+        var big = 1_000_000 * 3;
+        var bigger = 1_000_000L * 3000000;
+        System.out.println(big + " " + bigger);
+        var x = 'a' + 'b';
+        var y = "a" + 'b';
+        var z = 1 + 2.0f;
+        System.out.println(x + " " + y + " " + z);
+        System.out.println(((Object) x).getClass().getSimpleName() + ((Object) y).getClass().getSimpleName() + ((Object) z).getClass().getSimpleName() + ((Object) d).getClass().getSimpleName());
+        var lst = List.of(1, 2, 3);
+        var total = 0;
+        for (var v : lst) total += v;
+        System.out.println(total);
+        final var fv = "final var";
+        System.out.println(fv);
+        final String lit = "const";
+        String cat = lit + "ant";
+        System.out.println(cat == "constant");
+        final int[] fin = new int[2];
+        fin[1] = 5;
+        System.out.println(fin[0] + fin[1]);
+        var nested = new int[][]{{1}, {2, 3}};
+        System.out.println(nested[1].length);
+        var lam = (java.util.function.IntBinaryOperator) (p, q) -> p * q;
+        System.out.println(lam.applyAsInt(6, 7));
+        var anon = new Object() { int hidden = 42; int twice() { return hidden * 2; } };
+        System.out.println(anon.hidden + " " + anon.twice());
+        Map<String, List<Integer>> grouped = new HashMap<>();
+        grouped.computeIfAbsent("a", k -> new ArrayList<>()).add(1);
+        grouped.computeIfAbsent("a", k -> new ArrayList<>()).add(2);
+        System.out.println(grouped);
+        { int scoped = 1; System.out.println(scoped); }
+        { int scoped = 2; System.out.println(scoped); }
+        long ll = i;
+        double dd = ll;
+        System.out.println(dd);
+    }
+}

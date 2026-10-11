@@ -1,0 +1,5 @@
+{
+ "stdout": "Error: Bob cannot withdraw 500.0\nShort by 369.50\nCaught: Deposit must be positive: -5.0\nfinally block executed\nTransfer failed for Alice short=9824.5\n--- Alice ---\n#001 DEPOSIT          250.75 ->     350.75\n#002 WITHDRAW          75.25 ->     275.50\n#003 TRANSFER_OUT     100.00 ->     175.50\nFinal balance: 175.50\n--- Bob ---\n#004 TRANSFER_IN      100.00 ->     150.50\n#005 WITHDRAW          20.00 ->     130.50\nFinal balance: 130.50\n",
+ "exception": null,
+ "exit": 0
+}

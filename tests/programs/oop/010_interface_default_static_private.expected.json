@@ -1,0 +1,5 @@
+{
+ "stdout": ">> [Hello, World]\n>> [HELLO, WORLD]\n>> [Hello, Sir]!\n>> [HELLO, SIR]!\n>> [Hello, plain]\n>> [Hello, plain]>> [Hello, plain]\n3\n>> x\ncustom anon | CUSTOM ANON\n1 2 7 8\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 4,
+  "msg": "incompatible types: possible lossy conversion from long to int"
+ }
+}

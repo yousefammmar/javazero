@@ -1,0 +1,5 @@
+{
+ "stdout": "made length 3\nmade length 0\nmsg=-1\njava.lang.NegativeArraySizeException: -1\njava.lang.NegativeArraySizeException\ntrue\nmsg=-100\njava.lang.NegativeArraySizeException: -100\njava.lang.NegativeArraySizeException\ntrue\nmsg=-2147483648\njava.lang.NegativeArraySizeException: -2147483648\njava.lang.NegativeArraySizeException\ntrue\n2d: -3\nlong: -7\nNegativeArraySizeException -1\ncopyOf: -1\nIllegal Capacity: -2\nsb: -1\n",
+ "exception": null,
+ "exit": 0
+}

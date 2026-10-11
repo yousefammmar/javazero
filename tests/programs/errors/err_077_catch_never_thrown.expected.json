@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 6,
+  "msg": "exception IOException is never thrown in body of corresponding try statement"
+ }
+}

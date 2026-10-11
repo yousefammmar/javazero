@@ -1,0 +1,5 @@
+{
+ "stdout": "valid bob 3\nAppException[code=500, msg=processing failed] code=500\n  field=name msg=name: must not be empty code=400\nAppException[code=500, msg=processing failed] code=500\n  field=age msg=age: must be >= 0 but was -9 code=400\njava.lang.RuntimeException: boom | -1\nnull | AppException[code=0, msg=null]\nMain$Plain | null\ntrue\nMain$ValidationException AppException\n",
+ "exception": null,
+ "exit": 0
+}

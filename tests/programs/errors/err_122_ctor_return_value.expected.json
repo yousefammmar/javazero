@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 5,
+  "msg": "incompatible types: unexpected return value"
+ }
+}

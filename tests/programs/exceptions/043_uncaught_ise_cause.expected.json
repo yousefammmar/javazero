@@ -1,0 +1,5 @@
+{
+ "stdout": "begin\nrunning\nconn closed\n",
+ "exception": "java.lang.IllegalStateException: connection lost",
+ "exit": 1
+}

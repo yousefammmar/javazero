@@ -1,0 +1,5 @@
+{
+ "stdout": "Shortest path length: 19\nDFS found path: true\n*.#.......\n*##.#####.\n*...#***#.\n*####*#*#.\n******#***\n#####x###*\nxxxxxx#..E\n\nBlocked: -1 false\nFilled inner region: 4\nFilled outer region: 22\n~~##~~~~\n~#oo#~~~\n~#oo#~##\n~~##~~#.\n~~~~~~##\n\n",
+ "exception": null,
+ "exit": 0
+}

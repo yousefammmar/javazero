@@ -1,0 +1,5 @@
+{
+ "stdout": "t=01 floor=1 dir=UP   (was IDLE) pending=[2, 5, 8]\n  doors open at floor 2\nt=02 floor=2 dir=UP   (was UP  ) pending=[5, 8]\nt=03 floor=3 dir=UP   (was UP  ) pending=[5, 8]\nt=04 floor=4 dir=UP   (was UP  ) pending=[5, 8]\n  doors open at floor 5\nt=05 floor=5 dir=UP   (was UP  ) pending=[8]\nt=06 floor=6 dir=UP   (was UP  ) pending=[1, 8, 9]\nt=07 floor=7 dir=UP   (was UP  ) pending=[1, 8, 9]\n  doors open at floor 8\nt=08 floor=8 dir=UP   (was UP  ) pending=[1, 9]\n  doors open at floor 9\nt=09 floor=9 dir=UP   (was UP  ) pending=[1]\nt=10 floor=8 dir=DOWN (was UP  ) pending=[1]\nt=11 floor=7 dir=DOWN (was DOWN) pending=[1, 6]\n  doors open at floor 6\nt=12 floor=6 dir=DOWN (was DOWN) pending=[1]\nt=13 floor=5 dir=DOWN (was DOWN) pending=[1]\nt=14 floor=4 dir=DOWN (was DOWN) pending=[1]\nt=15 floor=3 dir=DOWN (was DOWN) pending=[1]\nt=16 floor=2 dir=DOWN (was DOWN) pending=[1]\n  doors open at floor 1\nt=17 floor=1 dir=DOWN (was DOWN) pending=[]\nTotal floors travelled: 17\nFinal state: floor 1, DOWN\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "[a, x, b, c]\nacaac\na [x, b, c]\n[z, x, b, c]\nc z [x, b]\n[p, x, b, q, r] size 5\npr [x, b, q]\n2 true\n[b, q]\n[b] false\nb null null\nNSEE getFirst\nNSEE removeLast\n[6, 99, 8] get(1)=99\n8,99,6,\n[7, 9]\n[4, 2, 0, 1, 3]\ntrue\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "12 loaded\nbad config key zz <- For input string: \"zz\"\n",
+ "exception": "Main$ConfigError: bad config key q1",
+ "exit": 1
+}

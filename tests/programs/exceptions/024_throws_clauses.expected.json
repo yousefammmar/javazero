@@ -1,0 +1,5 @@
+{
+ "stdout": "loaded ok\nchecked java.io.IOException: disk\nchecked java.lang.InterruptedException: sleep\nunchecked java.lang.IllegalArgumentException: rt\nABC\nempty key\nFNF base\nFNF derived\nquiet run\njava.io.IOException sneaked\nmain throws clause ok\n",
+ "exception": null,
+ "exit": 0
+}

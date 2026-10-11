@@ -1,0 +1,5 @@
+{
+ "stdout": "Circle[r=1.0] circle 3.14\nCircle[r=11.0] big circle 380.13\nRect[w=2.0, h=3.0] rect 6.00\nRect[w=4.0, h=4.0] square 16.00\nTri[b=3.0, h=5.0] tri 7.50\ntotal 412.774\nint 5\nlarge int 500\nempty string\nstring 5\nshape circle\nint array 3\nother 2.5\nnull!\nother c\ntrue false\nisosceles right 1.0\n",
+ "exception": null,
+ "exit": 0
+}

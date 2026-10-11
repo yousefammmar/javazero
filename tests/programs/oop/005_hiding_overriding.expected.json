@@ -1,0 +1,5 @@
+{
+ "stdout": "animal dog animal\ndog puppy\nWoof Woof Yip+Woof\nI am animal says Woof\nI am animal says Yip+Woof\nAnimal.kind Dog.kind Animal.kind\nAnimal.kind Dog.kind\nAnimal.kind Animal.kind\ndog/animal/animal\n...\ndog/animal/animal\n...\nAnimal: ... / animal\nDog: Woof / animal\nPuppy: Yip+Woof / animal\n",
+ "exception": null,
+ "exit": 0
+}

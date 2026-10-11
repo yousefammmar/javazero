@@ -1,0 +1,5 @@
+{
+ "stdout": "Report ctor Squares rows=0\n== Squares ==\n0: 0\n1: 1\n2: 4\n3: 9\n-- end --\nReport ctor Words rows=-1\n== Words ==\n0: A\n1: BC\n2: DEF\n(3 words)\nReport ctor Anon rows=2\n<<== Anon ==>>\n0: anon-0\n1: anon-1\n-- end --\ntrue\ntrue\n",
+ "exception": null,
+ "exit": 0
+}

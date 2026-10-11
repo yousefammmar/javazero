@@ -1,0 +1,5 @@
+{
+ "stdout": "key=  1 idx= 0 lower= 0 upper= 1 count=1 rec=0 lib=1\nkey=  3 idx= 2 lower= 1 upper= 4 count=3 rec=2 lib=1\nkey=  8 idx= 5 lower= 5 upper= 7 count=2 rec=5 lib=1\nkey= 55 idx=10 lower=10 upper=11 count=1 rec=10 lib=1\nkey=  4 idx=-1 lower= 4 upper= 4 count=0 rec=-5 lib=0\nkey=  0 idx=-1 lower= 0 upper= 0 count=0 rec=-1 lib=0\nkey=100 idx=-1 lower=11 upper=11 count=0 rec=-12 lib=0\nisqrt(0) = 0\nisqrt(1) = 1\nisqrt(15) = 3\nisqrt(16) = 4\nisqrt(17) = 4\nisqrt(99) = 9\nisqrt(100) = 10\nisqrt(1000000007) = 31622\nisqrt(4611686014132420609) = 2147483647\nrotated min: 1\nrotated min: 1\nFound 737 in 10 guesses\n",
+ "exception": null,
+ "exit": 0
+}

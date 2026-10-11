@@ -1,0 +1,5 @@
+{
+ "stdout": "sort [1, 2, 3, 3, 5, 7, 8, 9]\nreverse [9, 8, 7, 5, 3, 3, 2, 1]\nshuffle(42) [7, 2, 5, 8, 3, 9, 1, 3]\nshuffle(7) [a, b, j, d, h, e, i, f, c, g]\nmax 9 min 1\nmax by comparator a\nfrequency 2 0\nswap [3, 2, 5, 8, 3, 9, 1, 7]\nbinarySearch 8: 6 4: -5 0: -1 100: -9\nUOE unmodifiable\nview sees: 9\n[ab, ab, ab, ab] [] [5] {} [s]\nUOE empty\n[1000, 9, 8, 7, 5, 3, 3, 2, 1]\nrotate 2 [2, 1, 1000, 9, 8, 7, 5, 3, 3]\n[z, z, z, z, z, z, z, z, z, z]\n[7, 8, 9]\n[7, 8, 9, 1, 2] disjoint true false\n[Apple, Banana, apple, cherry]\n[Apple, apple, Banana, cherry]\n3\n[7, 8, 9, 1, 2]\n",
+ "exception": null,
+ "exit": 0
+}

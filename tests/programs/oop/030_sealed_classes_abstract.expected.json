@@ -1,0 +1,5 @@
+{
+ "stdout": "Savings#1000[100] tier=S fee=5\nChecking#1001[50] tier=C fee=1\nPremium#1002[10] tier=P fee=0\nGold#1003[0] tier=G fee=0\nok Savings#1000[75]\nok Checking#1001[29]\ninsufficient funds in 1002: need 20 have 10\ninsufficient funds in 1003: need 20 have 0\n[Savings#1000[175], Checking#1001[129], Premium#1002[110], Gold#1003[110]]\n524\n1004\n",
+ "exception": null,
+ "exit": 0
+}

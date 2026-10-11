@@ -1,0 +1,5 @@
+{
+ "stdout": "true 126145 126145 [a, b, c]\n[X, Y, a, b, c, a, b, c] 8\n3 6 true false\n[X, a, b, a, b]\n[X, b, b]\n[4, 5, 6, 7, 8, 9] 6 3 false\n[1, 2, 3, 9, 8, 7, 6, 5, 4, 10, 11, 12]\n[1, 2, 3, 9, 8, 7, 6, 5, 4, 100, 10, 11, 12] [9, 8, 7, 6, 5, 4, 100]\n[9, 8, 7, 6, 5, 4, 10, 11, 12]\n[9, 8, 70, 60, 5, 4, 10, 11, 12]\n[8, 70, 60, 4, 10, 12]\n[5, 8, 9, 60, 70, 4, 10, 11, 12]\n10 60 5\n1000 7979 16 986 59\nIAE fromIndex(3) > toIndex(1)\nIOOBE toIndex = 100\nIOOBE add Index: 100, Size: 9\nIndex 0 out of bounds for length 0\nIndex: 2, Size: 0\nIndex 2 out of bounds for length 2\nList.of Index: 3 Size: 1\nsub Index 5 out of bounds for length 2\n",
+ "exception": null,
+ "exit": 0
+}

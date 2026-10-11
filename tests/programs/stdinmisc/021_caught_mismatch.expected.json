@@ -1,0 +1,5 @@
+{
+ "stdout": "read 1\nread 2\nread 3\nMismatch: null\nok=6\nnext token still: four\n",
+ "exception": null,
+ "exit": 0
+}

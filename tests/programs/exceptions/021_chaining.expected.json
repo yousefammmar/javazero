@@ -1,0 +1,5 @@
+{
+ "stdout": "wrapper | root cause\njava.lang.Exception: root cause\njava.lang.RuntimeException: java.lang.Exception: root cause\nnull null\nm null\njava.lang.IllegalStateException\njava.lang.IllegalStateException: inner msg\njava.lang.Error: initialized\nISE: Can't overwrite cause with java.lang.Error: again\nISE2: Can't overwrite cause with java.lang.Error: x\nIAE: Self-causation not permitted\n0: java.lang.Exception: top\n1: java.lang.RuntimeException: mid\n2: java.lang.Error: bottom\nroot: bottom\ntrue\njava.lang.Exception: root cause\njava.lang.AssertionError: assert msg 42 java.lang.Exception: root cause\n",
+ "exception": null,
+ "exit": 0
+}

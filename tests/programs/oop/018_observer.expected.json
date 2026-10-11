@@ -1,0 +1,5 @@
+{
+ "stdout": "subs=5\nanon #1 got a 1\nonce a\nanon #2 got b 20\nsubs=4\ntrue false\nanon #3 got c 300\n[L:a=1, L:b=20]\n321 3\nx1 11\nx2 22\ny1 12\n",
+ "exception": null,
+ "exit": 0
+}

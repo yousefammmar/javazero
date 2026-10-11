@@ -1,0 +1,5 @@
+{
+ "stdout": "A(int) v=1\nA()\nA[1]\nA(int) v=5\nA[5]\nA(int) v=10\nB()\nA[20]\nA(int) v=1\nA()\nB(int) x=3\nA[8]\nA(int) v=1\nA()\nB(int) x=3\nB(String) abc\nA[8]\nA(int) v=1\nA()\nB(int) x=5\nB(String) hello\nC() extra=7\nA[19]\nA(int) v=1\nA()\nB(int) x=4\nC(int)\nA[14]\nA(int) v=1\nA()\nB(int) x=5\nB(String) hello\nC() extra=7\nD()\nA[19]\nA(int) v=1\nA()\nB(int) x=5\nB(String) hello\nC() extra=7\nD()\n6 19\n",
+ "exception": null,
+ "exit": 0
+}

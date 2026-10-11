@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 7,
+  "msg": "exception ArithmeticException has already been caught"
+ }
+}

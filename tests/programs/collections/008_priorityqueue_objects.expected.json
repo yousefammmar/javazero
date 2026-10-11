@@ -1,0 +1,5 @@
+{
+ "stdout": "heap: [write(3)]\nheap: [test(5), write(3)]\nheap: [test(5), write(3), deploy(1)]\nheap: [test(5), review(4), deploy(1), write(3)]\nheap: [test(5), plan(5), deploy(1), write(3), review(4)]\nheap: [test(5), plan(5), lint(2), write(3), review(4), deploy(1)]\nheap: [test(5), plan(5), fix(4), write(3), review(4), deploy(1), lint(2)]\nheap: [test(5), plan(5), fix(4), write(3), review(4), deploy(1), lint(2), docs(1)]\ntest(5) plan(5) review(4) fix(4) write(3) lint(2) deploy(1) docs(1) \nafter 7: [7]\nafter 2: [2, 7]\nafter 9: [2, 7, 9]\nafter 4: [2, 4, 9, 7]\nafter 11: [4, 7, 9, 11]\nafter 3: [4, 7, 9, 11]\nafter 8: [7, 8, 9, 11]\nafter 1: [7, 8, 9, 11]\nafter 10: [8, 10, 9, 11]\nafter 6: [8, 10, 9, 11]\nafter 5: [8, 10, 9, 11]\ntop 4: [11, 10, 9, 8]\nmax-heap content [4, 2, 3, 1]\n{a=4, b=3, c=5, d=1, e=1}\nc=5\na=4\nb=3\n",
+ "exception": null,
+ "exit": 0
+}

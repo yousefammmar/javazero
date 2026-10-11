@@ -1,0 +1,5 @@
+{
+ "stdout": "empty true []\npush returns 1\npush returns 4\npush returns 9\npush returns 16\npush returns 25\n[1, 4, 9, 16, 25] size 5\npeek 25 search 9=3 search 1=5 search 7=-1\npop 25 16\n[1, 4, 9] get(0)=1 firstElement=1 lastElement=9\n[100, 1, 4, 9] indexOf 4: 2\n9 4 1 100 \nEmptyStackException null\npeek empty\n3 4 + 2 * = 14\n5 1 2 + 4 * + 3 - = 14\n10 2 8 * + 3 - = 23\niteration (bottom first): to,be,or,not,\n[be, or]\n",
+ "exception": null,
+ "exit": 0
+}

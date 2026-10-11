@@ -1,0 +1,5 @@
+{
+ "stdout": "Insert money first (state=IDLE)\nInserted 100, credit=100\nDispensing Chips\nInserted 25, credit=50\nNeed 75 more for Soda\nInserted 100, credit=150\nDispensing Soda\nUnknown code Z9\nRefund 25: 1x25\nInserted 100, credit=100\nDispensing Candy\nInserted 100, credit=140\nCandy sold out\nRefund 140: 1x100 1x25 1x10 1x5\nOut of order, returning 25\nChips stock=1\nCandy stock=0\nSoda stock=4\nSales: 2.60\n[IDLE, HAS_MONEY, DISPENSING, OUT_OF_ORDER]\n",
+ "exception": null,
+ "exit": 0
+}

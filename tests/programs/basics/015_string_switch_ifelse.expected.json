@@ -1,0 +1,5 @@
+{
+ "stdout": "mon -> ugh\ntue -> weekday\nsat -> weekend\nsun -> weekend\nMON -> weekday\n -> weekday\nfall(0)=55\nfall(1)=111\nfall(2)=110\nfall(3)=100\nfall(4)=1055\nfall(5)=50\nfall(6)=55\nA A B B C C D D F F F \n'a' vowel\n'b' consonant\n' ' space\n'z' consonant\n'1' low digit\n' ' space\n'9' other\n'!' other\nmedium\nodd\nbyte three\ntwo\nB or C\nonly default\nK matched\nBB\nAa again\n318\n",
+ "exception": null,
+ "exit": 0
+}

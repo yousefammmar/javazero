@@ -1,0 +1,5 @@
+{
+ "stdout": "7.0\n2.5\nDivision by zero\n10.0\n-1.0\nUnknown op ^\nBad line: foo\n999.5\n3.3333333333333335\n",
+ "exception": null,
+ "exit": 0
+}

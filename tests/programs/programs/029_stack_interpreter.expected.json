@@ -1,0 +1,5 @@
+{
+ "stdout": "arith: out=[20] stack=[] vars={} steps=6\nswap: out=[1] stack=[] vars={} steps=5\ncountdown: out=[5 4 3 2 1] stack=[] vars={n=0} steps=56\nfactorial: out=[720] stack=[] vars={acc=720, n=0} steps=82\nunderflow: ERROR stack underflow (stack=[])\ndivzero: ERROR divide by zero (stack=[])\nbadword: ERROR unknown word: frobnicate (stack=[2, 1])\ninfinite: ERROR step limit (stack=[])\ndup: out=[49 49] stack=[] vars={} steps=6\n",
+ "exception": null,
+ "exit": 0
+}

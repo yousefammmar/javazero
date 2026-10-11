@@ -1,0 +1,5 @@
+{
+ "stdout": "> Added apples\n> Added  pears\n> 1. apples\n2.  pears\n> Unknown: ''\n> Unknown: 'foo'\n> Removed apples\n> 1\n> Bye\n[ pears]\n",
+ "exception": null,
+ "exit": 0
+}

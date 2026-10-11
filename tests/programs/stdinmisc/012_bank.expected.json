@@ -1,0 +1,5 @@
+{
+ "stdout": "1) Deposit 2) Withdraw 3) Balance 4) Exit: Deposited 50.25\n1) Deposit 2) Withdraw 3) Balance 4) Exit: Insufficient funds\n1) Deposit 2) Withdraw 3) Balance 4) Exit: Balance: 150.25\n1) Deposit 2) Withdraw 3) Balance 4) Exit: Withdrew 20.1\n1) Deposit 2) Withdraw 3) Balance 4) Exit: Invalid choice 9\n1) Deposit 2) Withdraw 3) Balance 4) Exit: Balance: 130.15\n1) Deposit 2) Withdraw 3) Balance 4) Exit: Final: 130.15\n",
+ "exception": null,
+ "exit": 0
+}

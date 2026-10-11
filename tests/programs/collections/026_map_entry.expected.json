@@ -1,0 +1,5 @@
+{
+ "stdout": "setValue write-through: {alpha=100, delta=400, beta=200, gamma=300}\nalpha 100 alpha=100\nk=5 k 5\nUOE entry\ns=2 equals true hash true\n[delta=400, gamma=300, beta=200, alpha=100]\n[alpha=100, beta=200, delta=400, gamma=300]\na=1 b=2 d=4 g=3 \nafter removing >250: {alpha=100, beta=200}\n{beta=200}\n{x=11, y=12, z=13}\nx11;y12;z13;\n{X=11, Y=12, Z=13}\n{only=1}\n3\n",
+ "exception": null,
+ "exit": 0
+}

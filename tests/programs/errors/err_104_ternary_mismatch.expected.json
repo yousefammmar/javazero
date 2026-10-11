@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 4,
+  "msg": "incompatible types: bad type in conditional expression"
+ }
+}

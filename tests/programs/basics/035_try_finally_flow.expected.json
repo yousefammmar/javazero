@@ -1,0 +1,5 @@
+{
+ "stdout": "f1 finally\n1\n2\n1\n99\nbody0 fin0 fin1 body2 fin2 fin3 \n6\ninner finally\nouter caught inner\nouter finally\ncaught second IllegalArgumentException\nexception checked\n2 12\nmulti NumberFormatException\nmulti NullPointerException\nopen A\nopen B\nin try AB\nclose B\nclose A\nafter close: boom\ntwr finally\nno throw\ncode7 7\nCCE\nASE java.lang.String\njava.lang.Error: custom error\nSOE true\nOOME\nouter <- cause java.lang.RuntimeException: outer\nNPE caught\nUOE null\nNSEE\nCME\nIndex 0 out of bounds for length 0\njava.lang.NumberFormatException\nend\n",
+ "exception": null,
+ "exit": 0
+}

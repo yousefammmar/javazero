@@ -1,0 +1,5 @@
+{
+ "stdout": "body 0\nfinally 0\nfinally 1\nbody 2\nfinally 2\nfinally 3\nw finally 1\nw finally 2\nw finally 3\nij 0,0\nf 0,0\nf 0,1\nij 1,0\nf 1,0\nf 1,1\nf 2,0\ncaught r0\nfin 0\nafter try 0\ncaught r1\nfin 1\ncaught r2\nfin 2\nafter try 2\nswallow loop ended\ndo finally 1\ndo finally 2\nin switch\nswitch finally\n",
+ "exception": null,
+ "exit": 0
+}

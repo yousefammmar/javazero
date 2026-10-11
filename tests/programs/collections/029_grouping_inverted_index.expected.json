@@ -1,0 +1,5 @@
+{
+ "stdout": "{the=[0, 1, 4], a=[3], mat=[0], cats=[2], log=[1], and=[2, 3], sat=[0, 1], cat=[0, 3], dogs=[2], end=[4], dog=[1, 3], on=[0, 1]}\n{a=[3], and=[2, 3], cat=[0, 3], cats=[2], dog=[1, 3], dogs=[2], end=[4], log=[1], mat=[0], on=[0, 1], sat=[0, 1], the=[0, 1, 4]}\ncat -> [0, 3]\ndog -> [1, 3]\nthe -> [0, 1, 4]\nzebra -> []\ncat AND dog: [3]\ncat OR dog: [0, 1, 3]\n{eggloo=[google, gogole], act=[cat, act, tac], eilnst=[listen, silent, enlist], dgo=[dog]}\n[[cat, act, tac], [listen, silent, enlist], [google, gogole], [dog]]\n{0=[1, 7, 8], 1=[15, 13], 2=[22, 29], 3=[36], 4=[41], 5=[50], 6=[64]}\n{false=[1, 15, 7, 41, 29, 13], true=[22, 36, 8, 50, 64]}\n{east=17, west=14, north=3}\n",
+ "exception": null,
+ "exit": 0
+}

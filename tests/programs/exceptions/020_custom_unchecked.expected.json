@@ -1,0 +1,5 @@
+{
+ "stdout": "withdrew 30.0 -> 70.0\nIAE amount must be positive\nIFE Need 430.0 more needed=430.0\nIAE amount must be positive\nwithdrew 70.0 -> 0.0\njava.lang.IllegalArgumentException: negative opening balance: -1.0\nMain$QuietException: overridden message | overridden message | overridden message\nMain$NoMsg | null\nMain$InsufficientFundsException\nInsufficientFundsException\njava.lang.RuntimeException\n",
+ "exception": null,
+ "exit": 0
+}

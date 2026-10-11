@@ -1,0 +1,5 @@
+{
+ "stdout": "0: [first line] len=10 upper=FIRST LINE\n1: [] len=0 upper=\n2: [  third with spaces  ] len=21 upper=  THIRD WITH SPACES  \nlongest=[  third with spaces  ]\nmore=true\nextra: extra1\nextra: extra2\n",
+ "exception": null,
+ "exit": 0
+}

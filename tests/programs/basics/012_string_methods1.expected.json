@@ -1,0 +1,5 @@
+{
+ "stdout": "12\no\nWorld\nHello\ntrue\n0\n4\n8\n4\n-1\n0\n12\n4\n-1\n8\n4\n10\n3\n12\n2\ntrue true\ntrue true true true\nHELLO, WORLDhello, world\nHeLLo, WorLd\nHeLLLLo, WorLLd\n-H-e-l-l-o-,- -W-o-r-l-d-\nbb\nXX\nxxxxx\naxbxc\na#b#c#\na#b22c333\nSmith, John\npad|pad|pad  |  pad|\n1\nababab||\n-1\n0\n2\n-32\n-1 1 -1\n0 -1\ntrue false false\ntrue false true\n532\n2\nbcd\n[h, e, y]\na-b-c\nx, y\n|\nabcdef\n5 2\n99162322 0 2112 2112\ntrue\nTitle\n3\ntrue false\n-2 2\nSIOOBE Index 20 out of bounds for length 12\nSIOOBE Range [5, 2) out of bounds for length 12\nSIOOBE Range [13, 12) out of bounds for length 12\nSIOOBE Range [-1, 12) out of bounds for length 12\n",
+ "exception": null,
+ "exit": 0
+}

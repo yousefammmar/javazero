@@ -1,0 +1,5 @@
+{
+ "stdout": "<age,30> <age,2.5> <age,[1]>\npear 9 2.5\nkiwi [apple, fig, kiwi]\n6.0 2.5 30.0\n[0, 1, 2] [0, 1]\n[c, b, a]\ny\n[n1, n2, n3] [1, 2]\n[2, 4, 6] [bb, ccc]\n10 abc\n{k=[<1,one>, <2,two>]}\n1 3\n60\n",
+ "exception": null,
+ "exit": 0
+}

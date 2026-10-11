@@ -1,0 +1,5 @@
+{
+ "stdout": "start\nMERCURY 3.70\nEARTH 9.80\nJUPITER 24.81\nJUPITER\nMON 0 false work next=TUE\nTUE 1 false work next=WED\nWED 2 false work next=THU\nTHU 3 false work next=FRI\nFRI 4 false almost next=SAT\nSAT 5 true rest next=SUN\nSUN 6 true rest next=MON\ninit LOW w=1\ninit MID w=5\ninit HIGH w=10\nMid(5) 10 HIGH\n-4 6 true\nIAE No enum constant Main.Day.XYZ\nIAE case-sensitive\nDay true\n{MON=8, WED=7, FRI=6}\n[SAT, SUN] [MON, TUE, WED, THU, FRI] [TUE, WED, THU]\n1mm\nmid\n",
+ "exception": null,
+ "exit": 0
+}

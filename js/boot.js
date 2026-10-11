@@ -2,7 +2,7 @@
 /* Loads shared scripts in order, then this page's script. Usage: <script src="js/boot.js" data-page="lessons"></script> */
 (() => {
   /* Visitor counting via Google Analytics 4. Set your Measurement ID, e.g. 'G-ABC123XYZ9' (GA4 > Admin > Data streams). Empty = disabled. */
-  const GA_ID = '';
+  const GA_ID = 'G-T9VHKMPTLR';
   if (/^G-[A-Z0-9]+$/.test(GA_ID) && !/^(localhost|127\.|\[::1\])/.test(location.hostname) && location.protocol !== 'file:') {
     const g = document.createElement('script');
     g.async = true;

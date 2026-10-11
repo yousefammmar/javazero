@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 3,
+  "msg": "variable a is already defined in method add(int,int)"
+ }
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "RED\nColor.valueOf RED: ok\nColor.valueOf PURPLE: java.lang.IllegalArgumentException msg=No enum constant Main.Color.PURPLE\nColor.valueOf lowercase: java.lang.IllegalArgumentException msg=No enum constant Main.Color.red\nColor.valueOf empty: java.lang.IllegalArgumentException msg=No enum constant Main.Color.\nColor.valueOf null: java.lang.NullPointerException msg=Name is null\nLevel.valueOf: java.lang.IllegalArgumentException msg=No enum constant Main.Level.MEDIUM\nEnum.valueOf: java.lang.IllegalArgumentException msg=No enum constant Main.Level.NOPE\n[RED, BLUE]\n{a=1, c=3}\n2 BLUE 2\nordinal: ok\nvalues index: java.lang.ArrayIndexOutOfBoundsException msg=Index 3 out of bounds for length 3\nMain$Level\nLevel getDeclaringClass: ok\n",
+ "exception": null,
+ "exit": 0
+}

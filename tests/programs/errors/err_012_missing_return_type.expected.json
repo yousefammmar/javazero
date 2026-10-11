@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 2,
+  "msg": "invalid method declaration; return type required"
+ }
+}

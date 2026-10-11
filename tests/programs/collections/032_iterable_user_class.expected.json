@@ -1,0 +1,5 @@
+{
+ "stdout": "0 3 6 9 \n[5, 6, 7]\nALPHA,BETA,GAMMA,DELTA,EPSILON, size 5\nidx 10\n[25, 16, 9, 4, 1]\nsum 55\nfe0 fe1 fe2 \nexhausted\nremove unsupported by default\n[0][1][2][3]\n[1, 2, 12]\n",
+ "exception": null,
+ "exit": 0
+}

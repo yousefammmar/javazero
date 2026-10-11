@@ -1,0 +1,5 @@
+{
+ "stdout": "\"A man, a plan, a canal: Panama\" palindrome? true\n\"Hello\" palindrome? false\n\"Was it a car or a cat I saw?\" palindrome? true\n\"\" palindrome? true\ntrue false\nKhoor, Zruog! | Hello, World!\nlxfopv ef rnhr | attack at dawn\na3b1c2d5e1 | aaabccddddde | xxxxxxxxxxxxy\nblue is sky the\nvowels: 9\nparse_http_response_code already\n{e=1, i=5, m=1, p=2, r=2, s=4, v=1}\n",
+ "exception": null,
+ "exit": 0
+}

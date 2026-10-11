@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 4,
+  "msg": "non-static method twice(int) cannot be referenced from a static context"
+ }
+}

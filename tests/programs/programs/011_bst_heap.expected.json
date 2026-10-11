@@ -1,0 +1,5 @@
+{
+ "stdout": "inorder  [20, 30, 35, 40, 45, 50, 60, 65, 70, 80]\npreorder [50, 30, 20, 40, 35, 45, 70, 60, 65, 80]\nlevels   [[50], [30, 70], [20, 40, 60, 80], [35, 45, 65]]\nsize=10 height=4\ntrue false\n[brown, dog, fox, jumps, lazy, over, quick, the] size=8\n0 0 4 12 14 18 30 34 35 36 44 49\n",
+ "exception": null,
+ "exit": 0
+}

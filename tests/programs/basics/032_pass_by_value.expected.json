@@ -1,0 +1,5 @@
+{
+ "stdout": "inside inc 6\n5\ninside incArr 101\n2\nsb!\nstr\n1 2\n[3, 2, 1]\n[0, 1, 2]\n1 2\n9\n123 123\n34 456\n2\n2 4 false\nlocal 2\n10 20\n[1, 2, 3]\n[2, 4, 6]\n[7, 7][9, 2]\nba\n[1, 2, 3] [1, 2]\n2147483652 5\n",
+ "exception": null,
+ "exit": 0
+}

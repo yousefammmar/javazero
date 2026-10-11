@@ -1,0 +1,5 @@
+{
+ "stdout": "7 : a b c\n5 : a b c\n14 : a b c\n3 : a b c\ntrue : a c\n[0, 7, 0, 0] : arr idx val\narr2 idx2 rhs\n127 : p q r s\n11 : m n\n4 2\n3 2\n4 2\n47 8\n21\n23 10\n20\n[2, 0, 0, 0] 2\n[5, 0, 0, 0] 2\n[5, 2, 0, 0] 2\n5\n1\n6\n9\nNPE : idx val\nAIOOBE : idx val\nAE : num zero\nNPE2 : arg\n12 7 : x y z w\n123 : f1 f2 f3\n9 : m1 m2\n1410065408 : L1 L2\n",
+ "exception": null,
+ "exit": 0
+}

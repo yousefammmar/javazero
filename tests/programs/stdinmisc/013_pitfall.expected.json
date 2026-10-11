@@ -1,0 +1,5 @@
+{
+ "stdout": "Age: Name: age=30 name=[]\nName again: name2=[John Smith]\nCity: city=[  Paris France  ]\n",
+ "exception": null,
+ "exit": 0
+}

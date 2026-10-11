@@ -1,0 +1,5 @@
+{
+ "stdout": "Index 5 out of bounds for length 3\njava.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 3\njava.lang.ArrayIndexOutOfBoundsException\ntrue\nIndex -1 out of bounds for length 3\njava.lang.ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 3\njava.lang.ArrayIndexOutOfBoundsException\ntrue\nIndex 3 out of bounds for length 3\njava.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3\njava.lang.ArrayIndexOutOfBoundsException\ntrue\nwrote 2 -> 7\nArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2\nIndex 4 out of bounds for length 4\nIndex 2 out of bounds for length 2\nIndex 0 out of bounds for length 0\nIndex 2147483647 out of bounds for length 1\nIndex -5 out of bounds for length 2\njava.lang.IllegalArgumentException: 5 > 2\njava.lang.ArrayIndexOutOfBoundsException: arraycopy: last destination index 3 out of bounds for int[2]\n",
+ "exception": null,
+ "exit": 0
+}

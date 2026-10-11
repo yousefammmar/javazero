@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 7,
+  "msg": "constructor Box in class Box cannot be applied to given types;"
+ }
+}

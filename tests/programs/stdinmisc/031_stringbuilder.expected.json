@@ -1,0 +1,5 @@
+{
+ "stdout": "0,1,2,3,4,5,6,7,8,9\n[0,1,2,3,4,5,6,7,8,9] 21\n]9,8,7,6,5,4,3,2,1,0[\n2,3,4,5,6,7,8,9]\nXYZ3,4,5,6,7,8,9] idx=7 last=14 3\nqYZ3,4,5,6,7,8,9]\nqYZ3,4,5,6,7,8,9]1.5truec102.5nullnullhi\n1.5a42bcz\n5a42bcz .5a false 8\n2000 opqrstuvwx 1439645800\nSIOOBE Range [999, 40) out of bounds for length 40\nSIOOBE2 Index 5 out of bounds for length 2\n",
+ "exception": null,
+ "exit": 0
+}

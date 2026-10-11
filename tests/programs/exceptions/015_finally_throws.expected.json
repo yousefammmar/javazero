@@ -1,0 +1,5 @@
+{
+ "stdout": "java.lang.IllegalStateException: from finally suppressed=0 cause=null\nfinally b\njava.lang.IllegalArgumentException: from catch cause=java.lang.RuntimeException: original b\nc try\nfinally only\ninner finally\nouter caught level1\nouter finally\nmain level2: level1\nhandled inside finally e2\nmain e1\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "Roster:\n  1002 Linus    Salaried      7000.00\n  1003 Ada      Hourly        7565.00\n  1004 Alan     Hourly        3600.00\n  1005 Dennis   Contractor    6500.50\n  1001 Grace    Manager(3)   10300.00\nBy pay:\n  Grace 10300.00\n  Ada 7565.00\n  Linus 7000.00\n  Dennis 6500.50\n  Alan 3600.00\nTotal payroll: 34,965.50\n  Contractor       6,500.50\n  Hourly          11,165.00\n  Manager         10,300.00\n  Salaried         7,000.00\nAda is hourly\nLinus is salaried\nAlan is hourly\nManager is Salaried: true, Employee: true\n",
+ "exception": null,
+ "exit": 0
+}

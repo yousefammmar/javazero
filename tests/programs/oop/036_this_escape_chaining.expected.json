@@ -1,0 +1,5 @@
+{
+ "stdout": "a->b->c b->c c\ntrue\ntrue\n3\nx,yp,q,r,\nroot/0 true\nroot/1 true\nroot/2 true\nin ctor v=2\n9 true 9\n",
+ "exception": null,
+ "exit": 0
+}

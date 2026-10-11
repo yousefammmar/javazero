@@ -1,0 +1,5 @@
+{
+ "stdout": "closing b\nclosing a\nbody suppressed=2\n  java.lang.Exception: close failed b\n  java.lang.Exception: close failed a\nbody ok\nclosing d\nclosing c\nclose failed d suppressed=1\n  close failed c\nsingle\nclosing e\njava.lang.Exception: close failed e 0\n2 java.lang.Error: s2\nSelf-suppression not permitted\nCannot suppress a null exception.\nclosing z\nerr body close failed z\n",
+ "exception": null,
+ "exit": 0
+}

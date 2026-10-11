@@ -1,0 +1,5 @@
+{
+ "stdout": "0 FNF fnf\n1 IO io\n2 RTE java.io.UncheckedIOException cause=java.io.IOException: wrapped\n3 AIOOBE Array index out of range: 7\n4 NFE\n5 EX generic\n6 multi InterruptedException\n7 multi CloneNotSupportedException\n8 NSE\n9 IME im\n10 no throw\nnull\njava.io.IOException: zz\njava.lang.RuntimeException: q\n",
+ "exception": null,
+ "exit": 0
+}

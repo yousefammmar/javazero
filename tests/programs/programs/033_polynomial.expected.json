@@ -1,0 +1,5 @@
+{
+ "stdout": "p = 2x^3 - 3x + 1  (deg 3)\nq = x - 1\np + q = 2x^3 - 2x\np * q = 2x^4 - 2x^3 - 3x^2 + 4x - 1\np' = 6x^2 - 3, p'' = 12x\n(x+1)^5 = x^5 + 5x^4 + 10x^3 + 10x^2 + 5x + 1\n(x-1)^4 = x^4 - 4x^3 + 6x^2 - 4x + 1\np(-2)=-9 p(-1)=2 p(0)=1 p(1)=0 p(2)=11 p(3)=46 \nzero: 0 const: 7 neg: -x\ntrue 994\np(10) = 1971, big: 1099511627776\nprod (x-r), r=1..5: x^5 - 15x^4 + 85x^3 - 225x^2 + 274x - 120\nroots check: 000 120\n",
+ "exception": null,
+ "exit": 0
+}

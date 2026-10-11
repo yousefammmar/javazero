@@ -1,0 +1,5 @@
+{
+ "stdout": "By category, qty desc, name:\napple      food      100     0.40     40.00\nmilk       food       30     1.10     33.00\nbread      food       20     2.25     45.00\nchair      home        7    45.90    321.30\nlamp       home        7    22.00    154.00\nnails      tools     500     0.05     25.00\nhammer     tools      10    12.50    125.00\nsaw        tools       4    18.00     72.00\n\nBy total value desc:\nchair      home        7    45.90    321.30\nlamp       home        7    22.00    154.00\nhammer     tools      10    12.50    125.00\nsaw        tools       4    18.00     72.00\nbread      food       20     2.25     45.00\napple      food      100     0.40     40.00\nmilk       food       30     1.10     33.00\nnails      tools     500     0.05     25.00\n\nCategory totals:\nfood   items=3 total=118.00\nhome   items=2 total=475.30\ntools  items=3 total=222.00\n\nContains lamp? false\nSaw now: saw        tools      10    18.00    180.00\nApple now: apple      food       65     0.40     26.00\nLow stock: [chair]\nGrand total: 755.30\nMissing: none       -           0     0.00      0.00\n",
+ "exception": null,
+ "exit": 0
+}

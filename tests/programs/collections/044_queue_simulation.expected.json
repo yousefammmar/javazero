@@ -1,0 +1,5 @@
+{
+ "stdout": "C1 arrives 1 needs 1\nC2 arrives 4 needs 4\nC3 arrives 7 needs 5\nC4 arrives 8 needs 3\nC5 arrives 8 needs 5\nC6 arrives 9 needs 3\nC7 arrives 10 needs 2\nC8 arrives 12 needs 5\nt=1 C1 joins, line=[C1]\nt=1 serving C1 waited 0\nt=2 C1 done\nt=4 C2 joins, line=[C2]\nt=4 serving C2 waited 0\nt=7 C3 joins, line=[C3]\nt=8 C4 joins, line=[C3, C4]\nt=8 C5 joins, line=[C3, C4, C5]\nt=8 C2 done\nt=8 serving C3 waited 1\nt=9 C6 joins, line=[C4, C5, C6]\nt=10 C7 joins, line=[C4, C5, C6, C7]\nt=12 C8 joins, line=[C4, C5, C6, C7, C8]\nt=13 C3 done\nt=13 serving C4 waited 5\nt=16 C4 done\nt=16 serving C5 waited 8\nt=21 C5 done\nt=21 serving C6 waited 12\nt=24 C6 done\nt=24 serving C7 waited 14\nt=26 C7 done\nt=26 serving C8 waited 14\nt=31 C8 done\ntotal wait 54, avg 6.75, finished at 32\njosephus [3, 6, 9, 2, 7, 1, 8, 5, 10, 4]\nround 1 out: ed left [ann, bo, cy, di]\nround 2 out: bo left [cy, di, ann]\nround 3 out: cy left [di, ann]\nround 4 out: ann left [di]\nwinner di\nwindow max [3, 3, 5, 5, 6, 7]\n",
+ "exception": null,
+ "exit": 0
+}

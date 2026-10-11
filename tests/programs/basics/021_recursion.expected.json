@@ -1,0 +1,5 @@
+{
+ "stdout": "0! = 1\n3! = 6\n6! = 720\n9! = 362880\n12! = 479001600\n15! = 1307674368000\n18! = 6402373705728000\n21! = -4249290049419214848\n2432902008176640000 -4249290049419214848 7034535277573963776\n479001600 1932053504 -288522240\n0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 \n12586269025 2880067194370816120\n6 1 9 25\nmove disk 1 A->C\nmove disk 2 A->B\nmove disk 1 C->B\nmove disk 3 A->C\nmove disk 1 B->A\nmove disk 2 B->C\nmove disk 1 A->C\n1030\n[abc, acb, bac, bca, cab, cba]\n24 abcd dcba\n1 4 9 61\n1024 1594323 -2147483648 1\nnoisrucer true false true\n35 0\ntrue true false\n3 -1 0 6\n{} {3} {2} {2 3} {1} {1 3} {1 2} {1 2 3} \n5000\n100101 11111111 1\n",
+ "exception": null,
+ "exit": 0
+}

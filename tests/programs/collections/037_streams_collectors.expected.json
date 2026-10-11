@@ -1,0 +1,5 @@
+{
+ "stdout": "[Ann, Bob, Cy, Dee, Eli, Fay, Gus]\n{ops=[Cy, Dee], hr=[Eli, Gus], eng=[Ann, Bob, Fay]}\n{eng=[Ann, Bob, Fay], hr=[Eli, Gus], ops=[Cy, Dee]}\n{eng=3, hr=2, ops=2}\n{ops=2, hr=2, eng=3}\n{ops=170, hr=145, eng=350}\n{ops=85.0, hr=72.5, eng=116.66666666666667}\n{50=Eli, 20=Cy/Gus, 40=Bob, 30=Ann/Dee/Fay}\n{false=[Emp[name=Cy, dept=ops, salary=80, age=28], Emp[name=Eli, dept=hr, salary=70, age=51], Emp[name=Gus, dept=hr, salary=75, age=29]], true=[Emp[name=Ann, dept=eng, salary=120, age=30], Emp[name=Bob, dept=eng, salary=100, age=45], Emp[name=Dee, dept=ops, salary=90, age=39], Emp[name=Fay, dept=eng, salary=130, age=35]]}\n{false=4, true=3}\n{Ann=120, Eli=70, Bob=100, Gus=75, Dee=90, Cy=80, Fay=130}\n{ops=170, hr=145, eng=350}\n{eng=Ann+Bob+Fay, ops=Cy+Dee, hr=Eli+Gus}\nISE Duplicate key eng (attempted merging values Ann and Bob)\n665 36.714285714285715\nFay\n[ops, hr, eng]\n[eng, hr, ops]\n7\n130 70 95.0\n{a=[apple, avocado], b=[banana, blueberry], c=[cherry]}\n{3=[one, two], 4=[four], 5=[three]}\n{false=9, true=12}\n[Fay, Ann, Bob]\n[a, b, c]\n{ops=39, hr=51, eng=45}\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "true false (asymmetric)\nfalse true\n2\n5 true false\ntrue\nfalse false false 1\ntrue false true\nfalse true true\nfalse true true\nfalse true\ntrue true\ntrue true\nfalse true true false\n",
+ "exception": null,
+ "exit": 0
+}

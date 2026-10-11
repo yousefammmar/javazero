@@ -1,0 +1,5 @@
+{
+ "stdout": "60.5\n30.25\n50.5\n66.5 75.5\nhello\n<b>hello</b>\n<i><b>hello</b></i>\n<b><I>HELLO</I></b>\n4 <b>hello</b>\ntrue false\n",
+ "exception": null,
+ "exit": 0
+}

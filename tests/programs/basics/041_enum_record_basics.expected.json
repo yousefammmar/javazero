@@ -1,0 +1,5 @@
+{
+ "stdout": "MON TUE WED THU FRI SAT* SUN* \n2 MON 4 mon true true\nNo enum constant Main.Day.XYZ\nMERCURY 3.70\nEARTH 9.80\nADD + 13\nMUL * 42\nPoint[x=3, y=4] 3 25 true true Point[x=0, y=0]\nneg x\nPair[first=k, second=5] k5\nPair[first=null, second=1.5] true false\ntrue\n{MON=1, FRI=5}\nthursday\n35 7 true\n[3, 3, 3, 3, 2, 3, 3]\n",
+ "exception": null,
+ "exit": 0
+}

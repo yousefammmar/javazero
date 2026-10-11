@@ -1,0 +1,5 @@
+{
+ "stdout": "added 50 -> [50]\nadded 20 -> [20, 50]\nadded 40 -> [20, 50, 40]\nadded 10 -> [10, 20, 40, 50]\nadded 30 -> [10, 20, 40, 50, 30]\nadded 5 -> [5, 20, 10, 50, 30, 40]\nadded 45 -> [5, 20, 10, 50, 30, 40, 45]\nadded 15 -> [5, 15, 10, 20, 30, 40, 45, 50]\nadded 25 -> [5, 15, 10, 20, 30, 40, 45, 50, 25]\nadded 35 -> [5, 15, 10, 20, 30, 40, 45, 50, 25, 35]\npeek 5 size 10\niter: 5 15 10 20 30 40 45 50 25 35 \npoll 5 -> [10, 15, 35, 20, 30, 40, 45, 50, 25]\npoll 10 -> [15, 20, 35, 25, 30, 40, 45, 50]\nremove 40 -> [15, 20, 35, 25, 30, 50, 45]\ncontains 25: true\npoll order [15, 20, 25, 30, 35, 45, 50]\nmax-heap [50, 35, 45, 25, 30, 5, 40, 10, 15, 20]\n50 45 [40, 35, 20, 25, 30, 5, 15, 10]\n[a, dog, fox, the, jumps, brown, over, quick, lazy]\na dog fox the lazy over brown jumps quick \nfrom collection: [1, 2, 3, 6, 5, 4, 7, 8, 9]\nnull null\n",
+ "exception": null,
+ "exit": 0
+}

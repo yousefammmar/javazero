@@ -1,0 +1,5 @@
+{
+ "stdout": "8h: Car(CAR-1) parks in MEDIUM slot\n8h: Motorcycle(MOTO-1) parks in SMALL slot\n9h: Motorcycle(MOTO-2) parks in MEDIUM slot\n9h: Car(CAR-2) parks in LARGE slot\n10h: Car(CAR-3) turned away, lot full\n10h: Truck(TRK-1) turned away, lot full\n11h: Truck(TRK-2) turned away, lot full\n12h: Car(CAR-1) leaves after 4h, pays 12\n12h: Car(CAR-4) parks in MEDIUM slot\n12h: Motorcycle(MOTO-2) leaves after 3h, pays 3\n13h: NOPE not found\n17h: TRK-1 not found\n8h: Motorcycle(MOTO-1) leaves after 1h, pays 1\nParked now: [CAR-2, CAR-4]\nFree: {SMALL=2, MEDIUM=0, LARGE=0}\nRevenue: 16\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "1.0\n2.0\n1.0 : Double\n\u0001 : Character\nb : Character\n98 : Integer\n1 : Integer\n1 : Short\n1 : Long\n1 : Long\n1.0 : Float\n1 : Integer\ns : String\na : Character\n5.0 : Double\n5 : Integer\n7.0 : Double\n2.5 : Double\n7 : Integer\n1\nnull\n120.0\n\n\nx\n120\nq\n113\n113\n5\n5 : Short\n9 : Integer\nyes\nv=none\nmid\nc\n11\n",
+ "exception": null,
+ "exit": 0
+}

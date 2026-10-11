@@ -1,0 +1,5 @@
+{
+ "stdout": "Circle[area=3.14]\nRect[area=6.00]\nSq[area=4.00]\nTri[area=6.00]\ntotal=19.142\nCircle -> shape\nRect -> shape\nSq -> shape\nTri -> shape\nrect shape square\n[Circle[area=3.14], Sq[area=4.00], Rect[area=6.00], Tri[area=6.00]]\n[Circle[area=3.14], Rect[area=6.00], Sq[area=4.00], Tri[area=6.00]]\nshape\nother\nnumber\nnumber\nother\nnull\n",
+ "exception": null,
+ "exit": 0
+}

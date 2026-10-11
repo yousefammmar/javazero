@@ -1,0 +1,5 @@
+{
+ "stdout": "build 2\n2\nbuild 1\n1\nbuild 0\n0\nbuild -1\n",
+ "exception": "java.lang.NegativeArraySizeException: -1",
+ "exit": 1
+}

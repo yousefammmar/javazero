@@ -1,0 +1,5 @@
+{
+ "stdout": "visiting a\nvisiting b\n",
+ "exception": "java.util.ConcurrentModificationException",
+ "exit": 1
+}

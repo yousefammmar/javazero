@@ -1,6 +1,6 @@
 /* Lessons index: every module with checkable lessons. */
 {
-  const root = $('#root'), FILTERS = [['all', 'All Modules'], ['fund', 'Fundamentals'], ['logic', 'Logic & Scope'], ['oop', 'Object-Oriented Java'], ['inh', 'Inheritance & Interfaces']];
+  const root = $('#root'), FILTERS = [['all', 'All Modules'], ['fund', 'Fundamentals'], ['logic', 'Logic & Scope'], ['oop', 'Object-Oriented Java'], ['inh', 'Inheritance & Interfaces'], ['mid', 'Intermediate']];
   let filter = 'all';
   const render = () => {
     const ov = Progress.overall(), pct = Math.round(ov.n / ov.total * 100);

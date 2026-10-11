@@ -1,0 +1,5 @@
+{
+ "stdout": "A java.lang.IllegalArgumentException: bad arg msg=bad arg cause=null\nA java.lang.IllegalStateException: bad state msg=bad state cause=null\nB UnsupportedOperationException nope\nA java.lang.IllegalArgumentException msg=null cause=null\nC java.lang.RuntimeException null\nA java.lang.IllegalStateException: java.lang.RuntimeException: inner msg=java.lang.RuntimeException: inner cause=java.lang.RuntimeException: inner\nB UnsupportedOperationException null\nC java.lang.ArithmeticException custom arith\nC java.lang.IndexOutOfBoundsException idx\nkind 9 fine\njava.lang.Exception null null\njava.lang.Throwable: t\njava.lang.Error: err / java.lang.Exception: why\nnull\nnull\n",
+ "exception": null,
+ "exit": 0
+}

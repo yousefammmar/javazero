@@ -1,0 +1,5 @@
+{
+ "stdout": "0 1 2 3 4 \ndo5 do4 \nruns once\n(0,10)(3,9)(6,8)\n9\n00 01 10 11 20 21 \n713\nin block\nw1 w3 w4 \n12\n1\n2\t4\n3\t6\t9\n4\t8\t12\t16\n5\t10\t15\t20\t25\n531\n014\n4999950000\n25 primes below 100\ncollatz 27: 111\naabbcc\n11.0\n9 8 7 \n0-0 1-0 1-1 2-0 2-1 2-2 \n",
+ "exception": null,
+ "exit": 0
+}

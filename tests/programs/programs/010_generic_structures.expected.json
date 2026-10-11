@@ -1,0 +1,5 @@
+{
+ "stdout": "peek=be\nbe to not or be to \nbe,to,not,or,be,to,\nerror: stack empty\nsize=5 first=1 second=4\nsum of rest = 149\n[> -> h -> e -> l -> l -> o]\n[o -> l -> l -> e -> h -> >]\ntrue false [o -> l -> e -> h -> >]\n",
+ "exception": null,
+ "exit": 0
+}

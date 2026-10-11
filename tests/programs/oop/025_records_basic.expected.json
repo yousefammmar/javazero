@@ -1,0 +1,5 @@
+{
+ "stdout": "Point[x=3, y=4] 3 4 5.0\ntrue false true false\nPoint[x=5, y=6] Point[x=0, y=0]\ncompact 2..9\nRange[lo=2, hi=9] len=7\ncompact 1..1\ncompact 1..1\ntrue\nAnn(30) 3 A Bob(18)\ntrue\nIAE age -1\nNPE name\nPair[first=k, second=1] Pair[first=k, second=2.5] 1\nPair[first=null, second=null] true\ntrue false\nEmpty[] true 0\ntrue 2\n{Point[x=1, y=5]=a, Point[x=2, y=0]=c, Point[x=2, y=1]=b}\ntrue\n",
+ "exception": null,
+ "exit": 0
+}

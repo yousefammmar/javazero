@@ -1,0 +1,5 @@
+{
+ "stdout": "10.50 EUR + 2.95 EUR = 13.45 EUR\n31.50 EUR true false\ntrue\nISE currency mismatch EUR/USD\nIAE negative: -5\ntrue false\nPizza(L, [ham, olive])\nPizza(L, [ham, olive, onion], +cheese)\nPizza(M, [])\nISE too many toppings\nUOE immutable list\nabc ABC true true\n",
+ "exception": null,
+ "exit": 0
+}

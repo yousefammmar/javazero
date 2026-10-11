@@ -1,0 +1,5 @@
+{
+ "stdout": "double 3.5\ndouble 9.9999999999E10\ndouble 5.0\ndouble 0.5\nints=4 sum=1013 words=5 other=4\n[apple, banana, pear, 0x1F, end]\n",
+ "exception": null,
+ "exit": 0
+}

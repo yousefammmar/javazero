@@ -1,0 +1,5 @@
+{
+ "stdout": "48 words\n{was=8, best=1, epoch=2, it=8, wisdom=1, the=8, times=2, incredulity=1, foolishness=1, light=1, of=8, season=2, worst=1, darkness=1, belief=1, age=2}\n{age=2, belief=1, best=1, darkness=1, epoch=2, foolishness=1, incredulity=1, it=8, light=1, of=8, season=2, the=8, times=2, was=8, wisdom=1, worst=1}\n1. it x8\n2. of x8\n3. the x8\n4. was x8\n5. age x2\n{8=[it, of, the, was], 2=[age, epoch, season, times], 1=[belief, best, darkness, foolishness, incredulity, light, wisdom, worst]}\n{a=13, b=2, c=3, d=3, e=22, f=10, g=3, h=12, i=16, k=1, l=4, m=3, n=5, o=16, p=2, r=3, s=22, t=22, u=1, w=10, y=1}\n{a=13, b=2, c=3, d=3, e=22, f=10, g=3, h=12, i=16, k=1, l=4, m=3, n=5, o=16, p=2, r=3, s=22, t=22, u=1, w=10, y=1}\n16 unique: [best, epoch, wisdom, times, incredulity, foolishness, of, season, darkness, belief, was, it, the, light, worst, age]\ndups [it, was, the, of, times, age, epoch, season]\n{2=16, 3=18, 4=1, 5=6, 6=4, 8=1, 11=2}\nfoolishness\n",
+ "exception": null,
+ "exit": 0
+}

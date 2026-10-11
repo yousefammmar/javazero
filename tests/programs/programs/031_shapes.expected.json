@@ -1,0 +1,5 @@
+{
+ "stdout": "Circle[area=7.069, perimeter=9.425]\nRect[area=12.000, perimeter=14.000]\nSquare[area=4.000, perimeter=8.000]\nTriangle[area=6.000, perimeter=12.000]\nTriangle[area=26.833, perimeter=24.000]\nPentagon[area=21.000, perimeter=17.536]\nRejected: Impossible triangle 1.0,2.0,10.0\nBy area: Square Triangle Circle Rect Pentagon Triangle\nTotal area 76.9014\nLongest perimeter: Triangle\ntrue Rect[w=1.0, h=2.0] 1072693248\nbox 2.0x2.0\nthree sides\nround r=1.5\nbox 3.0x4.0\nother\nthree sides\n",
+ "exception": null,
+ "exit": 0
+}

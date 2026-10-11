@@ -1,0 +1,5 @@
+{
+ "stdout": "[10, 20, 30, 40, 50, 60, 70, 80]\ninsert at 2: [10, 20, 15, 30, 40, 50, 60, 70, 80]\nremove(int 1): [10, 15, 30, 40, 50, 60, 70, 80]\nremove(Object 50): [10, 15, 30, 40, 60, 70, 80]\nremove missing: [10, 15, 30, 40, 60, 70, 80]\nset returns 10\nindexOf 60=4 lastIndexOf 60=4 indexOf 5=-1\ncontains 70: true, contains 71: false\nsub: [15, 30, 40]\nafter sub.set: [11, -1, 30, 40, 60, 70, 80]\nafter sub.clear: [11, 60, 70, 80]\naddAll(1,..): [11, 7, 8, 9, 60, 70, 80]\nsorted desc: [80, 70, 60, 11, 9, 8, 7]\ndoubled: [160, 140, 120, 22, 18, 16, 14]\nremoveIf %3: [160, 140, 22, 16, 14]\narray: [160, 140, 22, 16, 14] len 5\nobject array len 5\nequals copy: true\nequals after add: false\nhashCode equal lists: 30817 30817\nsum 352\n[] empty=true size=0\n",
+ "exception": null,
+ "exit": 0
+}

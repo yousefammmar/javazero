@@ -1,0 +1,5 @@
+{
+ "stdout": "true false true true true\nfalse true true\ntrue false true false true\ntrue false\nfalse true true\ntrue\nfalse true true\nNPE unboxing null\nNPE compare\ntrue false\ntrue true\nfalse true\nInteger Long Character Float Short Byte\nfalse true 0\n[0, 1, 2, 3, 4]\n10 10\n11 10\n[30]\ntrue true \u001e\n1.5 1 0 1\n",
+ "exception": null,
+ "exit": 0
+}

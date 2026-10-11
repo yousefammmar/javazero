@@ -1,0 +1,5 @@
+{
+ "stdout": "[42]\n[   42]\n[42   ]\n[00042]\n[+42] [-42]\n[ 42] [-42]\n[1,234,567]\n[-1,234,567]\n[999]\n[  1,234,567,890]\n[(5)]\n[-0042]\n[123456]\n[-2147483648] [9223372036854775807]\n[-3]\n[300]\n[ff] [FF] [0xff] [0XFF]\n[ffffffff]\n[ffffffffffffffff]\n[ff]\n[0000beef]\n[100] [0100]\n[37777777777]\n[      1000]\n[1000      ]\n[a] [b] [Z]\n[    q] [r    ]\n[true] [false] [false] [true]\n[TRUE] [ false] [true  ]\n[text] [TEXT]\n[1 2.5 c true null]\n[     right] [left      ]\n[abc] [       abc] [ab        ]\n100% done\n[%] [    %] [%    ]\n1two3\nb a b\n65 41 101 A\nrep rep REP\nab    |    cd|\n0\n[1, 2]\nnull\n2 items\ntrue\n007|  7|7  |12\nx=101\n|     101|      ff|\n00100101\n-9,223,372,036,854,775,808\n123456789012345678901234567890\n 1 x  6 =   6\n 2 x  7 =  14\n 3 x  8 =  24\n 4 x  9 =  36\n 5 x 10 =  50\nIFCE d != java.lang.String\n1 MFAE Format specifier '%d'\nUFCE Conversion = 'q'\nIFE d != java.lang.Double\n",
+ "exception": null,
+ "exit": 0
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "'A man, a plan, a canal: Panama' palindrome=true\n'hello' palindrome=false\n'' palindrome=true\n'No lemon, no melon' palindrome=true\n'ab' palindrome=false\ntrue true false\n'aaabbc' -> 'a3b2c'\n'abc' -> 'abc'\n'aabbaa' -> 'a2b2a2'\n'' -> ''\n'zzzzzzzzzzzz' -> 'z12'\nfox brown quick the\nHello World From Java\n11111111 FF -377 0 -80000000\n{and=2, bat=1, cat=1, hat=1, mat=1, on=1, sat=1, the=4}\n{a=7, b=1, c=1, d=2, e=4, h=5, m=1, n=3, o=1, s=1, t=9}\na=7 e=4 h=5 t=9\n[name, age, city] 3\n[Ann, 30, NYC] 3\n[Bob, , LA] 3\nmultiple spaces here\nabcd\ncamel_case_to_snake\nx=<1>, y=<22>, z=<333>\nolleh\n4 7 7\nPNG\nMiSSiSSIppi\n3 7\nabdeyz\n50%|   ab|cd   |  abc$ x$y\ntrue 1 true 2 true 1 1\n-1 1 -31 -8 0\n",
+ "exception": null,
+ "exit": 0
+}

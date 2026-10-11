@@ -1,4 +1,4 @@
-/* 16 badges; each has a test against saved progress. */
+/* 25 badges; each has a test against saved progress. */
 const BADGES = (() => {
   const d = id => Progress.has(id), all = m => MODULES.find(x => x.id === m).lessons.every(l => d(l.id));
   const b = (id, t, icon, test, hint) => ({ id, t, icon, test, hint });
@@ -15,6 +15,15 @@ const BADGES = (() => {
     b('cmaster', 'Class Master', 'blocks', () => all('classes'), 'Complete Classes'),
     b('imaster', 'Family Head', 'branch', () => all('inherit'), 'Complete Inheritance'),
     b('pmaster', 'Polymorph', 'target', () => all('interfaces'), 'Complete Interfaces'),
+    b('abstract', 'Abstractor', 'blocks', () => d('abstraction-1'), 'Finish Abstract classes'),
+    b('catcher', 'Catcher', 'bug', () => d('exceptions-1'), 'Finish try and catch'),
+    b('collector', 'Collector', 'db', () => d('collections-1'), 'Finish ArrayList'),
+    b('lambda', 'Lambda Learner', 'zap', () => d('lambdas-3'), 'Finish Lambda expressions'),
+    b('amaster', 'Abstraction Master', 'network', () => all('abstraction'), 'Complete Abstraction & Enums'),
+    b('emaster', 'Exception Handler', 'warn', () => all('exceptions'), 'Complete Exceptions'),
+    b('colmaster', 'Collections Master', 'cpu', () => all('collections'), 'Complete Collections'),
+    b('lmaster', 'Lambda Master', 'sigma', () => all('lambdas'), 'Complete Generics & Lambdas'),
+    b('quizmid', 'Intermediate Quiz Whiz', 'quiz', () => Store.get('quizBestMid', 0) >= 7, 'Score 7 or more on the intermediate quiz'),
     b('quiz8', 'Quiz Whiz', 'quiz', () => Store.get('quizBest', 0) >= 8, 'Score 8 or more on the quiz'),
     b('quiz10', 'Perfect Score', 'trophy', () => Store.get('quizBest', 0) >= 10, 'Score 10 out of 10'),
     b('bugs', 'Bug Hunter', 'bug', () => Store.get('seenMistakes', []).length >= 4, 'Open 4 mistakes in the lab'),

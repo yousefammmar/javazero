@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 4,
+  "msg": "method add in class Main cannot be applied to given types;"
+ }
+}

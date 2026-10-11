@@ -1,0 +1,5 @@
+{
+ "stdout": "[0.9, 1.2, 1.2, 1.10, 2.0]\n2.0 0.9\n[2.0, 1.10, 1.2, 1.2, 0.9]\n-1 1 0\n[0.9, 1.2, 1.10, 2.0] 0.9 2.0 1.10 1.2\n{0.9=v0.9, 1.2=v1.2, 1.10=v1.10, 2.0=v2.0}\nEmp[name=Amy, dept=eng, sal=120]\nEmp[name=Dan, dept=eng, sal=100]\nEmp[name=Zed, dept=eng, sal=100]\nEmp[name=Bob, dept=ops, sal=90]\nEmp[name=Cat, dept=ops, sal=90]\n[Cat, Bob, Zed, Dan, Amy]\n[fig, pear, kiwi, date, apple, banana]\n[banana, apple, date, kiwi, pear, fig]\n[apple, banana, date, fig, kiwi, pear]\n[9, 5, 3, 1]\n[null, a, b]\n[b, a, null]\n",
+ "exception": null,
+ "exit": 0
+}

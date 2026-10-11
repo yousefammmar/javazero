@@ -1,0 +1,5 @@
+{
+ "stdout": "20 10kg2.0/2.5\n20 2 3\n[100, 2, 3]\nBase.fixed\nLeaf.open then\nBase.open\n77 base base\n[a, b]\n4\ntrue true false true true\n98\n1099511627776 0 4\n",
+ "exception": null,
+ "exit": 0
+}

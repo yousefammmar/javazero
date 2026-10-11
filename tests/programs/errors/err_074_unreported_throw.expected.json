@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 3,
+  "msg": "unreported exception Exception; must be caught or declared to be thrown"
+ }
+}

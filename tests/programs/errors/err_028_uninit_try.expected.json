@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 9,
+  "msg": "variable v might not have been initialized"
+ }
+}

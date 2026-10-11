@@ -1,0 +1,5 @@
+{
+ "stdout": "[25 16 9 4 1] size=5 peek=25\n25 16 [9 4 1]\nsum=14\n[#9 #4 #1]\n[2 2 2]\nempty stack\nnull\nabcdnull\n1 2\n",
+ "exception": null,
+ "exit": 0
+}

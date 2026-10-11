@@ -1,0 +1,5 @@
+{
+ "stdout": "[0, 10, 20, 30, 40, 50] size 6\n0 30 50\nindex 6 size 6\ntrue false true true [10, 20, 40]\n[10, 20, 40, 60] 4\n[60, 40, 20, 10]\n[60, 40, 20, 10, 5]\n135\n[a, null, c] true [a, c]\na;c;\n[] 0\n",
+ "exception": null,
+ "exit": 0
+}

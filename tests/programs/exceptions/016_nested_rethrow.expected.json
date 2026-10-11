@@ -1,0 +1,5 @@
+{
+ "stdout": "level3 ok 1\nlevel2 finally 1\nlevel1 finally 1\nok 1\nlevel2 rethrow\nlevel2 finally 3\nlevel1 finally 3\nmain: wrapped: x too big: 3\ncause: java.lang.IllegalArgumentException: x too big: 3 same? true\nrethrowing precise io\nio caught java.io.IOException: io\nError: top\n  RuntimeException: mid\n    Exception: deep\n",
+ "exception": null,
+ "exit": 0
+}

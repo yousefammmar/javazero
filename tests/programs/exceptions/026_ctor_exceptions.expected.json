@@ -1,0 +1,5 @@
+{
+ "stdout": "constructing Ann\nok Ann(30)\nconstructing \nfail: name required\nconstructing Bob\nfail: age out of range: 200\nconstructing null\nfail: name required\nconstructing Cy\nok Cy(10)\ncreated=2\nconstructing Kid\nChild body\nconstructing Old\nChild body\nnot a child: 40\ncreated=4\nconstructing \njava.lang.IllegalArgumentException: name required\ncompute\nFor input string: \"n/a\"\nx<0\nconstructing Z\np is null\n",
+ "exception": null,
+ "exit": 0
+}

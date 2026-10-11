@@ -1,0 +1,6 @@
+{
+ "compile": {
+  "line": 5,
+  "msg": "local variables referenced from a lambda expression must be final or effectively final"
+ }
+}

@@ -1,0 +1,5 @@
+{
+ "stdout": "item one\n",
+ "exception": "java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')",
+ "exit": 1
+}

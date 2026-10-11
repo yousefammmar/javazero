@@ -1,0 +1,5 @@
+{
+ "stdout": "[name, city, amount]\n3 fields: [ann, Paris, 12.5]\n3 fields: [bob, , 7]\n3 fields: [cy, Rome, ]\n4 fields: [dee, Oslo, 100.25, extra]\nrows=4 total=119.75\n",
+ "exception": null,
+ "exit": 0
+}

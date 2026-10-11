@@ -14,7 +14,8 @@
     gtag('config', GA_ID);
   }
   const page = document.currentScript.dataset.page;
-  const common = ['core/icons', 'core/store', 'data/curriculum', 'data/mistakes', 'data/errors', 'data/quiz', 'data/resources', 'data/badges', 'core/java', 'core/hl', 'core/shell'];
+  const common = ['core/icons', 'core/store', 'data/curriculum', 'data/mistakes', 'data/errors', 'data/quiz', 'data/resources', 'data/intermediate', 'data/badges',
+    'core/java-parse', 'core/java-rt', 'core/java-coll', 'core/java-gen', 'core/java-gen-expr', 'core/java-gen-call', 'core/java-flow', 'core/java', 'core/hl', 'core/shell'];
   const extra = { index: ['components/module-cards', 'components/labs'], tools: ['components/labs'] }[page] || [];
   [...common, ...extra, 'pages/' + page].forEach(f => document.write(`<script src="js/${f}.js"><\/script>`));
 })();

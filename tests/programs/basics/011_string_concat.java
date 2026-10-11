@@ -1,0 +1,66 @@
+public class Main {
+    static String nul() { return null; }
+    public static void main(String[] args) {
+        String s = null;
+        System.out.println("a" + s);
+        System.out.println(s + "a");
+        System.out.println(s + s);
+        System.out.println("x" + null);
+        System.out.println("" + 1 + 2);
+        System.out.println(1 + 2 + "");
+        System.out.println(1 + 2 + "x" + 1 + 2);
+        System.out.println("x" + (1 + 2));
+        System.out.println('a' + 1 + "b");
+        System.out.println("b" + 'a' + 1);
+        System.out.println("b" + (char) ('a' + 1));
+        System.out.println("d=" + 1.0 + " f=" + 1.5f + " l=" + 10L + " b=" + true + " c=" + 'c');
+        System.out.println("d=" + 1.0 / 3 + " f=" + 1.0f / 3);
+        System.out.println("sum " + 0.1 + 0.2);
+        System.out.println("sum " + (0.1 + 0.2));
+        System.out.println(1 + 'a' + "");
+        System.out.println("" + 1e10 + " " + 1e-5 + " " + 100.0 + " " + -0.0);
+        System.out.println("" + Integer.MAX_VALUE + Integer.MIN_VALUE);
+        System.out.println("" + (byte) 200 + (short) 70000 + (char) 66);
+        System.out.println("t" + true + false + (true && false) + (true ^ false));
+        System.out.println(nul() + "!");
+        String acc = "";
+        for (int i = 0; i < 5; i++) acc += i;
+        System.out.println(acc);
+        acc = "";
+        for (int i = 0; i < 5; i++) acc = i + acc;
+        System.out.println(acc);
+        acc = "";
+        for (char c = 'a'; c < 'e'; c++) acc += c + 1;
+        System.out.println(acc);
+        acc = "";
+        for (char c = 'a'; c < 'e'; c++) acc += (char) (c + 1);
+        System.out.println(acc);
+        int[] arr = {1, 2};
+        String as = "arr" + arr.length;
+        System.out.println(as);
+        Object o = null;
+        System.out.println("o=" + o);
+        Object[] objs = {1, "two", 3.0, 'c', null, 5L, 2.5f, true};
+        for (Object x : objs) System.out.println("item: " + x);
+        System.out.println("tab\there \"quoted\" back\\slash");
+        System.out.println("uniAé");
+        System.out.println("a" + 'b' + 'c' + 1 + 2L + 3.0f + 4.0);
+        String t = "x";
+        t += t += "y";
+        System.out.println(t);
+        StringBuilder sb = new StringBuilder("sb");
+        System.out.println("v:" + sb + sb.length());
+        System.out.println("n" + new int[0].length + new String[2][3][1].length);
+        String lit = "ab" + "cd";
+        String part = "ab";
+        String dyn = part + "cd";
+        final String fpart = "ab";
+        String fin = fpart + "cd";
+        System.out.println((lit == "abcd") + " " + (dyn == "abcd") + " " + (fin == "abcd") + " " + dyn.equals(lit) + " " + (dyn.intern() == lit));
+        System.out.println(1 + 2 + 3 + "=" + 1 + 2 + 3);
+        System.out.println(("" + 'a' + 'b').length());
+        System.out.println(String.valueOf((Object) null) + String.valueOf(3) + String.valueOf('c') + String.valueOf(2.0) + String.valueOf(true));
+        System.out.println(String.valueOf(new char[]{'o', 'k'}));
+        System.out.println(Integer.toString(255, 16) + Integer.toString(-255, 2) + Long.toString(99L) + Double.toString(1e3) + Boolean.toString(false) + Character.toString(97));
+    }
+}

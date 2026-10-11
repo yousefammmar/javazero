@@ -1,0 +1,5 @@
+{
+ "stdout": "[shirt-1 x15 @9.5, shirt-2 x5 @9.5, hat-1 x3 @12.0]\n226.0\nfalse true false true\n[shirt-1 x15 @9.5, shirt-2 x3 @9.5] 171.0\n[a-0=2, a-1=1, b-0=1, b-1=1, c-1=1]\ntrue 19345 19346\n20 0\n",
+ "exception": null,
+ "exit": 0
+}

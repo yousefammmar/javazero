@@ -1,0 +1,5 @@
+{
+ "stdout": "Two-dice totals over 600 rolls:\n 2 | ******                          20 (expected  16.7)\n 3 | *************                   39 (expected  33.3)\n 4 | *****************               52 (expected  50.0)\n 5 | ***************************     83 (expected  66.7)\n 6 | *************************       75 (expected  83.3)\n 7 | ********************************  96 (expected 100.0)\n 8 | *******************************  93 (expected  83.3)\n 9 | *******************             58 (expected  66.7)\n10 | ************                    37 (expected  50.0)\n11 | *******                         22 (expected  33.3)\n12 | ********                        25 (expected  16.7)\nDoubles: 104 (17.3%)\nLongest run of consecutive sevens: 4\nFirst die faces: [121, 95, 114, 89, 85, 96]\nMost common total: 7\n30 63 48\n884324181205335268 true\n0.277078\nshuffled: [1, 2, 10, 4, 8, 5, 9, 6, 3, 7]\n1.561581040188955\n",
+ "exception": null,
+ "exit": 0
+}

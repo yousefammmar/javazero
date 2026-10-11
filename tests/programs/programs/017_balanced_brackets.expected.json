@@ -1,0 +1,5 @@
+{
+ "stdout": "\"()\"         -> balanced\n\"([]{})\"     -> balanced\n\"((()))\"     -> balanced\n\"(]\"         -> mismatch '(' at 0 vs ']' at 1\n\"((\"         -> unclosed '(' at 1\n\"())\"        -> unmatched ')' at 2\n\"{[(])}\"     -> mismatch '(' at 2 vs ']' at 3\n\"a(b)c[d]{e}\" -> balanced\n\"\"           -> balanced\n\"}{\"         -> unmatched '}' at 0\ndepth: 3\nlongest valid: 4 2 6\n5 [((())), (()()), (())(), ()(()), ()()()]\n14\n[s, t, a, c, k] search(s)=5 search(k)=1\nkcats\n",
+ "exception": null,
+ "exit": 0
+}

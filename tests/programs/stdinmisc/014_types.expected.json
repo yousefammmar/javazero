@@ -1,0 +1,5 @@
+{
+ "stdout": "-42 9876543210 3.14159 true word\n-84 9876543211 1.0471966666666666 false WORD\n0.001\nx false\nfalse\n",
+ "exception": null,
+ "exit": 0
+}

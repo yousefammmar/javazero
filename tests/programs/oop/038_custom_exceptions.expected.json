@@ -1,0 +1,5 @@
+{
+ "stdout": "alpha\ndone a\nNF zz not found 404\ndone zz\nAPP invalid: empty key 400 true\ndone \nRT boom! cause=x not found NotFound\ndone boom\nfinally n=0\nfinally n=1\nfinally n=2\n10 30 20\nopen A\nopen B\nuse A\nuse B\nclose B\nclose A\ncaught fail in B\nwrapped <- invalid: inner 500\nNPE\nIndex 2 out of bounds for length 2\nCCE\n/ by zero\nFor input string: \"12x\"\nMain$Fatal: top | null\n",
+ "exception": null,
+ "exit": 0
+}

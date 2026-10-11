@@ -1,0 +1,5 @@
+{
+ "stdout": "new Base\n  Base field init\n  Base init block\n  Base ctor\n  Base.hook\nnew Derived\n  Base field init\n  Base init block\n  Base ctor\n  Derived.hook n=0 df=null\n  Derived field init\n  Derived init block n=42\n  Derived ctor n=42 df=Derived field init\nnew Third\n  Base field init\n  Base init block\n  Base ctor\n  Third.hook name=null tag=T\n  Derived field init\n  Derived init block n=42\n  Derived ctor n=42 df=Derived field init\n  Third ctor\nagain Third\n  Base field init\n  Base init block\n  Base ctor\n  Third.hook name=null tag=T\n  Derived field init\n  Derived init block n=42\n  Derived ctor n=42 df=Derived field init\n  Third ctor\n  Third.hook name=third tag=T\n",
+ "exception": null,
+ "exit": 0
+}

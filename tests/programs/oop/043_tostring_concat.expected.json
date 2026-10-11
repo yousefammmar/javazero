@@ -1,0 +1,5 @@
+{
+ "stdout": "A B<A> B<A>\nxA12B<A>\n3x12\n195cde\nabb97\nn=null null null null\nnull|null|\nRec\nRec(self)\n21.6 C -3.0 C\nred GREEN red [red, green]\n[A, B<A>, green, 1, 2.0, c, s, true, 5, 1.5]\n[A, null, B<A>]\n{k=A, n=null, l=[B<A>]}\nR[a=A, c=red, arr=null]\nA1c2.5truenullxyB<A> 20\na-bhi3.0true\nab\ncs=ab\n0.3333333333333333 1.1 9223372036854775807 0.33333334 100.0 1.0E10 1.0E-5 0.30000000000000004\n",
+ "exception": null,
+ "exit": 0
+}

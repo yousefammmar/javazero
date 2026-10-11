@@ -12,7 +12,7 @@ There is no build step, no framework and no backend. It is plain HTML, CSS and J
 2. [Pages](#pages)
 3. [Quick start](#quick-start)
 4. [How learning works](#how-learning-works)
-5. [Study plan: 8 weeks to Java fundamentals](#study-plan-8-weeks-to-java-fundamentals)
+5. [Study plan: from zero to advanced in 22 weeks](#study-plan-from-zero-to-advanced-in-22-weeks)
 6. [Project structure](#project-structure)
 7. [Architecture notes](#architecture-notes)
 8. [The in-browser Java runner](#the-in-browser-java-runner)
@@ -28,13 +28,14 @@ There is no build step, no framework and no backend. It is plain HTML, CSS and J
 
 | Area | What you get |
 |---|---|
-| Curriculum | 55 lessons across 9 modules (5 Beginner + 4 Intermediate), each with a runnable example and key points |
+| Curriculum | 78 lessons across 15 modules in three levels (Basics, Intermediate, Advanced), each with a runnable example and key points |
+| Levels | A Lessons page with three level cards (name, description, progress), a dedicated page per level, and W3Schools topic lists for each |
 | Playground | Write and run Java in the browser on a real in-browser compiler (javac-style errors, JDK 21 library behavior), with interactive console input and plain-English error explanations |
 | Labs | Multi-file IDE with a live memory model, String Lab, Compiler Error Translator, Stack Trace Analyzer |
 | Mistake Lab | 9 classic beginner errors, each with buggy code, the fix and the reason |
 | Daily Quiz | 10 beginner questions plus 8 intermediate questions, with instant feedback and a saved best score |
 | Progress | Lesson checkboxes, module mastery, 25 badges, all stored in `localStorage` |
-| Navigation | Command palette (`Cmd/Ctrl + K` or `/`) searching lessons, errors, tools and resources |
+| Navigation | A slide-out sections menu with Basics, Intermediate and Advanced nested under Lessons (hidden until you press the sidebar button in the header) and a command palette (`Cmd/Ctrl + K` or `/`) searching lessons, errors, tools and resources |
 | Resources | Curated links to W3Schools Java reference pages, plus a per-lesson "read more" link |
 | Design | Responsive layout, SVG icon system, keyboard-friendly, reduced-motion aware |
 
@@ -43,7 +44,10 @@ There is no build step, no framework and no backend. It is plain HTML, CSS and J
 | Page | File | Purpose |
 |---|---|---|
 | Dashboard | `index.html` | Hero, mastery path, module cards, IDE and labs |
-| Lessons | `lessons.html` | Every module and lesson with checkboxes and filters |
+| Lessons | `lessons.html` | Choose a level: three cards showing each level's name, description, size and your progress |
+| Basics | `basics.html` | Level 1: its interactive lessons (with checkboxes) and its W3Schools topic groups |
+| Intermediate | `intermediate.html` | Level 2: lessons and topic groups |
+| Advanced | `advanced.html` | Level 3: lessons and topic groups, including topics that need a local JDK |
 | Lesson viewer | `lesson.html?id=<lesson-id>` | One lesson: explanation, runnable code, key points, previous/next |
 | Roadmap | `roadmap.html` | The Learn, See, Try, Break, Build loop applied to every module |
 | Playground | `playground.html` | Free-form editor and console with templates |
@@ -80,9 +84,9 @@ Progress is tracked per lesson. Tick a lesson when you finish it; the sidebar, m
 
 ---
 
-## Study plan: 8 weeks to Java fundamentals
+## Study plan: from zero to advanced in 22 weeks
 
-**Time commitment:** about 5 hours per week (roughly 45 to 60 minutes on five days, with a longer review session at the weekend). The 30 beginner lessons contain about 200 minutes of core reading; the rest of the time is deliberate practice, which is where the learning happens.
+**Time commitment:** about 5 hours per week (roughly 45 to 60 minutes on five days, with a longer review session at the weekend). The 38 Basics lessons contain about 250 minutes of core reading; the rest of the time is deliberate practice, which is where the learning happens.
 
 ### The daily routine (45 to 60 minutes)
 
@@ -101,38 +105,60 @@ Rules that make the plan work:
 - **Read the error from the top.** Use the Compiler Error Translator and Stack Trace Analyzer when stuck.
 - **Review at the weekend.** Redo one earlier lesson from memory in a blank Playground.
 
-### Week-by-week
+### Basics: weeks 1 to 10
+
+Level 1 on the Lessons page. The Basics topics follow the W3Schools Java Tutorial, Methods and Classes groups.
 
 | Week | Module and lessons | Practice tasks | Checkpoint |
 |---|---|---|---|
 | **1** | **Variables & Memory Boxes**, lessons 1 to 4: what a variable is, primitive types, declaring and assigning, integer versus decimal math | Declare one variable of each primitive type and print them. Predict `7 / 2`, `7 % 2`, `7 / 2.0` before running. | Explain why `7 / 2` is `3` |
 | **2** | **Variables**, lessons 5 to 8: Strings, casting, `final`, naming rules and `var` | Build a small program that stores your name and age and prints a sentence, then make it ask for them with `Scanner` (try the *Read input* template). Use the String Lab on five methods. Read the Mistake Lab entries on `==` versus `.equals()` and immutability. | Daily Quiz: score 6 or more |
-| **3** | **Methods, Parameters & Scope**, lessons 1 to 3: method anatomy, parameters, return values | Write `add`, `isEven` and `max` as methods. Call each with three inputs. | Write a method from memory in a blank Playground |
-| **4** | **Methods**, lessons 4 to 6: scope, overloading, recursion | Overload `area` for a square and a rectangle. Write a recursive `factorial`, then remove the base case and read the `StackOverflowError`. | Daily Quiz: score 7 or more. Mistake Lab: the off-by-one and missing-semicolon entries |
-| **5** | **Classes as Blueprints**, lessons 1 to 4: class versus object, fields, constructors, `this` | Model a `Car` with fields and a constructor. Create three cars. Open the multi-file IDE and watch the heap model update with *Mutate Object*. | Draw, on paper, the stack and heap for `Car a = new Car("Golf");` |
-| **6** | **Classes**, lessons 5 to 7: encapsulation, `static` versus instance, `toString` | Build an `Account` with a private balance, `deposit` and `getBalance`. Add a `static` counter of accounts created. Override `toString`. | Explain when to use `static` and when not to |
-| **7** | **Inheritance**, lessons 1 to 5: `extends`, `super`, overriding, `protected`, the `Object` class | Create `Animal` and `Dog`, override `speak`, call `super.speak()`. Trigger a `NullPointerException` on purpose and read the trace. | Daily Quiz: score 8 or more |
-| **8** | **Interfaces as Contracts**, lessons 1 to 4, then the capstone | Define `Shape` with `Circle` and `Square`, store both in one array and loop over it. **Capstone:** extend the multi-file IDE with a new class (for example `Teacher`) across separate files. | Daily Quiz: score 9 or more. Earn the *Polymorph* badge |
+| **3** | **Decisions, Loops & Arrays**, lessons 1 to 4: if/else, booleans, switch, while and do/while | Write a grade calculator with `if / else if`, a day-of-week `switch` in both the classic and arrow forms, and a loop that counts down from 10. | Explain why a `while` loop can run zero times but `do/while` cannot |
+| **4** | **Decisions, Loops & Arrays**, lessons 5 to 8: for loops, break/continue, arrays, the Math class | Print a multiplication table with nested loops, find the largest number in an array, and use `Math` to compute a circle's area. | Sum an array from memory in a blank Playground. Daily Quiz: score 6 or more |
+| **5** | **Methods, Parameters & Scope**, lessons 1 to 3: method anatomy, parameters, return values | Write `add`, `isEven` and `max` as methods. Call each with three inputs. | Write a method from memory in a blank Playground |
+| **6** | **Methods**, lessons 4 to 6: scope, overloading, recursion | Overload `area` for a square and a rectangle. Write a recursive `factorial`, then remove the base case and read the `StackOverflowError`. | Daily Quiz: score 7 or more. Mistake Lab: the off-by-one and missing-semicolon entries |
+| **7** | **Classes as Blueprints**, lessons 1 to 4: class versus object, fields, constructors, `this` | Model a `Car` with fields and a constructor. Create three cars. Open the multi-file IDE and watch the heap model update with *Mutate Object*. | Draw, on paper, the stack and heap for `Car a = new Car("Golf");` |
+| **8** | **Classes**, lessons 5 to 7: encapsulation, `static` versus instance, `toString` | Build an `Account` with a private balance, `deposit` and `getBalance`. Add a `static` counter of accounts created. Override `toString`. | Explain when to use `static` and when not to |
+| **9** | **Inheritance**, lessons 1 to 5: `extends`, `super`, overriding, `protected`, the `Object` class | Create `Animal` and `Dog`, override `speak`, call `super.speak()`. Trigger a `NullPointerException` on purpose and read the trace. | Daily Quiz: score 8 or more |
+| **10** | **Interfaces as Contracts**, lessons 1 to 4, then the capstone | Define `Shape` with `Circle` and `Square`, store both in one array and loop over it. **Capstone:** extend the multi-file IDE with a new class (for example `Teacher`) across separate files. | Daily Quiz: score 9 or more. Earn the *Polymorph* badge |
 
-### Intermediate track: weeks 9 to 16
+### Intermediate: weeks 11 to 18
 
-The Intermediate section follows the structure of the W3Schools Java intermediate topics (links only; the text is original). Same daily routine, about 5 hours per week.
+Level 2. The topics follow the W3Schools Classes (going further), Errors and Data Structures groups.
+
+Same daily routine, about 5 hours per week. All lessons and examples are original; W3Schools is linked for further reading.
 
 | Week | Module and lessons | Practice tasks |
 |---|---|---|
-| **9 to 10** | **Abstraction, Enums & Nested Classes** (6 lessons) | Model shapes with an `abstract` class, add an `enum` with fields and a `switch` over it, write one inner and one static nested class |
-| **11 to 12** | **Exceptions: When Things Go Wrong** (6 lessons) | Handle `NumberFormatException`, write a custom checked exception, use try-with-resources and read a `Caused by:` chain |
-| **13 to 14** | **Collections: Lists, Maps & Sets** (8 lessons) | Count word frequencies with a `HashMap`, de-duplicate with a `HashSet`, sort with `Comparator`, iterate safely |
-| **15 to 16** | **Generics & Lambdas** (5 lessons) | Write a generic `Box<T>`, replace loops with lambdas and a stream pipeline |
+| **11 to 12** | **Abstraction, Enums & Nested Classes** (6 lessons) | Model shapes with an `abstract` class, add an `enum` with fields and a `switch` over it, write one inner and one static nested class |
+| **13 to 14** | **Exceptions: When Things Go Wrong** (6 lessons) | Handle `NumberFormatException`, write a custom checked exception, use try-with-resources and read a `Caused by:` chain |
+| **15 to 16** | **Collections: Lists, Maps & Sets** (8 lessons) | Count word frequencies with a `HashMap`, de-duplicate with a `HashSet`, sort with `Comparator`, iterate safely |
+| **17 to 18** | **Generics & Lambdas** (5 lessons) | Write a generic `Box<T>`, replace loops with lambdas and a stream pipeline |
 
 Checkpoint: the intermediate quiz (8 questions) and the intermediate badges in *Settings*.
+
+### Advanced: weeks 19 to 22
+
+Level 3. It covers the topics in W3Schools' *Java Advanced* section (Wrapper Classes, Generics, Annotations, RegEx, Threads, Lambda, Advanced Sorting); Generics and Lambda are taught in the Intermediate track. The File Handling and I/O Streams topics need a real computer, so the level page links them to W3Schools instead of running them in the browser.
+
+| Week | Module and lessons | Practice tasks |
+|---|---|---|
+| **19** | **Wrapper Classes & Autoboxing** (3 lessons) and **Annotations** (2 lessons) | Reproduce the `Integer` cache trap with 127 and 1000 and fix it with `.equals()`; mistype `@Override` on a method and read the compiler's complaint; declare an annotation with a default value |
+| **20** | **Regular Expressions** (3 lessons) | Validate an email address and a phone number, pull two groups out of a sentence, and clean text with `replaceAll` |
+| **21** | **Threads & Concurrency** (4 lessons) | Run two threads and `join` them, explain in your own words why the shared counter needs `synchronized`, then submit three tasks to a thread pool |
+| **22** | **Advanced Sorting** (3 lessons), then the W3Schools File Handling topics | Sort students by score and then by name with a chained `Comparator`; on your own computer with a JDK, write a program that copies a text file |
+
+Checkpoint: explain `Comparable` versus `Comparator` and what a race condition is, then pick a W3Schools *Java Projects* exercise and build it.
 
 ### Weekly milestones at a glance
 
 - **End of week 2:** you can read and write basic programs with variables, Strings and arithmetic.
-- **End of week 4:** you can break a problem into reusable methods and explain scope.
-- **End of week 6:** you can design a small class with hidden state and safe methods.
-- **End of week 8:** you can model related types with inheritance and interfaces and explain polymorphism.
+- **End of week 4:** your programs can make decisions, repeat work and store lists of values.
+- **End of week 6:** you can break a problem into reusable methods and explain scope.
+- **End of week 8:** you can design a small class with hidden state and safe methods.
+- **End of week 10:** you can model related types with inheritance and interfaces and explain polymorphism.
+- **End of week 18:** you can handle errors, use collections and write lambdas.
+- **End of week 22:** you can use regular expressions and threads and sort by any rule.
 
 ### Self-assessment: are you ready to move on?
 
@@ -161,7 +187,10 @@ Collections (`ArrayList`, `HashMap`), exceptions with `try` and `catch`, reading
 ```
 javazero/
 ├── index.html                 Dashboard
-├── lessons.html               Lessons index
+├── lessons.html               Lessons landing: choose a level
+├── basics.html                Level 1
+├── intermediate.html          Level 2
+├── advanced.html              Level 3
 ├── lesson.html                Lesson viewer (?id=vars-4)
 ├── roadmap.html               Roadmap
 ├── playground.html            Playground
@@ -177,8 +206,8 @@ javazero/
 │   ├── main.css               Imports everything below, in order
 │   ├── base.css               Variables, reset, buttons, icon base
 │   ├── responsive.css         Breakpoints
-│   ├── components/            layout, shell, hero, path, modules, ide, labs, sidebar
-│   └── pages/                 lessons, roadmap, playground, mistakes, quiz, settings, resources
+│   ├── components/            layout, shell, drawer, a11y, hero, path, modules, ide, labs, sidebar
+│   └── pages/                 lessons, levels, roadmap, playground, mistakes, quiz, settings, resources
 └── js/
     ├── boot.js                Loads shared scripts, then the page script
     ├── core/
@@ -191,10 +220,10 @@ javazero/
 │   ├── java-rt.js         Runtime: values, strings, exceptions, Scanner, formatting
 │   ├── java-coll.js       Runtime: collections, streams, Optional, BigInteger/BigDecimal, regex
     │   ├── hl.js              HTML escape, progress bar, Java syntax highlighter
-    │   └── shell.js           Header, nav, sidebar, command palette, footer
-    ├── data/                  curriculum, intermediate, mistakes, errors, quiz, badges, resources
-    ├── components/            module-cards, labs
-    └── pages/                 one script per page
+    │   └── shell.js           Header, slide-out sections menu, progress panel, command palette, footer
+    ├── data/                  curriculum, basics-flow, intermediate, advanced, levels, mistakes, errors, quiz, badges, resources
+    ├── components/            module-cards, module-list, labs
+    └── pages/                 one script per page (lessons = level chooser, level = one level page)
 ```
 
 ## Architecture notes
@@ -246,10 +275,16 @@ The `tests/` folder contains Node scripts (no dependencies) that load the compil
 
 ## Accessibility and responsiveness
 
-- Semantic landmarks (`header`, `nav`, `main`, `aside`, `footer`), labelled controls, and `aria-current` on the active navigation link.
+- Semantic landmarks (`header`, `nav`, `main`, `aside`, `footer`), labelled controls, `aria-expanded` on the menu button, focus moved into the drawer when it opens and returned to the button when it closes, and `aria-current` on the active page.
 - Lesson checkboxes use `role="checkbox"` with `aria-checked`; the quiz supports keyboard answers (keys `1` to `4`); the command palette is fully keyboard driven.
 - Visible focus rings and `prefers-reduced-motion` support.
-- Layouts adapt from large desktop to phone width. On small screens the navigation becomes a bottom bar.
+- Layouts adapt from large desktop to phone width. The sections menu is a drawer on every screen size: nothing of it is visible until the header button is pressed, and it closes with `Esc`, the close button or a click outside it.
+- **Contrast:** all text meets WCAG 2.1 AA (4.5:1, or 3:1 for large text). Decorative coral stays bright; text and button fills use the darker `--coral-ink` and `--coral-btn` tokens in `css/base.css`.
+- **Structure:** every page has exactly one `h1` and no skipped heading levels, plus a "Skip to main content" link as the first Tab stop.
+- **Targets and text:** interactive controls are at least 24px (40px on touch screens; the lesson tick has a 44px hit area), and no text is smaller than 12px.
+- **Focus:** every control shows a focus ring, including the dark code editors (a ring around the whole editor).
+- **Motion:** animations and transitions are removed when the system asks for reduced motion.
+
 
 ## Extending the content
 
@@ -257,6 +292,8 @@ The `tests/` folder contains Node scripts (no dependencies) that load the compil
 |---|---|
 | A beginner lesson | `js/data/curriculum.js`: add `L('<module>', n, title, summary, code, [points])` to a module |
 | An intermediate lesson | `js/data/intermediate.js` (modules, lessons, W3Schools links and the intermediate quiz) |
+| An advanced lesson | `js/data/advanced.js` (modules, lessons and their W3Schools links) |
+| A level's description or W3Schools topic list | `js/data/levels.js`: each level has `desc`, `tracks` (which modules belong to it) and `groups` of `[title, path, lessonId?, description?]` topics. Add a module's `track` to a level and it appears on that level's page, in the sidebar menu and in search |
 | A module | `js/data/curriculum.js`: add an object to `MODULES`, and a card visual in `js/components/module-cards.js` |
 | A mistake | `js/data/mistakes.js` |
 | A quiz question | `js/data/quiz.js` |

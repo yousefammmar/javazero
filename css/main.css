@@ -1,6 +1,8 @@
 @import url("base.css");
 @import url("components/layout.css");
 @import url("components/shell.css");
+@import url("components/drawer.css");
+@import url("components/a11y.css");
 @import url("components/hero.css");
 @import url("components/path.css");
 @import url("components/modules.css");
@@ -8,6 +10,7 @@
 @import url("components/labs.css");
 @import url("components/sidebar.css");
 @import url("pages/lessons.css");
+@import url("pages/levels.css");
 @import url("pages/roadmap.css");
 @import url("pages/playground.css");
 @import url("pages/mistakes.css");

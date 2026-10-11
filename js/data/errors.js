@@ -37,3 +37,9 @@ const EXCEPTIONS = [
   { n: 'NoSuchElementException', frames: ['java.util.Scanner.nextLine(Scanner.java:1651)', 'com.javazero.App.main(App.java:6)'], say: 'The program tried to read input, but there was none left.', fix: 'Provide enough input, or guard the read with hasNextLine() or hasNextInt().' },
   { n: 'StackOverflowError', frames: ['com.javazero.Math.fact(Math.java:3)', 'com.javazero.Math.fact(Math.java:3)', '... 1022 more'], say: 'A recursive method never reached its base case.', fix: 'Add a base case such as if (n <= 1) return 1;' },
 ];
+
+/* Real package of each exception class, so traces show the true fully-qualified name. */
+const JAVA_UTIL_EXC = new Set(['ConcurrentModificationException', 'EmptyStackException', 'InputMismatchException', 'NoSuchElementException', 'MissingResourceException']);
+const excFullName = n => (JAVA_UTIL_EXC.has(n) ? 'java.util.' : 'java.lang.') + n;
+/* A frame is "yours" when it is in the learner's package; "..." lines are elisions, everything else is the JDK. */
+const frameKind = f => /^\.\.\./.test(f) ? 'more' : /^com\.javazero\./.test(f) ? 'mine' : 'lib';

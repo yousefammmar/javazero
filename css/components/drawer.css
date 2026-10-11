@@ -1,0 +1,20 @@
+/* slide-out section menu: nothing of it is visible until the toggle in the header is pressed */
+.menu{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px;color:var(--ink);background:#f1ece3;flex:none;transition:background .15s}
+.menu:hover{background:#e7e0d3}.menu[aria-expanded="true"]{background:var(--dark);color:#fff}
+.scrim{position:fixed;inset:0;background:#201d1a59;backdrop-filter:blur(2px);z-index:40}.scrim[hidden]{display:none}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(300px,86vw);background:var(--cream);border-right:1px solid var(--line);box-shadow:20px 0 50px -20px #0004;z-index:41;display:flex;flex-direction:column;padding:14px 12px;gap:6px;
+  transform:translateX(-102%);visibility:hidden;transition:transform .22s ease,visibility 0s linear .22s}
+.drawer.open{transform:none;visibility:visible;transition:transform .22s ease}
+.drawer-h{display:flex;align-items:center;justify-content:space-between;padding:4px 8px 10px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.drawer-h b{font:700 12px var(--mono);letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.drawer-x{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:var(--mut)}.drawer-x:hover{background:#f1ece3;color:var(--ink)}
+.drawer ul{list-style:none;padding:0;display:grid;gap:2px}
+.drawer li>a,.drawer li>button{width:100%;display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:12px;font-size:15px;font-weight:600;text-decoration:none;color:var(--ink);text-align:left}
+.drawer li>a:hover,.drawer li>button:hover{background:#f1ece3}
+.drawer li>a.on{background:var(--dark);color:#fff}.drawer .i{font-size:19px}
+.drawer kbd{margin-left:auto;font:12px var(--mono);background:#fff;border:1px solid var(--line);border-radius:5px;padding:1px 5px;color:var(--mut)}
+.drawer-f{margin-top:auto;border-top:1px solid var(--line);padding-top:8px}
+/* levels nested under "Lessons" */
+.drawer li>a.in{background:#f1ece3}
+.drawer .sub{margin:2px 0 4px 22px;padding-left:10px;border-left:2px solid var(--line)}
+.drawer .sub li>a{padding:8px 10px;font-size:14px;font-weight:600}.drawer .sub .i{font-size:17px}

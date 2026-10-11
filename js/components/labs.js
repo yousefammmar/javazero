@@ -31,14 +31,26 @@ const Labs = {
       <select class="in" aria-label="Exception">${EXCEPTIONS.map((x, i) => `<option value="${i}">${x.n}</option>`).join('')}</select>
       <div class="nl"><div class="e"></div><div class="frames"></div></div>
       <div class="box soft"><b class="grn tl">${ic('bulb')} What it means</b><div class="say"></div><div class="code grn fixl"></div></div></article>`;
-    const sel = el.querySelector('select');
-    const upd = () => {
-      const x = EXCEPTIONS[sel.value];
-      el.querySelector('.e').textContent = `Exception in thread "main" java.lang.${x.n}`;
-      el.querySelector('.frames').innerHTML = x.frames.map((f, i) => `<button class="frame" data-i="${i}">at ${esc(f)}</button>`).join('');
-      el.querySelector('.say').textContent = x.say; el.querySelector('.fixl').textContent = 'Fix: ' + x.fix; seenTool('stack');
+    const sel = el.querySelector('select'), frames = el.querySelector('.frames');
+    // what a clicked frame means: library frames are where Java noticed the problem, the first "mine" frame is where to start
+    const explain = (x, i) => {
+      const kind = frameKind(x.frames[i]), firstMine = x.frames.findIndex(f => frameKind(f) === 'mine');
+      if (kind === 'more') return 'Java hides the repeated frames. The same line is calling itself over and over until the stack runs out.';
+      if (kind === 'lib') return 'This frame is inside the Java library. The library noticed the problem, but your code caused it, so keep reading down to the first frame in your own code.';
+      const loc = (x.frames[i].match(/\(([^)]+)\)/) || [])[1];
+      return i === firstMine ? `This is the first frame in your own code, so start debugging here (${loc}). ${x.say}` : 'This frame called the one above it. Frames read like a chain of who-called-who, newest first.';
     };
-    el.querySelector('.frames').onclick = e => { const b = e.target.closest('.frame'); if (!b) return; el.querySelectorAll('.frame').forEach(f => f.classList.toggle('on', f === b)); el.querySelector('.say').textContent = b.dataset.i === '0' ? 'This is the frame closest to the crash: start here. ' + EXCEPTIONS[sel.value].say : 'This frame called the one above it. Frames read like a chain of who-called-who, newest first.'; };
+    const pick = (x, i) => { frames.querySelectorAll('.frame').forEach(f => f.classList.toggle('on', +f.dataset.i === i)); el.querySelector('.say').textContent = explain(x, i); };
+    const upd = () => {
+      const x = EXCEPTIONS[sel.value], firstMine = Math.max(0, x.frames.findIndex(f => frameKind(f) === 'mine'));
+      el.querySelector('.e').textContent = `Exception in thread "main" ${excFullName(x.n)}`;
+      frames.innerHTML = x.frames.map((f, i) => { const k = frameKind(f); return k === 'more'
+        ? `<div class="frame more" data-i="${i}">${esc(f)}</div>`
+        : `<button class="frame ${k}" data-i="${i}">at ${esc(f)}<span class="who">${k === 'mine' ? 'your code' : 'library'}</span></button>`; }).join('');
+      el.querySelector('.fixl').textContent = 'Fix: ' + x.fix; seenTool('stack');
+      pick(x, firstMine);
+    };
+    frames.onclick = e => { const b = e.target.closest('.frame:not(.more)'); if (b) pick(EXCEPTIONS[sel.value], +b.dataset.i); };
     sel.onchange = upd; upd();
   },
 
@@ -50,14 +62,14 @@ const Labs = {
     };
     const icons = { Main: 'code', Student: 'file', Course: 'branch' };
     let cur = 'Main';
-    el.innerHTML = `<section class="ide" id="ide"><div class="ide-h"><span class="tag sm">Multi-file sandbox</span><div><h3>Interactive Multi-File Java IDE</h3><p>Switch between source files to observe how <code>Student.java</code> interacts with <code>Main.java</code> in heap memory. Edit any file, then build.</p></div><button class="build">${ic('play')} BUILD &amp; RUN</button></div>
+    el.innerHTML = `<section class="ide" id="ide"><div class="ide-h"><span class="tag sm">Multi-file sandbox</span><div><h2>Interactive Multi-File Java IDE</h2><p>Switch between source files to observe how <code>Student.java</code> interacts with <code>Main.java</code> in heap memory. Edit any file, then build.</p></div><button class="build">${ic('play')} BUILD &amp; RUN</button></div>
       <div class="ide-b"><div class="ed"><div class="tabs" role="tablist">${Object.keys(files).map(f => `<button role="tab" data-t="${f}" class="${f === cur ? 'on' : ''}">${ic(icons[f])} ${f}.java</button>`).join('')}</div>
         <textarea spellcheck="false" aria-label="Source code"></textarea>
         <div class="out"><small>OUTPUT TERMINAL</small><div class="oc"></div></div></div>
-        <div class="mem"><h4>Live JVM Memory Model <span>Synchronized</span></h4>
+        <div class="mem"><h3>Live JVM Memory Model <span>Synchronized</span></h3>
           <div class="fr"><b>STACK FRAME: MAIN()</b><span class="red">student</span> ${ic('right', 'inl-i')} <span class="pur">@0x4a9b</span> (heap pointer)</div>
           <div class="fr h"><b class="pur">HEAP OBJECT: @0X4A9B</b>name: <span class="grn m-name"></span><br>gpa: <span class="red m-gpa"></span><br>credits: <b class="m-cr"></b></div>
-          <button class="mut">${ic('trend')} Mutate Object in Heap</button></div></div></section>`;
+          <button class="mutate">${ic('trend')} Mutate Object in Heap</button></div></div></section>`;
     const ta = el.querySelector('textarea'), oc = el.querySelector('.oc');
     const load = () => { ta.value = files[cur]; el.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('on', b.dataset.t === cur)); };
     const memory = () => {
@@ -68,13 +80,17 @@ const Labs = {
     };
     const build = () => {
       files[cur] = ta.value;
-      const r = Java.run([files.Course, files.Student, files.Main].join('\n\n'));
-      oc.innerHTML = '[javac] Compiling 3 source files...' + (r.err ? (r.err.kind === 'compile' ? r.err.list.map(e => `<br><span class="e">error: ${esc(e.msg)}${e.line ? ` (line ${e.line})` : ''}</span>`).join('') : `<br><span class="e">Exception in thread "main" ${esc(r.err.text)}</span>`) : r.out.map(l => `<br>[java] ${esc(l)}`).join(''));
+      // files are compiled together; remember where each starts so errors can point at the right file and line
+      const order = ['Course', 'Student', 'Main'], starts = {}; let at = 1;
+      order.forEach(n => { starts[n] = at; at += files[n].split('\n').length + 1; });
+      const where = line => { const n = [...order].reverse().find(f => line >= starts[f]); return n ? `${n}.java:${line - starts[n] + 1}` : `line ${line}`; };
+      const r = Java.run(order.map(n => files[n]).join('\n\n'));
+      oc.innerHTML = '[javac] Compiling 3 source files...' + (r.err ? (r.err.kind === 'compile' ? r.err.list.map(e => `<br><span class="e">error: ${esc(e.msg)}${e.line ? ` (${where(e.line)})` : ''}</span>`).join('') : `<br><span class="e">Exception in thread "main" ${esc(r.err.text)}</span>`) : r.out.map(l => `<br>[java] ${esc(l)}`).join(''));
       memory(); seenTool('ide');
     };
     el.querySelector('.tabs').onclick = e => { const b = e.target.closest('[data-t]'); if (!b) return; files[cur] = ta.value; cur = b.dataset.t; load(); };
     el.querySelector('.build').onclick = build;
-    el.querySelector('.mut').onclick = () => {
+    el.querySelector('.mutate').onclick = () => {
       files[cur] = ta.value;
       files.Main = files.Main.replace(/(new Student\("[^"]*",\s*)([\d.]+)/, (_, a, g) => a + Math.min(4, +(+g + 0.05).toFixed(2)));
       files.Student = files.Student.replace(/(credits\s*=\s*)(\d+);/, (_, a, n) => `${a}${+n + 4};`);

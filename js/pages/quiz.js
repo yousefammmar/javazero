@@ -10,13 +10,13 @@
     if (i >= QS.length) {
       const key = SETS[set].key, best = Math.max(Store.get(key, 0), score); Store.set(key, best); Activity.touch();
       const top = QS.length;
-      root.innerHTML = `${tabs()}<div class="qres"><div class="ico big2">${ic('trophy')}</div><h2>${score} / ${top}</h2><p>${score === top ? 'Perfect. Nothing got past you.' : score >= top * 0.8 ? 'Excellent work.' : score >= top / 2 ? 'Solid. Review the lessons you missed.' : 'Good start. Revisit the lessons and try again.'}</p><p class="mut">Best score: <b>${best}</b></p>
+      root.innerHTML = `${tabs()}<div class="qres"><div class="ico big2">${ic('trophy')}</div><h1>${score} / ${top}</h1><p>${score === top ? 'Perfect. Nothing got past you.' : score >= top * 0.8 ? 'Excellent work.' : score >= top / 2 ? 'Solid. Review the lessons you missed.' : 'Good start. Revisit the lessons and try again.'}</p><p class="mut">Best score: <b>${best}</b></p>
         <div class="actions c"><button class="btn b1" id="again">${ic('reset')} Try again</button><a class="btn b2 m0" href="lessons.html">${ic('book')} Back to lessons</a></div></div>`;
       $('#again').onclick = () => { i = 0; score = 0; picked = null; draw(); }; return;
     }
     const q = QS[i];
-    root.innerHTML = `${tabs()}<div class="mh"><div><h2>Daily Practice Quiz</h2><p>${SETS[set].name} set • Question ${i + 1} of ${QS.length}</p></div><span class="cnt">Score ${score}</span></div>${pctBar((i / QS.length) * 100, 'var(--coral)')}
-      <div class="qcard"><h3>${esc(q.q)}</h3><div class="opts" role="radiogroup">${q.o.map((o, n) => `<button class="opt" data-n="${n}" role="radio"><span class="k">${n + 1}</span>${esc(o)}</button>`).join('')}</div>
+    root.innerHTML = `${tabs()}<div class="mh"><div><h1>Daily Practice Quiz</h1><p>${SETS[set].name} set • Question ${i + 1} of ${QS.length}</p></div><span class="cnt">Score ${score}</span></div>${pctBar((i / QS.length) * 100, 'var(--coral)')}
+      <div class="qcard"><h2>${esc(q.q)}</h2><div class="opts" role="radiogroup">${q.o.map((o, n) => `<button class="opt" data-n="${n}" role="radio"><span class="kn">${n + 1}</span>${esc(o)}</button>`).join('')}</div>
         <div class="fb" id="fb" aria-live="polite"></div><div class="actions"><button class="btn b1" id="nxt" hidden>${i + 1 === QS.length ? 'See result' : 'Next question'} ${ic('right')}</button></div></div>`;
     picked = null;
     $$('.opt').forEach(b => b.onclick = () => pick(+b.dataset.n));

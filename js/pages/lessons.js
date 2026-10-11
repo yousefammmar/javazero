@@ -1,21 +1,23 @@
-/* Lessons index: every module with checkable lessons. */
+/* Lessons landing page: choose a level. Each card shows the level, what it covers and your progress. */
 {
-  const root = $('#root'), FILTERS = [['all', 'All Modules'], ['fund', 'Fundamentals'], ['logic', 'Logic & Scope'], ['oop', 'Object-Oriented Java'], ['inh', 'Inheritance & Interfaces'], ['mid', 'Intermediate']];
-  let filter = 'all';
+  const root = $('#root');
   const render = () => {
     const ov = Progress.overall(), pct = Math.round(ov.n / ov.total * 100);
-    root.innerHTML = `<div class="mh"><div><h2>Lessons</h2><p>${ov.total} lessons across ${MODULES.length} modules. Tick a lesson when you finish it.</p></div><span class="cnt">${ov.n} / ${ov.total} done • ${pct}%</span></div>
-      <div class="filters">${FILTERS.map(([k, t]) => `<button data-f="${k}" class="${k === filter ? 'on' : ''}">${t}</button>`).join('')}</div>
-      <div class="stack-list">${MODULES.filter(m => filter === 'all' || m.track === filter).map(m => {
-        const p = Progress.forModule(m);
-        return `<section class="mod"><header><div class="ico">${ic(m.icon)}</div><div><h3>${m.name}</h3><p>${m.desc}</p></div><div class="mp"><b>${p.pct}%</b><span>${p.n}/${p.total}</span>${pctBar(p.pct, 'var(--coral)')}</div></header>
-          <ol>${m.lessons.map(l => `<li class="${Progress.has(l.id) ? 'done' : ''}"><button class="tick" data-id="${l.id}" role="checkbox" aria-checked="${Progress.has(l.id)}" aria-label="Mark ${l.t} complete">${ic('check')}</button>
-            <a href="lesson.html?id=${l.id}"><span class="n">${String(l.n).padStart(2, '0')}</span><span class="t"><b>${l.t}</b><small>${l.sum}</small></span>${ic('chevr')}</a></li>`).join('')}</ol></section>`;
-      }).join('')}</div>`;
-  };
-  root.onclick = e => {
-    const f = e.target.closest('[data-f]'), t = e.target.closest('.tick');
-    if (f) { filter = f.dataset.f; render(); } else if (t) { Progress.toggle(t.dataset.id); render(); refreshAside(); }
+    root.innerHTML = `<div class="mh"><div><h1>Lessons</h1><p>${ov.total} interactive lessons in three levels. Pick the one that matches where you are today.</p></div><span class="cnt">${ov.n} / ${ov.total} done • ${pct}%</span></div>
+      <div class="levels">${LEVELS.map((lv, i) => {
+        const s = levelStats(lv), preview = lv.groups.flatMap(g => g.topics).slice(0, 8);
+        return `<article class="level lv${i + 1}">
+          <div class="lv-top"><span class="lv-ico">${ic(lv.icon)}</span><span class="lv-step">Level ${i + 1} of ${LEVELS.length}</span></div>
+          <h2><a href="${lv.page}">${lv.name}</a></h2>
+          <p class="lv-tag">${lv.tagline} • ${lv.audience}</p>
+          <p class="lv-desc">${lv.desc}</p>
+          <dl class="lv-stats"><div><dt>Lessons</dt><dd>${s.lessons}</dd></div><div><dt>Topics</dt><dd>${s.topics}</dd></div><div><dt>Plan</dt><dd>${lv.weeks.replace('Weeks ', 'Wk ')}</dd></div></dl>
+          <div class="lv-prog"><div class="row"><span class="mut">Your progress</span><b>${s.pct}%</b></div>${pctBar(s.pct, 'var(--coral)')}<small>${s.done} of ${s.lessons} lessons done</small></div>
+          <ul class="chips2" aria-label="Some topics in ${lv.name}">${preview.map(t => `<li>${t[0].replace(/^Java /, '')}</li>`).join('')}<li class="more-chip">+ more</li></ul>
+          <a class="btn b1 lv-go" href="${lv.page}">Open ${lv.name} ${ic('right')}</a>
+        </article>`;
+      }).join('')}</div>
+      <p class="lv-note">Not sure where to start? If you have never written code, begin with <a href="basics.html">Basics</a>. Topic lists follow the structure of the <a href="https://www.w3schools.com/java/" target="_blank" rel="noopener">W3Schools Java tutorial</a>; the lessons and examples are original.</p>`;
   };
   render();
 }

@@ -1,9 +1,9 @@
 /* Mistake Lab: buggy vs corrected code for the classic beginner errors. */
 {
   const root = $('#root'), seen = new Set(Store.get('seenMistakes', []));
-  root.innerHTML = `<div class="mh"><div><h2>Mistake Lab</h2><p>Every Java developer makes these. Flip each card to see the buggy code and the fix.</p></div><span class="cnt" id="cnt"></span></div>
+  root.innerHTML = `<div class="mh"><div><h1>Mistake Lab</h1><p>Every Java developer makes these. Flip each card to see the buggy code and the fix.</p></div><span class="cnt" id="cnt"></span></div>
     <div class="mods mist">${MISTAKES.map((m, n) => `<article class="card" id="${m.id}" data-id="${m.id}"><div class="ch"><div class="ico red-ico">${ic('bug')}</div><span class="bd red-bd">Pitfall #${String(n + 1).padStart(2, '0')}</span><span class="m seen">${ic('checkc')}</span></div>
-      <h3>${m.t}</h3><p>${m.why}</p><div class="box"><div class="bug"><button class="a on" data-m="bad">Buggy Code</button><button class="b" data-m="good">Corrected Fix</button></div><pre class="code bugcode red">${esc(m.bad)}</pre></div></article>`).join('')}</div>`;
+      <h2>${m.t}</h2><p>${m.why}</p><div class="box"><div class="bug"><button class="a on" data-m="bad">Buggy Code</button><button class="b" data-m="good">Corrected Fix</button></div><pre class="code bugcode red">${esc(m.bad)}</pre></div></article>`).join('')}</div>`;
   const count = () => { $('#cnt').textContent = `${seen.size} / ${MISTAKES.length} explored`; $$('.mist .card').forEach(c => c.classList.toggle('seen-on', seen.has(c.dataset.id))); };
   const mark = id => { seen.add(id); Store.set('seenMistakes', [...seen]); count(); };
   root.onclick = e => {

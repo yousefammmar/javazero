@@ -21,12 +21,24 @@ const MIDVIS = {
   collections: () => `<div class="box"><div class="code">Map&lt;String, Integer&gt; ages = new <span class="red">HashMap</span>&lt;&gt;();</div><div><span class="sm"><b class="red">List</b>: ordered, allows duplicates</span><span class="sm"><b class="grn">Set</b>: no duplicates</span><span class="sm"><b class="pur">Map</b>: key to value</span></div></div>`,
   lambdas: () => `<div class="box"><div class="code">names.forEach(<span class="red">n</span> <span class="pur">-&gt;</span> System.out.println(n));</div><span class="note">[parameter] [arrow] [body]: a method with no name</span></div>`,
 };
-const midFoot = (color, cta) => m => { const p = Progress.forModule(m); return [`<div><div class="row"><span class="mut">Track Mastery</span><b style="color:${color}">${p.pct}%</b></div>${pctBar(p.pct, color)}</div>`, `<span>${ic('checkc')} ${p.n} of ${p.total} Completed</span><a class="mini c" href="lesson.html?id=${(m.lessons.find(l => !Progress.has(l.id)) || m.lessons[0]).id}">${p.n ? 'Resume Lesson' : cta}</a>`]; };
+MIDVIS.flow = () => `<div class="box"><div class="code">for (<span class="red">int</span> i = 0; i &lt; 3; i++) { ... }</div><div><span class="sm"><b class="red">if / else</b>: choose</span><span class="sm"><b class="grn">for / while</b>: repeat</span><span class="sm"><b class="pur">int[]</b>: many values</span></div></div>`;
+MIDVIS.wrappers = () => `<div class="box"><div class="code">Integer a = <span class="red">127</span>, b = <span class="red">127</span>;<br>a == b <span class="grn">// true (cached)</span></div><span class="note">Small values are cached: use .equals() for the rest.</span></div>`;
+MIDVIS.regex = () => `<div class="box"><div class="code">Pattern.compile(<span class="grn">"(\\d+)-(\\d+)"</span>)</div><span class="note">[digits] [dash] [digits]: group(1) and group(2)</span></div>`;
+MIDVIS.threads = () => `<div class="box"><div class="code">new <span class="red">Thread</span>(() -&gt; work()).<span class="pur">start()</span>;</div><span class="note">start() runs it alongside main; join() waits for it.</span></div>`;
+MIDVIS.sorting = () => `<div class="box"><div class="code">list.sort(Comparator.<span class="red">comparing</span>(Student::getName)<br>&nbsp;&nbsp;.<span class="pur">reversed</span>());</div><span class="note">One class, many orders.</span></div>`;
+MIDVIS.annotations = () => `<div class="box"><div><span class="sm"><b class="red">@Override</b></span><span class="sm"><b class="grn">@FunctionalInterface</b></span><span class="sm"><b class="pur">@Deprecated</b></span></div><span class="note">Markers the compiler and frameworks can read.</span></div>`;
+const midFoot = (color, cta) => m => { const p = Progress.forModule(m); return [`<div><div class="row"><span class="mut">Track Mastery</span><b style="color:${color === 'var(--coral)' ? 'var(--coral-ink)' : color}">${p.pct}%</b></div>${pctBar(p.pct, color)}</div>`, `<span>${ic('checkc')} ${p.n} of ${p.total} Completed</span><a class="mini c" href="lesson.html?id=${(m.lessons.find(l => !Progress.has(l.id)) || m.lessons[0]).id}">${p.n ? 'Resume Lesson' : cta}</a>`]; };
 const CARD_FOOT = {
   abstraction: midFoot('var(--coral)', 'Start Lesson'),
   exceptions: midFoot('var(--purple)', 'Start Lesson'),
   collections: midFoot('var(--coral)', 'Start Lesson'),
   lambdas: midFoot('var(--purple)', 'Start Lesson'),
+  flow: midFoot('var(--purple)', 'Start Lesson'),
+  wrappers: midFoot('var(--coral)', 'Start Lesson'),
+  regex: midFoot('var(--purple)', 'Start Lesson'),
+  threads: midFoot('var(--coral)', 'Start Lesson'),
+  sorting: midFoot('var(--purple)', 'Start Lesson'),
+  annotations: midFoot('var(--coral)', 'Start Lesson'),
   vars: m => { const p = Progress.forModule(m); return [`<div><div class="row"><span class="mut">Track Mastery</span><b class="red">${p.pct}%</b></div>${pctBar(p.pct, 'var(--coral)')}</div>`, `<span>${ic('checkc')} ${p.n} of ${p.total} Completed</span><a class="mini c" href="lesson.html?id=${(m.lessons.find(l => !Progress.has(l.id)) || m.lessons[0]).id}">${p.n ? 'Resume Lesson' : 'Start Lesson'}</a>`]; },
   methods: m => { const p = Progress.forModule(m); return [`<div><div class="row"><span class="mut">Track Mastery</span><b class="pur">${p.pct}%</b></div>${pctBar(p.pct, 'var(--purple)')}</div>`, `<span>${ic('dots')} ${p.n} of ${p.total} Completed</span><a class="mini" href="lesson.html?id=${(m.lessons.find(l => !Progress.has(l.id)) || m.lessons[0]).id}">Practice Methods</a>`]; },
   classes: m => ['', `<span>Next: Constructor Overloading</span><a class="mini c" href="lesson.html?id=${(m.lessons.find(l => !Progress.has(l.id)) || m.lessons[0]).id}">Explore OOP Lab</a>`],

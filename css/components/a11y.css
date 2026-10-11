@@ -1,0 +1,32 @@
+/* accessibility and ergonomics: skip link, touch targets, focus indicators */
+.skip{position:absolute;left:12px;top:-60px;z-index:60;background:var(--dark);color:#fff;padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none;transition:top .15s}
+.skip:focus{top:12px}
+main:focus{outline:none}
+/* touch targets: 24px minimum everywhere, 40px for touch screens; the lesson tick keeps its look but gets a 44px hit area */
+.search{min-height:40px}.logo{width:40px;height:40px}
+.tick{position:relative}.tick::after{content:"";position:absolute;inset:-9px}
+.more,.w3,.bc a,.status a{display:inline-flex;align-items:center;min-height:24px;padding:3px 0}
+.sm,button.sm{padding-top:4px;padding-bottom:4px;min-height:24px}
+.mini,.step,.rb,.run button,.bug button,.meth button,.filters button,.tabs button,.tog{min-height:28px}
+@media (pointer:coarse),(max-width:700px){
+  button:not(.tick):not(.drawer-x),.btn,.mini,.step{min-height:40px}
+  .mini,.step,.meth button,.bug button,.filters button,.tabs button{display:inline-flex;align-items:center;justify-content:center}
+  .more,.w3,.bc a,.status a{min-height:40px}
+  .sm,button.sm{min-height:36px}
+  .logo{width:40px;height:40px}
+}
+/* visible focus for the dark editors whose own outline is removed */
+.pg-ed:focus-within,.pg-in:focus-within,.ed:focus-within{box-shadow:inset 0 0 0 2px var(--coral)}
+.pal-in:focus-within{box-shadow:inset 0 -2px 0 var(--coral)}
+.inrow input:focus-visible{border-bottom-color:var(--coral);box-shadow:0 1px 0 var(--coral)}
+small{font-size:12px}
+.search{min-width:40px;justify-content:center}
+.tree .open{display:inline-flex;align-items:center;min-height:28px}
+@media (pointer:coarse),(max-width:700px){.tree .open{min-height:36px}}
+/* level pages: comfortable touch targets for topic links and the sidebar's level names */
+@media (pointer:coarse),(max-width:700px){
+  .side .lvlink{min-height:36px}
+  .tgroup .tp-w3{min-height:40px;min-width:44px;display:flex;flex-direction:column;justify-content:center}
+  .tp-lesson{min-height:36px}
+  .lvnav a{min-height:44px}
+}

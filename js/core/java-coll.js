@@ -324,7 +324,7 @@ JavaRT.extensions.push((rt, L, H) => {
   class HashMap extends AbstractMap {
     constructor() { super(); this.tab = null; this.n = 0; this.cap = 16; this.lf = 0.75; this.lfSet = false; }
     $init(a, b) {
-      if (a instanceof AbstractMap) { const s = a.size(); if (s > 0) this.cap = tableSizeFor(Math.floor(s / this.lf + 1)); this.tab = null; this.putAll(a); }
+      if (a instanceof AbstractMap) { const s = a.size(); if (s > 0) this.cap = tableSizeFor(Math.ceil(s / this.lf)); this.tab = null; this.putAll(a); }
       else if (a !== undefined) { const c = toNum(a); if (c < 0) throwEx('IllegalArgumentException', 'Illegal initial capacity: ' + c); this.cap = tableSizeFor(c); if (b !== undefined) this.lf = toNum(b); if (c === 0) this.cap = 1; }
       return this;
     }
@@ -444,7 +444,7 @@ JavaRT.extensions.push((rt, L, H) => {
       this.m = this.$mk();
       if (a === undefined) return this;
       if (typeof a === 'number') { this.m.$init(a, b); return this; }
-      if (a instanceof Coll) { if (this.m instanceof HashMap && !(this.m instanceof LinkedHashMap) || this.m instanceof LinkedHashMap) { this.m.cap = tableSizeFor(Math.max(Math.floor(a.size() / 0.75) + 1, 16)); } if (a instanceof TreeSet && this.m instanceof TreeMap) this.m.cmp = a.m.cmp; for (const x of a.$arr().slice()) this.add(x); return this; }
+      if (a instanceof Coll) { if (this.m instanceof HashMap && !(this.m instanceof LinkedHashMap) || this.m instanceof LinkedHashMap) { this.m.cap = tableSizeFor(Math.ceil(Math.max(a.size(), 12) / 0.75)); } if (a instanceof TreeSet && this.m instanceof TreeMap) this.m.cmp = a.m.cmp; for (const x of a.$arr().slice()) this.add(x); return this; }
       if (this.m instanceof TreeMap) { this.m.cmp = cmpFn(a); return this; }
       for (const x of rt.$iter(a)) this.add(x);
       return this;
@@ -925,6 +925,7 @@ JavaRT.extensions.push((rt, L, H) => {
     if (!c) throwEx('RuntimeException', `no applicable constructor for ${C.$jn}`);
     return C.prototype[c.fn].apply(obj, args);
   };
+  rt.$np = msg => { throw mk('NullPointerException', msg); };
   rt.$ec = (o, name, ord) => { o.$ename = name; o.$ord = ord; return o; };
   rt.$boxEq = (a, b) => {
     if (a === null || b === null || a === undefined || b === undefined) return a === b;

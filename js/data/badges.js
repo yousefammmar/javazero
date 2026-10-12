@@ -24,6 +24,7 @@ const BADGES = (() => {
     b('colmaster', 'Collections Master', 'cpu', () => all('collections'), 'Complete Collections'),
     b('lmaster', 'Lambda Master', 'sigma', () => all('lambdas'), 'Complete Generics & Lambdas'),
     b('quizmid', 'Intermediate Quiz Whiz', 'quiz', () => Store.get('quizBestMid', 0) >= 7, 'Score 7 or more on the intermediate quiz'),
+    b('quizadv', 'Advanced Quiz Whiz', 'quiz', () => Store.get('quizBestAdv', 0) >= 8, 'Score 8 or more on the advanced quiz'),
     b('quiz8', 'Quiz Whiz', 'quiz', () => Store.get('quizBest', 0) >= 8, 'Score 8 or more on the quiz'),
     b('quiz10', 'Perfect Score', 'trophy', () => Store.get('quizBest', 0) >= 10, 'Score 10 out of 10'),
     b('bugs', 'Bug Hunter', 'bug', () => Store.get('seenMistakes', []).length >= 4, 'Open 4 mistakes in the lab'),

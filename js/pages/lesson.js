@@ -9,6 +9,10 @@ lesson: {
   }
   const l = flat[i], m = MODULES.find(x => x.id === l.mod);
   document.title = `${l.t} – JavaZero`;
+  // per-lesson search snippet and canonical URL (the static tags in lesson.html are generic)
+  const desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.setAttribute('content', `${l.t}: ${l.sum} A runnable Java example with key points, in the ${m.name} module.`);
+  const canon = document.createElement('link'); canon.rel = 'canonical'; canon.href = `https://yousefammmar.github.io/javazero/lesson.html?id=${l.id}`; document.head.appendChild(canon);
   const render = () => {
     const done = Progress.has(l.id), prev = flat[i - 1], next = flat[i + 1];
     root.innerHTML = `<nav class="bc" aria-label="Breadcrumb"><a href="lessons.html">Lessons</a>${ic('chevr')}<span>${m.name}</span></nav>

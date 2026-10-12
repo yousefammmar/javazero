@@ -33,8 +33,8 @@ There is no build step, no framework and no backend. It is plain HTML, CSS and J
 | Playground | Write and run Java in the browser on a real in-browser compiler (javac-style errors, JDK 21 library behavior), with interactive console input and plain-English error explanations |
 | Labs | Multi-file IDE with a live memory model, String Lab, Compiler Error Translator, Stack Trace Analyzer |
 | Mistake Lab | 9 classic beginner errors, each with buggy code, the fix and the reason |
-| Daily Quiz | 10 beginner questions plus 8 intermediate questions, with instant feedback and a saved best score |
-| Progress | Lesson checkboxes, module mastery, 25 badges, all stored in `localStorage` |
+| Daily Quiz | Three sets: 10 core, 8 intermediate and 10 advanced questions, with instant feedback and a saved best score for each |
+| Progress | Lesson checkboxes, module mastery, 26 badges, all stored in `localStorage` |
 | Navigation | A slide-out sections menu with Basics, Intermediate and Advanced nested under Lessons (hidden until you press the sidebar button in the header) and a command palette (`Cmd/Ctrl + K` or `/`) searching lessons, errors, tools and resources |
 | Resources | Curated links to W3Schools Java reference pages, plus a per-lesson "read more" link |
 | Design | Responsive layout, SVG icon system, keyboard-friendly, reduced-motion aware |
@@ -53,7 +53,7 @@ There is no build step, no framework and no backend. It is plain HTML, CSS and J
 | Playground | `playground.html` | Free-form editor and console with templates |
 | Tools | `tools.html` | Multi-file IDE, String Lab, Compiler Errors, Stack Traces |
 | Mistake Lab | `mistakes.html` | Buggy versus corrected code for common errors |
-| Daily Quiz | `quiz.html` | Ten-question practice quiz |
+| Daily Quiz | `quiz.html` | Practice quiz with core, intermediate and advanced sets |
 | Resources | `resources.html` | W3Schools Java links grouped by topic |
 | Settings | `settings.html` | Badges overview and progress reset |
 
@@ -148,7 +148,7 @@ Level 3. It covers the topics in W3Schools' *Java Advanced* section (Wrapper Cla
 | **21** | **Threads & Concurrency** (4 lessons) | Run two threads and `join` them, explain in your own words why the shared counter needs `synchronized`, then submit three tasks to a thread pool |
 | **22** | **Advanced Sorting** (3 lessons), then the W3Schools File Handling topics | Sort students by score and then by name with a chained `Comparator`; on your own computer with a JDK, write a program that copies a text file |
 
-Checkpoint: explain `Comparable` versus `Comparator` and what a race condition is, then pick a W3Schools *Java Projects* exercise and build it.
+Checkpoint: score 8 or more on the Advanced set of the Daily Quiz (it earns the *Advanced Quiz Whiz* badge), explain `Comparable` versus `Comparator` and what a race condition is, then pick a W3Schools *Java Projects* exercise and build it.
 
 ### Weekly milestones at a glance
 
@@ -199,6 +199,8 @@ javazero/
 ├── quiz.html                  Daily Quiz
 ├── resources.html             W3Schools links
 ├── settings.html              Badges and reset
+├── sitemap.xml                For search engines (regenerate with node tools/sitemap.js)
+├── tools/sitemap.js           Builds sitemap.xml from the pages and lessons
 ├── tests/                     Compiler test tooling and differential corpus (see Testing)
 ├── img/
 │   └── avatar.png             Author avatar (footer)
@@ -296,7 +298,7 @@ The `tests/` folder contains Node scripts (no dependencies) that load the compil
 | A level's description or W3Schools topic list | `js/data/levels.js`: each level has `desc`, `tracks` (which modules belong to it) and `groups` of `[title, path, lessonId?, description?]` topics. Add a module's `track` to a level and it appears on that level's page, in the sidebar menu and in search |
 | A module | `js/data/curriculum.js`: add an object to `MODULES`, and a card visual in `js/components/module-cards.js` |
 | A mistake | `js/data/mistakes.js` |
-| A quiz question | `js/data/quiz.js` |
+| A quiz question | `js/data/quiz.js` (core), `js/data/intermediate.js` (`QUIZ_MID`) or `js/data/advanced.js` (`QUIZ_ADV`) |
 | A compiler error or exception translation | `js/data/errors.js` |
 | A badge | `js/data/badges.js` |
 | A resource link | `js/data/resources.js` |

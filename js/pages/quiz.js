@@ -1,7 +1,7 @@
-/* Daily quiz: one question at a time with instant feedback. Two sets: core (10) and intermediate (8). */
+/* Daily quiz: one question at a time with instant feedback. Three sets: core (10), intermediate (8) and advanced (10). */
 {
   const root = $('#root');
-  const SETS = { core: { name: 'Core', qs: QUIZ, key: 'quizBest' }, mid: { name: 'Intermediate', qs: QUIZ_MID, key: 'quizBestMid' } };
+  const SETS = { core: { name: 'Core', qs: QUIZ, key: 'quizBest' }, mid: { name: 'Intermediate', qs: QUIZ_MID, key: 'quizBestMid' }, adv: { name: 'Advanced', qs: QUIZ_ADV, key: 'quizBestAdv' } };
   let set = 'core', i = 0, score = 0, picked = null;
   const cur = () => SETS[set].qs;
   const tabs = () => `<div class="filters" role="tablist" aria-label="Quiz set">${Object.entries(SETS).map(([k, s]) => `<button role="tab" aria-selected="${k === set}" data-set="${k}" class="${k === set ? 'on' : ''}">${s.name} (${s.qs.length})</button>`).join('')}</div>`;
